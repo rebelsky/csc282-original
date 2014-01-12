@@ -37,6 +37,9 @@ admin/*
 !admin/sendgrades
 !admin/sendreport
 
+# The schedule overview directory is automatically generated (more or less)
+handouts/overviews
+
 # +------------------------+------------------------------------------
 # | Rules for Generic Site |
 # +------------------------+

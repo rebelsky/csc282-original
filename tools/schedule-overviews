@@ -1,0 +1,17 @@
+#!/usr/bin/perl
+
+# schedule-overviews
+#   Create all of the overviews for semester
+
+if (! -d "overviews") {
+  system("mkdir overviews");
+} # if the directory does not exist
+
+my $file;       # The original overview
+my $target;     # The target file
+for $file (`ls ../outlines/overviews`) {
+  chomp($file);
+  $target = "overviews/$file";
+  $target =~ s/md$/xml/g;
+  system("make $target");
+} # for

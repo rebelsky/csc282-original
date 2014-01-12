@@ -86,4 +86,9 @@
   <span class="break"><xsl:apply-templates/></span>
 </xsl:template>
 
+<!-- Overviews in the schedule -->
+<xsl:template match="overview">
+  <span class="overview"><xsl:apply-templates/></span>
+</xsl:template>
+
 </xsl:stylesheet>

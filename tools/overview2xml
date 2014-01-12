@@ -1,0 +1,30 @@
+#!/usr/bin/perl
+
+# overview2xml
+#   A simple script to convert a typical overview (essentially, lines
+#   of text that start with asterisks) to a simple XML file, useful for
+#   including in the syllabus.
+
+my $contents = readFile($ARGV[0]);
+$contents =~ s/^\* //gm;
+$contents =~ s/`([^`]*)`/<code>\1<\/code>/gm;
+
+print "<overview>\n$contents<\/overview>\n";
+
+# +-------------+------------------------------------------------------
+# | Subroutines |
+# +-------------+
+
+# Read in the contents of  file.
+sub readFile
+{
+  my $filename = shift;
+  my $linesep = $/; # Save for later
+  undef $/; # When $/ is undefined, read reads the wholefile
+  open(TMPFILE, "< $filename");
+  my $contents = <TMPFILE>;
+  close(TMPFILE);
+  $/ = $linesep; # Restore
+  return $contents;
+} # readFile
+

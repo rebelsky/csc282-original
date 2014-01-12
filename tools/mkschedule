@@ -20,7 +20,8 @@ my $WEEK = 0;
 # | Main |
 # +------+
 
-my $type = shift;
+my $type = shift;       # The type of schedule
+my $i;                  # Everyone's favorite counter variable
 
 if ($type eq "mtwf-fall") {
   top();
@@ -44,21 +45,13 @@ if ($type eq "mtwf-fall") {
 }
 elsif ($type eq "mtwf-spring") {
   top();
-  week(); day(); day(); day(); day(); 
-  week(); day(); day(); day(); day(); 
-  week(); day(); day(); day(); day(); 
-  week(); day(); day(); day(); day(); 
-  week(); day(); day(); day(); day(); 
-  week(); day(); day(); day(); day(); 
-  week(); day(); day(); day(); day(); 
-  week(); day(); day(); day(); day(); 
+  for ($i = 0; $i < 8; $i++) {
+    week(); day(); day(); day(); day(); 
+  } # for
   break("Spring Break");
-  week(); day(); day(); day(); day(); 
-  week(); day(); day(); day(); day(); 
-  week(); day(); day(); day(); day(); 
-  week(); day(); day(); day(); day();
-  week(); day(); day(); day(); day(); 
-  week(); day(); day(); day(); day(); 
+  for ($i = 0; $i < 6; $i++) {
+    week(); day(); day(); day(); day(); 
+  } # for
   bottom();
 }
 elsif ($type eq "lfa-fall") {
@@ -138,7 +131,10 @@ sub day()
       <tr>
         <td>$DAY</td>
         <td>&date$DAY;</td>
-        <td><ulink url="../outlines/outline.$DAY.html"><emphasis role="strong">&title$DAY;</emphasis></ulink></td>
+        <td>
+          <ulink url="../outlines/outline.$DAY.html"><emphasis role="strong">&title$DAY;</emphasis></ulink>
+          <xi:include href="overviews/&abbrev$DAY;.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        </td>
         <td>&reading$DAY;</td>
         <td>&lab$DAY; <break/><emphasis>&writeup$DAY;</emphasis></td>
         <td>&due$DAY;</td>
@@ -177,16 +173,14 @@ sub twoDigits(n)
 sub headings() 
 {
 print <<"HEADINGS";
-  <thead>
-    <tr>
-      <th></th>
-      <th>Date</th>
-      <th>Topic</th>
-      <th>Reading</th>
-      <th>Lab</th>
-      <th>Work Due</th>
-    </tr>
-  </thead>
+  <tr>
+    <th></th>
+    <th>Date</th>
+    <th width="35%">Topic</th>
+    <th width="20%">Reading</th>
+    <th width="20%">Lab</th>
+    <th>Work Due</th>
+  </tr>
 HEADINGS
 } # headings
 

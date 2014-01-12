@@ -371,3 +371,10 @@ SPAN.guibutton {
 SPAN.break {
   display: block;
 }
+
+/*
+ * Overviews (still under development).
+ */
+SPAN.overview {
+  display: block;
+}

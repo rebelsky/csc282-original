@@ -1,0 +1,56 @@
+<!ENTITY date01 "&mon01;">
+<!ENTITY date02 "&wed01;">
+<!ENTITY date03 "&fri01;">
+
+<!ENTITY date04 "&mon02;">
+<!ENTITY date05 "&wed02;">
+<!ENTITY date06 "&fri02;">
+
+<!ENTITY date07 "&mon03;">
+<!ENTITY date08 "&wed03;">
+<!ENTITY date09 "&fri03;">
+
+<!ENTITY date10 "&mon04;">
+<!ENTITY date11 "&wed04;">
+<!ENTITY date12 "&fri04;">
+
+<!ENTITY date13 "&mon05;">
+<!ENTITY date14 "&wed05;">
+<!ENTITY date15 "&fri05;">
+
+<!ENTITY date16 "&mon06;">
+<!ENTITY date17 "&wed06;">
+<!ENTITY date18 "&fri06;">
+
+<!ENTITY date19 "&mon07;">
+<!ENTITY date20 "&wed07;">
+<!ENTITY date21 "&fri07;">
+
+<!ENTITY date22 "&mon08;">
+<!ENTITY date23 "&wed08;">
+<!ENTITY date24 "&fri08;">
+
+<!ENTITY date25 "&mon09;">
+<!ENTITY date26 "&wed09;">
+<!ENTITY date27 "&fri09;">
+
+<!ENTITY date28 "&mon10;">
+<!ENTITY date29 "&wed10;">
+<!ENTITY date30 "&fri10;">
+
+<!ENTITY date31 "&mon11;">
+<!ENTITY date32 "&wed11;">
+<!ENTITY date33 "&fri11;">
+
+<!ENTITY date34 "&mon12;">
+<!ENTITY date35 "&wed12;">
+<!ENTITY date36 "&fri12;">
+
+<!ENTITY date37 "&mon13;">
+<!ENTITY date38 "&wed13;">
+<!ENTITY date39 "&fri13;">
+
+<!ENTITY date40 "&mon14;">
+<!ENTITY date41 "&wed14;">
+<!ENTITY date42 "&fri14;">
+
