@@ -1,8 +1,8 @@
-<!ENTITY courseid "COURSE ID">
-<!ENTITY section "#">
-<!ENTITY semester "SEMESTER">
-<!ENTITY coursename "COURSE NAME">
+<!ENTITY courseid "CSC 295/282">
+<!ENTITY section "01">
+<!ENTITY semester "2014S">
+<!ENTITY coursename "Thinking in C and *nix">
 <!ENTITY school "Grinnell College">
-<!ENTITY url "http://www.cs.grinnell.edu/~rebelsky/Courses/courses/">
+<!ENTITY url "http://www.cs.grinnell.edu/~rebelsky/Courses/CSC282/2014S/">
 <!ENTITY courseurl "&url;">
-<!ENTITY grader "grader@cs.grinenll.edu">
+<!ENTITY grader "rebelsky@grinnell.edu">
