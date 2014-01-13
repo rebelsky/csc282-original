@@ -57,6 +57,17 @@ elsif ($type eq "mtwf-spring-alt") {
   print "</tbody>\n";
   bottom();
 } # mtwf-spring-alt
+elsif ($type eq "th-spring") {
+  top();
+  print "<thead>\n";
+  headings();
+  print "</thead>\n";
+  print "<tbody>\n";
+  days(8);
+  break("Spring Break");
+  days(6);
+  print "</tbody>\n";
+} # th-spring
 elsif ($type eq "lfa-fall") {
   lfaTop();
   lfaDay(); lfaDay(); lfaDay(); lfaDay();
@@ -166,6 +177,17 @@ sub day()
       </tr>
 DAY
 } # day
+
+# days(N)
+#   Print N days
+sub days($) 
+{
+  my $D = shift;
+  my $d;
+  for ($d = 0; $d < $D; $d++) {
+    day();
+  } # for
+} # days
 
 # lfaDay()
 #   Much like day(), but for a Learning from alumni course
