@@ -1,56 +1,14 @@
-<!ENTITY due01 "">
-<!ENTITY due02 "">
-<!ENTITY due03 "">
-<!ENTITY due04 "">
-<!ENTITY due05 "">
-<!ENTITY due06 "">
-<!ENTITY due07 "">
-<!ENTITY due08 "">
-<!ENTITY due09 "">
-<!ENTITY due10 "">
-<!ENTITY due11 "">
-<!ENTITY due12 "">
-<!ENTITY due13 "">
-<!ENTITY due14 "">
-<!ENTITY due15 "">
-<!ENTITY due16 "">
-<!ENTITY due17 "">
-<!ENTITY due18 "">
-<!ENTITY due19 "">
-<!ENTITY due20 "">
-<!ENTITY due21 "">
-<!ENTITY due22 "">
-<!ENTITY due23 "">
-<!ENTITY due24 "">
-<!ENTITY due25 "">
-<!ENTITY due26 "">
-<!ENTITY due27 "">
-<!ENTITY due28 "">
-<!ENTITY due29 "">
-<!ENTITY due30 "">
-<!ENTITY due31 "">
-<!ENTITY due32 "">
-<!ENTITY due33 "">
-<!ENTITY due34 "">
-<!ENTITY due35 "">
-<!ENTITY due36 "">
-<!ENTITY due37 "">
-<!ENTITY due38 "">
-<!ENTITY due39 "">
-<!ENTITY due40 "">
-<!ENTITY due41 "">
-<!ENTITY due42 "">
-<!ENTITY due43 "">
-<!ENTITY due44 "">
-<!ENTITY due45 "">
-<!ENTITY due46 "">
-<!ENTITY due47 "">
-<!ENTITY due48 "">
-<!ENTITY due49 "">
-<!ENTITY due50 "">
-<!ENTITY due51 "">
-<!ENTITY due52 "">
-<!ENTITY due53 "">
-<!ENTITY due54 "">
-<!ENTITY due55 "">
-<!ENTITY due56 "">
+<!ENTITY hw00 "<ulink url='../assignments/assignment.00.html'>HW 00: GitHub</ulink>">
+<!ENTITY hw01 "HW 01">
+<!ENTITY hw02 "HW 02">
+<!ENTITY hw03 "HW 03">
+<!ENTITY hw04 "HW 04">
+<!ENTITY hw05 "HW 05">
+<!ENTITY hw06 "HW 06">
+<!ENTITY hw07 "HW 07">
+<!ENTITY hw08 "HW 08">
+<!ENTITY hw09 "HW 09">
+<!ENTITY hw10 "HW 10">
+<!ENTITY hw11 "HW 11">
+<!ENTITY hw12 "HW 12">
+<!ENTITY hw13 "HW 13">

@@ -1,5 +1,7 @@
-<section id="index-&group;"><title>List of &group;</title>
+<section id="index-assignment"><title>List of Assignments</title>
 
-<para id="{$group}"></para>
+<itemizedlist>
+  <listitem>&hw00; (due 10:30 p.m., &wed01;)</listitem>
+</itemizedlist>
 
-</section> <!-- index-&group; -->
+</section> <!-- index-assignment -->
