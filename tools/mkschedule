@@ -67,6 +67,7 @@ elsif ($type eq "th-spring") {
   break("Spring Break");
   days(6);
   print "</tbody>\n";
+  bottom();
 } # th-spring
 elsif ($type eq "lfa-fall") {
   lfaTop();
