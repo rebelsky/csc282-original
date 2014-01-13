@@ -40,6 +40,10 @@ admin/*
 # The schedule overview directory is automatically generated (more or less)
 handouts/overviews
 
+# The sched.sect file is automatically generated in the process of 
+# creating the PDF of the schedule.
+handouts/sched.sect
+
 # +------------------------+------------------------------------------
 # | Rules for Generic Site |
 # +------------------------+

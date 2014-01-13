@@ -1,0 +1,13 @@
+@html2ps {
+  option {
+    landscape: 1;
+  }
+}
+
+TD {
+  text-align: top;
+}
+
+BODY {
+  font-size: 9pt;
+}
