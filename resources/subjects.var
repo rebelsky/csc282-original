@@ -1,14 +1,130 @@
-+week
-<!ENTITY week{$week} "Getting Started">
-
 +day
-<!ENTITY title{$day} "An Introduction to the Course">
-<!ENTITY abbrev{$day} "course-intro">
+<!ENTITY due{$day} "HW 00: Set up a GitHub account and Learn a bit of git">
++hw
 
+<!ENTITY title{$day} "Introduction">
+<!ENTITY abbrev{$day} "intro">
+<!ENTITY reading{$day} "">
+<!ENTITY lab{$day} "">
+<!ENTITY writeup{$day} "">
 +day
-<!ENTITY title{$day} "Introduction, continued">
-<!ENTITY abbrev{$day} "intro-continued">
+<!ENTITY due{$day} "HW {$hw}: Solve some simple tasks">
++hw
 
+<!ENTITY title{$day} "Some Basic Tasks and Corresponding Tools">
+<!ENTITY abbrev{$day} "tools">
+<!ENTITY reading{$day} "">
+<!ENTITY lab{$day} "">
+<!ENTITY writeup{$day} "">
 +day
-<!ENTITY title{$day} "Real Work">
-<!ENTITY abbrev{$day} "real-work">
+<!ENTITY due{$day} "HW {$hw}">
++hw
+
+<!ENTITY title{$day} "The Bash Shell - A Refresher">
+<!ENTITY abbrev{$day} "bash">
+<!ENTITY reading{$day} "">
+<!ENTITY lab{$day} "">
+<!ENTITY writeup{$day} "">
++day
+<!ENTITY due{$day} "HW {$hw}">
++hw
+
+<!ENTITY title{$day} "Regular Expressions">
+<!ENTITY abbrev{$day} "regexp">
+<!ENTITY reading{$day} "">
+<!ENTITY lab{$day} "">
+<!ENTITY writeup{$day} "">
++day
+<!ENTITY due{$day} "HW {$hw}: A complex regular expression">
++hw
+
+<!ENTITY title{$day} "Learning Vi">
+<!ENTITY abbrev{$day} "vi">
+<!ENTITY reading{$day} "">
+<!ENTITY lab{$day} "">
+<!ENTITY writeup{$day} "">
++day
+<!ENTITY due{$day} "HW {$hw}: Playing with vi settings">
++hw
+
+<!ENTITY title{$day} "Compilation, Macros, and the C Preprocessor">
+<!ENTITY abbrev{$day} "cpp">
+<!ENTITY reading{$day} "">
+<!ENTITY lab{$day} "">
+<!ENTITY writeup{$day} "">
++day
+<!ENTITY due{$day} "HW {$hw}">
++hw
+
+<!ENTITY title{$day} "Using Macros for Generics">
+<!ENTITY abbrev{$day} "generics">
+<!ENTITY reading{$day} "">
+<!ENTITY lab{$day} "">
+<!ENTITY writeup{$day} "">
++day
+<!ENTITY due{$day} "HW {$hw}">
++hw
+
+<!ENTITY title{$day} "Writing a Unit Testing Library">
+<!ENTITY abbrev{$day} "unit-testing">
+<!ENTITY reading{$day} "">
+<!ENTITY lab{$day} "">
+<!ENTITY writeup{$day} "">
++day
+<!ENTITY due{$day} "HW {$hw}">
++hw
+
+<!ENTITY title{$day} "Automating Work with Make">
+<!ENTITY abbrev{$day} "make-1">
+<!ENTITY reading{$day} "">
+<!ENTITY lab{$day} "">
+<!ENTITY writeup{$day} "">
++day
+<!ENTITY due{$day} "HW {$hw}">
++hw
+
+<!ENTITY title{$day} "Improved Make">
+<!ENTITY abbrev{$day} "make-2">
+<!ENTITY reading{$day} "">
+<!ENTITY lab{$day} "">
+<!ENTITY writeup{$day} "">
++day
+<!ENTITY due{$day} "HW {$hw}">
++hw
+
+<!ENTITY title{$day} "Debugging with GDB">
+<!ENTITY abbrev{$day} "gdb">
+<!ENTITY reading{$day} "">
+<!ENTITY lab{$day} "">
+<!ENTITY writeup{$day} "">
++day
+<!ENTITY due{$day} "HW {$hw}">
++hw
+
+<!ENTITY title{$day} "Miscellaneous C Programming Issues">
+<!ENTITY abbrev{$day} "misc">
+<!ENTITY reading{$day} "">
+<!ENTITY lab{$day} "">
+<!ENTITY writeup{$day} "">
++day
+<!ENTITY due{$day} "HW {$hw}">
++hw
+
+<!ENTITY title{$day} "Variadic Functions">
+<!ENTITY abbrev{$day} "varargs">
+<!ENTITY reading{$day} "">
+<!ENTITY lab{$day} "">
+<!ENTITY writeup{$day} "">
++day
+<!ENTITY due{$day} "HW {$hw}">
++hw
+
+<!ENTITY title{$day} "Wrapup">
+<!ENTITY abbrev{$day} "wrapup">
+<!ENTITY reading{$day} "">
+<!ENTITY lab{$day} "">
+<!ENTITY writeup{$day} "">
++day
+<!ENTITY due{$day} "HW {$hw}">
++hw
+
