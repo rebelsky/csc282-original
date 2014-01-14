@@ -1,7 +1,124 @@
 <section id="front-door"><title>Front Door</title>
 
+<section id="introduction"><title>Introduction</title>
+
 <para>
-  Welcome to the &semester; section of &courseid; - &coursename;.
+  Welcome to the Spring 2014 session of Grinnell College's CSC 295.01, a
+  one-credit special topics course entitled <emphasis>Roots of Professional
+  Practice - A Philosophy of Unix</emphasis>.  In this course, we will
+  explore the approaches that professionals take when developing software
+  using C in the Unix/Linux environments.  But we will also delve more
+  deeply into the underlying <emphasis>Unix philosophy</emphasis> that
+  guides this practice.
 </para>
+
+<para>
+  At times I will refer to this course as <quote>CSC 282: Thinking in C
+  and Unix</quote> because the department has proposed regularizing this
+  course under that number and name.
+</para>
+
+<para>
+  There will be very little lecture in the class.  The focus will be on
+  collaborative exploration of problems and their solutions.  Each class,
+  I expect to suggest a problem and an approach and to have the class discuss
+  and experiment with alternatives.
+</para>
+
+<para>
+  The Web site for the course is <code><ulink
+  url="&url;"/></code>.
+  You can find all sorts of interesting things on the course web, and
+  I'd encourage you to look there.
+</para>
+
+<para>
+  This is an experimental course.  Among other things, this means that I
+  expect to be updating the syllabus as the semester goes on.  
+</para>
+
+</section> <!-- introduction -->
+
+<section name="basics"><title>Basics</title>
+
+<para>
+  <emphasis role="strong">Meets</emphasis>: Thursdays, 1:15-2:05 p.m., 
+  Science 3819. 
+</para>
+
+<para>
+  <emphasis role="strong">Instructor</emphasis>: 
+  <ulink url="http://www.cs.grinnell.edu/~rebelsky/">Samuel A. Rebelsky</ulink>,
+  Science 3824.  269-4410 (office).  236-7445 (home).  
+  Office hours:  M 2:15-3:05, TW 11:00-11:45, F 2:15-3:05.
+  I tend to follow an open door policy: Feel free to stop by when my
+  door is open or to make an appointment for another time.  
+</para>
+
+</section>
+
+<section id="grading"><title>Grading</title>
+
+<para>
+  This course is offered for one credit and is graded as
+  S/D/F.  All students who take the course are expected to
+</para>
+
+<itemizedlist>
+  <listitem>attend at least twelve of the fourteen class meetings;</listitem>
+  <listitem>do all of the assigned readings;</listitem>
+  <listitem>spend an appropriate amount of time on each homework 
+    assignment; and</listitem>
+  <listitem>participate actively in class.</listitem>
+</itemizedlist>
+
+<para>
+  Students who meet these criteria will earn a grade of S.  Students who
+  do not will likely earn a lower grade.
+</para>
+
+</section> <!-- grading -->
+
+<section name="textbook" title="Textbooks and Other Readings">
+
+<para>
+  Mecklenburg, Robert (2004).  <emphasis>Managing Projects
+  with GNU Make</emphasis>, Third Edition. Sebastapol, CA:
+  O'Reilly and Associates. Also available online at <ulink
+  url="http://oreilly.com/catalog/make3/book/index.csp"/>.
+</para>
+
+<para>
+  Raymond, Eric S. (2003). <emphasis>The Art of UNIX
+  Programming</emphasis>. Addison-Wesley, Professional. Also available
+  online at <ulink url="http://www.catb.org/esr/writings/taoup/html/"/>.
+</para>
+
+<para>
+  Rebelsky, Samuel A. (2014).  <emphasis>Don't Embarrass Me
+  / Don't Embarrass Yourself: A Guide to Thinking in C and
+  *nix</emphasis>.  An e-book in progress available at <ulink
+  url="http://www.cs.grinnell.edu/~rebelsky/Cnix/"/>.
+</para>
+
+<section id="additional-readings"><title>Additional Readings</title>
+
+<para>
+  <emphasis>Here are some other things you might find useful.</emphasis>
+</para>
+
+<para>
+  Gancarz, Mike.  1994.  <emphasis>The Unix Philosophy</emphasis>.
+  Digital Press.
+</para>
+
+<para>
+  Kernighan, Brian W. &amp; Ritchie, Dennis, M. (1988). The C Programming
+  Language, 2nd Edition: ANSI C. Upper Saddle River, NJ: Prentice-Hall.
+</para>
+
+</section> <!-- additional-readings -->
+
+</section> <!-- textbook -->
 
 </section> <!-- front-door -->
