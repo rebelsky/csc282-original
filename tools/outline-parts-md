@@ -4,7 +4,7 @@
 #   Copy parts of an outline from the old format of course to the current 
 #   course.
 
-my $OLD = "/home/rebelsky/Web/Courses/CSC151/2010S/Outlines";
+my $OLD = "/home/rebelsky/Web/Courses/CSC295/2013S.03/Outlines";
 
 my $prefix = shift;
 
