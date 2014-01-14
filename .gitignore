@@ -44,6 +44,14 @@ handouts/overviews
 # creating the PDF of the schedule.
 handouts/sched.sect
 
+* THe schedule.sect file is now automatically generated.
+handouts/schedule.sect
+
+# The daily outlines are automatically generated, as is the corresponding
+# makefile.
+outlines/outline.*.md
+outlines/outlines.mk
+
 # +------------------------+------------------------------------------
 # | Rules for Generic Site |
 # +------------------------+
