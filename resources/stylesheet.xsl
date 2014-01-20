@@ -40,7 +40,7 @@
 <div class="pagenotes">
 
 <p>
-Copyright (c) 2013 Samuel A. Rebelsky.  
+Copyright (c) 2013-14 Samuel A. Rebelsky.  
 </p>
 
 <p>
