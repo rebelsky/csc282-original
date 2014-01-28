@@ -1,4 +1,58 @@
-<section id="email"><title>Thoughts About Email and Encryption</title>
+<section id="email"><title>Thoughts About Email, Including Thoughts About Encryption</title>
+
+<section id="subject-lines"><title>Choosing Subject Lines</title>
+
+<para>
+  I get way too much email, hundreds of messages each day.  I rely on
+  programs to automatically file my email and to search my email.  Hence,
+  I'd appreciate it if you'd help me process email from you more carefully.
+  Here are a few short guidelines.
+</para>
+
+<itemizedlist>
+  <listitem>
+    Please take the time to choose an appropriate subject line for your 
+    email message.
+  </listitem>
+  
+  <listitem>
+    If I tell you to use a particular subject line for an email message,
+    particularly for an assignment, please use that subject line.
+    The correct subject makes it easier for me to file your email
+    and, more importantly, for me to <emphasis>find</emphasis> your email.
+    The typical subject line is <quote>&courseid; *Assignment*: *Title*
+    (*Your Names*)</quote>.  For example, in submitting the typical
+    introductory survey, I might use the subject line <quote>&courseid;
+    Assignment 1: Introductory Survey (Samuel A. Rebelsky)</quote> or
+    the subject line <quote>&courseid; Assignment 1: Introductory Survey
+    (Rebelsky)</quote>.
+  </listitem>
+
+  <listitem>
+    If you are asking for help on an assignment, please do not use a
+    title like <quote>Homework assignment</quote>.  I generally assume
+    that titles like that represent <emphasis>submissions</emphasis>
+    of homework assignments, and may file them without looking at them
+    until it comes time to grade the assignment.  If you're asking a
+    question, please put a term like <quote>Question</quote> or
+    <quote>Help</quote> or even <quote>HELP!</quote> in the subject
+    line.  (Yes, I know that the use of all capital letters is a form
+    of shouting.  It's okay if you virtually shout when asking for help.)
+  </listitem>
+
+  <listitem>
+    If you are replying to a message and are changing the topic of
+    the message, please also change the subject line.  If you want to
+    be precise, you can include the old subject line in parentheses,
+    prefixed by the word <quote>Was</quote>, as in <quote>Question on
+    the assignment (was re: This week's convocation)</quote>.
+  </listitem>
+
+</itemizedlist>
+
+</section> <!-- subjects -->
+
+<section id="authentication-and-encryption"><title>Authentication and Encryption</title>
 
 <para>
   Most of us, myself included, don't think much about email, other
@@ -15,10 +69,10 @@
   so I'm not going to write much here, other than to recommend that
   you learn about using GPG.  I will say that, depending on what email
   package I'm using and who I'm communicating with, encryption is either
-  trivial (one click and one password when I'm using Mail.app and sending
-  email) or a slight pain (saving the encrypted message as a file and
-  then running a decryption program when I'm receiving an encrypted
-  message via Webmail).
+  trivial (one click and one password when I'm using Mail.app on the
+  Macintosh and sending email) or a slight pain (saving the encrypted
+  message as a file and then running a decryption program when I'm
+  receiving an encrypted message via Webmail).
 </para>
 
 <para>
@@ -31,11 +85,13 @@
     On the Mac, I use <ulink url="https://gpgtools.org/">GPGMail 2</ulink>.
     I find it simple and straightforward.
   </listitem>
+
   <listitem>
     I don't use Microsoft Windows, but I hear that 
     <ulink url="http://www.gpg4win.org/">gpg4win</ulink>
     works pretty well.
   </listitem>
+
   <listitem>
     On the Linux workstations in the MathLAN, GPG is installed as
     a command line tool.   
@@ -50,15 +106,6 @@
   <ulink url="http://pgp.mit.edu/">http://pgp.mit.edu/</ulink>.  
 </para>
 
-<para>
-  You may find it a bit strange that I'm giving you instructions for
-  encrypting your email when I'm encouraging you to use a public IRC
-  channel to discuss homework.  But the combination is intentional.  
-  IRC channels are supposed to be public.  I ask you to use an IRC channel
-  to remind you of the benefits of working in public.  In contrast, email
-  is supposed to be private.  I teach you about GPG to help you ensure
-  that your remail remains private.  You are free to judge the best
-  balance between the two.
-</para>
+</section> <!-- authentication-and-encryption -->
 
 </section> <!-- email -->

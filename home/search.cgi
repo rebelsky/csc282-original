@@ -58,7 +58,7 @@ sub main() {
   my $keyword = extractField($query, "keyword");
 
   # Clean up the query for safety
-  $keyword =~ s/[^-_0-9 a-zA-Z]//g;
+  $keyword =~ s/[^-_0-9 a-zA-Z.]/./g;
 
   # my $template = minimalTemplate();
   my $template = readFile("template.html");

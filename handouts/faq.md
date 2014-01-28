@@ -1,6 +1,11 @@
 Frequently (and not-so-frequently) Asked Questions
 ==================================================
 
+These are my attempts to answer some questions that students have asked
+(in the first assignment, in office hours, via email, etc.)
+
+Note that there may be some repetition on this page.
+
 About the Site
 --------------
 
@@ -15,7 +20,7 @@ What technology do you use to build the course web?
 > labs) I use a form of XML called Docbook.  But Docbook is wordy, so
 > for other pages (e.g., the daily outlines and eboards), I use
 > Markdown.  I also have a bunch of scripts to help with all of this.
-> You can find the scripts and source code on github._
+> You can find the scripts and source code on GitHub._
 
 About the Course
 ----------------

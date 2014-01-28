@@ -90,6 +90,7 @@ includeMDFile("overviews/$PREFIX.md", "${pre}Overview${post}");
 
 # Daily notes/administrivia.
 includeMDFile($ADMIN, "${pre}Administrivia${post}");
+print "\n";
 
 # And the body
 includeOptionalMDFile("bodies/$PREFIX.md");
