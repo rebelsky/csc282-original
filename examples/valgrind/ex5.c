@@ -1,5 +1,5 @@
 /**
- * ex4.c
+ * ex5.c
  *   An example of using freed memory.
  */
 
@@ -20,14 +20,15 @@ int
 main (void)
 {
   int *stuff;
-  int *more;
+  int *answer;
   // *stuff = 1;   // Assignment to unitialized memory
   stuff = malloc (sizeof (int));
   *stuff = 1;   // Legal assignment
   free (stuff);
-  more = malloc (sizeof (int));
-  *more = 2;
-  *stuff = 1;   // Assignment to freed memory (and potentially reused mem)
-  assert (*more == 2);
+  answer = malloc (sizeof (int));
+  *answer = 42;
+  *stuff = 1;   // Assignment to freed memory
+  assert (*answer == 42);
+  free (answer);
   return 0;
 } // main
