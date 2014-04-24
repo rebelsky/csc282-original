@@ -37,7 +37,8 @@ f (int n)
   for (i = 0; i < 10; i++)
     {
       values[i] = n;
-    }
+      assert(values[i] == n);
+    } // for
 } // f
 
 
@@ -52,6 +53,6 @@ main (void)
   vals (&stuff);
   stuff[0] = 42;
   f (5);
-  printf ("%d\n", stuff[0] == 42);
+  assert (stuff[0] == 42);
   return 0;
 } // main
