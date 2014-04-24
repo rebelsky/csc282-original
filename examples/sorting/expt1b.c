@@ -1,5 +1,5 @@
 /** 
- * expt1a.c
+ * expt1b.c
  *   An experiment to see how strings_sort works.  Sorts the strings
  *   entered on the command line by size.
  */
@@ -20,18 +20,19 @@
 // +---------------+
 
 /**
- * Compare two strings by size.
+ * Compare two strings by length.  (We assume that the string length is
+ * not enough to overflow integers.)
  */
 static int
-strcmp_size (char *str1, char *str2)
+strcmp_length (char *str1, char *str2)
 {
   return (strlen (str1) - strlen (str2));
-} // strcmp_size
+} // strcmp_length
 
 static int
-strcmp_size_report (char *str1, char *str2)
+strcmp_length_report (char *str1, char *str2)
 {
-  int result = strcmp_size (str1, str2);
+  int result = strcmp_length (str1, str2);
   if (result < 0)
     fprintf (stderr, "%s < %s\n", str1, str2);
   else if (result >= 0)
@@ -39,7 +40,7 @@ strcmp_size_report (char *str1, char *str2)
   else
     fprintf (stderr, "%s == %s\n", str1, str2);
   return result;
-} // strcmp_size_report
+} // strcmp_length_report
 
 
 // +------+------------------------------------------------------------
@@ -50,7 +51,7 @@ int
 main (int argc, char *argv[])
 {
   int i;
-  strings_sort (argc-1, argv+1, strcmp_size);
+  strings_sort (argc-1, argv+1, strcmp_length);
   for (i = 1; i < argc; i++)
     printf ("%s\n", argv[i]);
   return 0;
