@@ -3,8 +3,11 @@
 # mkschedule TYPE
 #   Creates a schedule of a particular type
 #     mtwf-fall: A Monday, Tuesday, Wednesday, and Friday fall lab class.
+#     mtwf-fall-writeups: A Monday, Tuesday, Wednesday, and Friday fall 
+#       lab class with writeups.
 #     lfa-fall: Learning from Alumni in the Fall (one day per week)
 #     mtwf-spring: A Monday, Tuesday, Wednesday, and Friday spring lab class.
+#     mtwf-spring-mlk, A MWTF spring lab class, with no MLK day
 #     th-spring: Meets Thursday in the spring
 #     mwf-spring: A MWF spring class (no labs)
 #     mwf-spring-notes: A MWF spring class (no labs, note takers)
@@ -30,28 +33,60 @@ my $type = shift;       # The type of schedule
 my $i;                  # Everyone's favorite counter variable
 
 # A quick hack to support notes
-if ($type =~ s/-notes$//) {
+if ($type =~ s/-notes//) {
   $NOTETAKERS = 1;
 }
 
+# Do we include writeups?
+my $INCLUDE_WRITEUPS = 0;
+if ($type =~ s/-writeups//) {  
+  $INCLUDE_WRITEUPS = 1;
+}
+  
 # Deal with the different kinds of classes
 if ($type eq "mtwf-fall") {
   top();
   print "<tbody>\n";
-  weeks(1,5,true);   # 1 week of 5 days
-  weeks(6,4,true);   # 6 weeks of 4 days
+  weeks(1,5,1);   # 1 week of 5 days
+  weeks(6,4,1);   # 6 weeks of 4 days
   break("Fall Break", 6);
-  weeks(4,4,true);   # 4 weeks of 4 days
-  weeks(1,3,true);   # 1 week of 3 days
+  weeks(4,4,1);   # 4 weeks of 4 days
+  weeks(1,3,1);   # 1 week of 3 days
   break("Thanksgiving Break", 6);
-  weeks(4,4,true);   # 2 weeks of 4 days
+  weeks(2,4,1);   # 2 weeks of 4 days
   print "</tbody>\n";
   bottom();
 } # mtwf-fall
+elsif ($type eq "mtwf-fall-alt") {
+  top();
+  print "<thead>\n";
+  headings();
+  print "<\/thead>\n";
+  print "<tbody>\n";
+  weeks(1,5,0);   # 1 week of 5 days
+  weeks(6,4,0);   # 6 weeks of 4 days
+  break("Fall Break", 6);
+  weeks(4,4,0);   # 4 weeks of 4 days
+  weeks(1,3,0);   # 1 week of 3 days
+  break("Thanksgiving Break", 6);
+  weeks(2,4,0);   # 2 weeks of 4 days
+  print "</tbody>\n";
+  bottom();
+} # mtwf-spring-alt
 elsif ($type eq "mtwf-spring") {
   top();
   print "<tbody>\n";
   weeks(8,4,1);  
+  break("Spring Break", 6);
+  weeks(6,4,1);   
+  print "</tbody>\n";
+  bottom();
+} # mtwf-spring
+elsif ($type eq "mtwf-spring-mlk") {
+  top();
+  print "<tbody>\n";
+  weeks(1,3,1);         # 1 week of 3 days because of MLK
+  weeks(7,4,1);         # 7 more weeks of 4 days
   break("Spring Break", 6);
   weeks(6,4,1);   
   print "</tbody>\n";
@@ -63,9 +98,9 @@ elsif ($type eq "mtwf-spring-alt") {
   headings();
   print "<\/thead>\n";
   print "<tbody>\n";
-  weeks(8,4,false);
+  weeks(8,4,0);
   break("Spring Break", 6);
-  weeks(6,4,false);
+  weeks(6,4,0);
   print "</tbody>\n";
   bottom();
 } # mtwf-spring-alt
@@ -103,11 +138,13 @@ else {
   print STDERR "Unknown type of schedule: $type\n";
   print STDERR "   lfa-fall: The Learning from Alumni Fall Course.\n";
   print STDERR "   mtwf-fall: A MTuWF Fall lab class.\n";
+  print STDERR "   mtwf-fall-writeups: A MTuWF Fall lab class with writeups.\n";
   print STDERR "   mtwf-spring: A MTuWF Spring lab class.\n";
   print STDERR "   mwf-spring: A MWF Spring class.\n";
   print STDERR "   th-spring: A Thursday-only Spring class.\n";
   exit 1;
 }
+
 # +-------------+-----------------------------------------------------
 # | Subroutines |
 # +-------------+
@@ -140,19 +177,20 @@ BREAK
 } # lfaBreak()
 
 # weeks(W,D,H?)
-#   Creates W weeks of D days.  Includes the headings if H? is true.
+#   Creates W weeks of D days.  Includes the headings if H? is 1.
 sub weeks($$$)
 {
   my $W = shift;        # Number of weeks
   my $D = shift;        # Number of days
   my $headings = shift; # Do we have headings?
+
   my $w;                # Week counter
   my $d;                # Day counter
   for ($w = 0; $w < $W; $w++) {
     # Generate the title for the week
     week();
     # Generate the headings, if appropriate
-    if ($headings != false) { 
+    if ($headings) { 
       headings(); 
     }
     # Generate the code for the days.
@@ -185,6 +223,12 @@ sub day()
 {
   $DAY++;
   $DAY = twoDigits($DAY);
+  if ($INCLUDE_WRITEUPS) {
+    $WRITEUP = " <break/><emphasis>&writeup$DAY;</emphasis>"
+  }
+  else {
+    $WRITEUP = "";
+  }
   print<<"DAY";
       <tr>
         <td>$DAY</td>
@@ -194,7 +238,7 @@ sub day()
           <xi:include href="overviews/&abbrev$DAY;.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         </td>
         <td>&reading$DAY;</td>
-        <td>&lab$DAY; <break/><emphasis>&writeup$DAY;</emphasis></td>
+        <td>&lab$DAY;$WRITEUP</td>
         <td>&due$DAY;</td>
       </tr>
 DAY
@@ -260,10 +304,12 @@ sub top()
   print <<"TOP";
 <section id="schedule"><title>Schedule</title>
 
+<!-- This page generated automatically.  Please do not edit by hand. -->
+
 <para>
   <emphasis>This is an <emphasis type="strong">approximate</emphasis>
-  schedule.  Expect dates and topics to change.  (I will try to keep
-  due dates the same.)</emphasis>
+  schedule.  Expect topics and dates of topics to change.  (I will try 
+  to keep due dates of assignments the same.)</emphasis>
 </para>
 
 <para>

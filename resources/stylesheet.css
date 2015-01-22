@@ -18,6 +18,11 @@ BODY {
   background-repeat: no-repeat;
 }
 
+/* Get rid of the stupid HR that appears at the top. */
+div.titlepage hr {
+  display: none;
+}
+
 /* The head and the foot. */
 div.head {
   background-color: rgb(232,232,232); 
@@ -48,52 +53,12 @@ div.pagenotes {
   font-size: small;
 }
 
-/* The fascinating history section */
-div.history {
-  margin-left: 3em;
-  padding-left: 1em;
-  border-width: 0.1em 0em 0em 0.1em;
-  border-color: gray; 
-  /* border-width: 0.1em; */
-  color: gray;
-  background-color: white;
-  font-size: small;
-}
-
-div.history p {
-  color: gray;
-}
-div.history li {
-  color: gray;
-}
-div.history ul {
-  color: gray;
-}
-div.history a:link {
-  color: gray;
-}
-div.history a:visited {
-  color: gray;
-}
-
-div.history H3 {
-  color: gray;
-  margin-left: 0em;
-  border-width: 0em;
-}
-
-div.history HR {
-  width: 50%;
-  text-align: right;
-
-}
-
 /* Have some fun with my headers */
-H1, H2, H3 { 
+H1, H2 { 
   color: white;
-  background-color: gray;
-  font-family: Helvetica, sans-serif;
+  background-color: rgb(96,96,96);
   font-weight: bold;
+  font-family: Helvetica, sans-serif;
   /* border: solid silver; */
   /* margin-left: -0.7em;  */
   padding-left: 0.2em;
@@ -116,6 +81,8 @@ H2 {
 }
 
 H3 {
+  color: rgb(96,96,96);
+  font-family: Helvetica, sans-serif;
   border-width: 2px 0em 0em 5px;
   font-size: 1.1em;
   font-style: italic;
@@ -253,6 +220,16 @@ SPAN.errortext {
   color: red;
 }
 
+/**
+ * Standard background color for preformatted sections.
+ */
+PRE,
+PRE.screen,
+PRE.programlisting,
+DIV.literallayout {
+  background-color: rgb(224,224,224);
+}
+
 PRE {
   border-width: 1px;
   border-style: solid;
@@ -266,7 +243,6 @@ PRE.screen {
   border-style: dashed;
   border-color: black;
   color: black;
-  background-color: transparent;
   padding: 5px;
   margin-left: 2em;
   margin-right: 2em;
@@ -285,7 +261,6 @@ PRE.programlisting {
   border-width: 1px;
   border-color: black;
   color: black;
-  background-color: rgb(224,224,224);
   padding: 5px;
   margin-left: 2em;
   margin-right: 2em;
@@ -296,7 +271,6 @@ DIV.literallayout {
   border-width: 1px;
   border-color: black;
   color: black;
-  background-color: rgb(224,224,224);
   padding: 5px;
   margin-left: 2em;
   margin-right: 2em;
@@ -377,4 +351,55 @@ SPAN.break {
  */
 SPAN.overview {
   display: block;
+}
+
+/*
+ * Set up for printing
+ */
+@media print {
+  div.head {
+    display: none;
+  }
+  div.NOPRINT {
+    display: none;
+  }
+
+  @page {
+    margin: 0.5in;
+  }
+
+  H1, H2 { 
+    background-color: rgb(96,96,96);
+  }
+
+  H1 {
+    padding-top: 0;
+  }
+
+  H1, H2, H3 {
+    margin-top: 0;
+    padding-top: 0;
+    padding-left: 0;
+    margin-left: 0;
+  }
+
+  H1, H2, H3 {
+    font-size: 100%;
+  }
+
+  P.course {
+    font-size: small;
+    color: rgb(128,128,128);
+  }
+
+  P.course,
+  div.section,
+  div.titlepage {
+    margin: 0;
+    padding: 0;
+  }
+
+  PRE {
+    font-size: 90%;
+  }
 }
