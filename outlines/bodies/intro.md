@@ -5,24 +5,25 @@ Motivation
 ----------
 
 This course is an extension of a seminar I ran in spring 2012 and that
-students asked me to repeat.  That seminar was an outgrowth of things
-I observed and was told in CSC 362 2011F.  In particular, the students
-in that course had much less familiarity with Makefiles than I would
-have liked and they told me that they generally did not use gdb when
-debugging their programs.  I also observed that many of them were less
-than competent at dealing with memory leaks in their programs.
+students asked me to repeat in spring 2013.  That seminar was an outgrowth
+of things I observed and was told in CSC 362 2011F.  In particular, the
+students in that course had much less familiarity with Makefiles than
+I would have liked and they told me that they generally did not use gdb
+when debugging their programs.  I also observed that many of them were
+less than competent at dealing with memory leaks in their programs.
 
 I do not blame my students for these flaws in their background.  Rather,
 I expect that it's a consequnce of our decision to teach these issues
 relatively early in their careers and of different faculty opinions on
-what is important to teach.
+what is important to teach.  (I'm not sure that students who took 161
+from me have substantially different backgrounds from those who took it
+from someone else.)
 
 A few of the students asked me to spend some additional time teaching
 the things that I consider important (and that they quickly found were
 important).  But we didn't have class sessions to spare.  This class
 is therefore my attempt to address some of the weaknesses that I or the
-students observed.  I hope to offer it every year (although I may not
-get teaching credit for it).
+students observed.  I hope to offer it every year.
 
 Policies and procedures
 -----------------------
@@ -35,46 +36,20 @@ Policies and procedures
   up to date,
 * This is an S/D/F course.  Show up, be active, do the homework and you pass.  
   Miss more than two classes or two assignments and you fail.
+* We'll take a quick look at [the current version of the
+  schedule](../handouts/schedule.html) so that you can see how I plan to
+  approach the course.
 
 Principles and practices
 ------------------------
 
 * From my perspective, this course is about three related issues:
+  + Generally good programming practices
   + How to think like a *nix programmer
   + How to think like a C programmer
-  + Generally good programming practices
 * We'll look at a few important issues in each
 
-### Some key *nix principles
-
-Unix and its descendents have been around a long time.  They must be
-doing something right.  So, what are the principles that have made
-*nix so successful?  Here are a few particularly important principles
-that many C/*nix programmers follow.  (We will expand upon these as the
-seminar continues.)
-
-* Don't do things by hand when you can more efficiently do them with
-  a program.
-* Write small programs and libraries that have a very focused purpose.
-  + And save them for later.
-* Chain together small programs to solve more complex problems.
-* Share!
-
-That first principle may seem a bit daunting.  Do you always write 
-programs to do tasks?  No, you can certainly use programs.  Here are
-ways you better do things "by program".
-
-* Know the primary tools that Linux provides.  (We'll make a list.)
-  + It's okay to know generally what they do and to read the documentation
-    when you need more info.
-* Be able to write your own small tools in some scripting language. 
-  (I tend to script in Perl.  Python, Bash, and Ruby can all be useful
-  scripting languages, too.)
-* Be able to write your own small tools in C.  (Sometimes you need speed.)
-* Know enough *nix bash syntax to tie things together.
-
-Important programming practices
--------------------------------
+### Important programming practices
 
 Since I'm teaching this course, I get to impose my favorite practices on
 you.  (I'll note that most of our students who leave Grinnell and go on
@@ -99,8 +74,36 @@ that your typical goal is efficiency.  You don't need to comprehensively
 test a few-line throwaway program.  However, you should document the
 program, because you may want to do a similar thing later.
 
-Some important C practices
---------------------------
+### Some key *nix principles
+
+Unix and its descendents have been around a long time.  They must be
+doing something right.  So, what are the principles that have made
+*nix so successful?  Here are a few particularly important principles
+that many C/*nix programmers follow.  (We will expand upon these as the
+seminar continues.)
+
+* Don't do things by hand when you can more efficiently do them with
+  a program.
+* Write small programs and libraries that have a very focused purpose.
+  + And save them for later.
+* Chain together small programs to solve more complex problems.
+* Communicate with text files.
+* Share!
+
+That first principle may seem a bit daunting.  Do you always write 
+programs to do tasks?  No, you can certainly use programs.  Here are
+ways you better do things "by program".
+
+* Know the primary tools that Linux provides.  (We'll make a list.)
+  + It's okay to know generally what they do and to read the documentation
+    when you need more info.
+* Be able to write your own small tools in some scripting language. 
+  (I tend to script in Perl.  Python, Bash, and Ruby can all be useful
+  scripting languages, too.)
+* Be able to write your own small tools in C.  (Sometimes you need speed.)
+* Know enough *nix bash syntax to tie things together.
+
+### Some important C practices
 
 In addition to the general programming practices I've mentioned above,
 there are a few approaches that C programmers should master.  (We'll
@@ -109,6 +112,7 @@ add more as the semester goes on.)
 * Know how to use the C preprocessor, particularly #include files and
   macros.
 * Know how to use a debugger.
+* Know how to use libraries.
 * Understand memory: How pointers are used, how malloc works, etc.
   It's also useful to trace your programs' memory usage (e.g., using
   valgrind)
@@ -118,13 +122,26 @@ threads, signals, and some common libraries (such as libraries for
 processing the command line).  Due to limited time, we probably won't
 cover those in this course.
 
+Thinking in C: A Simple Example
+-------------------------------
+
+The following code comes from K&amp;R (although it is reformatted).  What 
+does it do?
+
+    char *
+    fun (char *t, char *s)
+    {
+      while (*t = *s);
+      return t;
+    } // fun
+
 Detour: A C Memory Problem
 --------------------------
 
 *Activity/Discussion*
 
 To illustrate my point that understanding memory in C is important,
-let's start with a problem that a friend gave to me a while ago.
+let's continue with a problem that a friend gave to me a while ago.
 He showed me the following fragment of C code.
 
 <pre>
@@ -166,7 +183,7 @@ and estimate the time each would take.
   find the the five highest grades on homework 2.
 * Given an HTML file, find the URLs of all images.  In case you don't
   know HTML, those will typically look like <br>
-  `&lt;img src="*URL*"...&gt;`
+  `<img ... src="*URL*" ...>`
   + The `img` can have any capitalization (`img`,
     `IMG`, `Img`,  `iMg`, etc.)
   + There can be other text between the `img` and the
@@ -175,20 +192,19 @@ and estimate the time each would take.
    
 *Homework*
 
-Find good solutions to any of the tasks we did not solve in class.  (That
-is, write a program or command to solve the task.)
+This will appear online some time in the near future (probably over the
+weekend).
 
-Some important *nix tools
--------------------------
+Repository: `https://github.com/Grinnell-CSC282/hw1`
 
-*Activity:* I'd like *you* to make a list of Unix
-tools/utitlities that you've found useful (or even that you've heard of).
-I'll do my best to categorize them as you list them.
+1. Read chapter 1 of Raymond to get a deeper understanding of the *nix
+Philosophy.
 
-Looking ahead
--------------
+2. Find good solutions to any of the tasks we did not solve in class.  (That
+is, write a program or command to solve the task.)  Put them in a folder
+with your name in the GitHub repository.
 
-We'll take a quick look at [](../Handouts/schedule.html)the current
-version of the schedule</a> so that you can see how I plan to approach the
-course.
+3. Make a list of *nix tools and utilities that you've found useful (or 
+even that you've just heard of).  Try to categorize and add a short
+description.  Put them in the `tools.md` file in the repository.
 

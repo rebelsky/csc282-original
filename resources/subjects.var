@@ -29,22 +29,13 @@
 <!ENTITY due{$day} "HW {$hw}">
 +hw
 
-<!ENTITY title{$day} "Regular Expressions">
-<!ENTITY abbrev{$day} "regexp">
+<!ENTITY title{$day} "Decoding Scripts">
+<!ENTITY abbrev{$day} "typescript">
 <!ENTITY reading{$day} "">
 <!ENTITY lab{$day} "">
 <!ENTITY writeup{$day} "">
 +day
-<!ENTITY due{$day} "HW {$hw}: A complex regular expression">
-+hw
-
-<!ENTITY title{$day} "Learning Vi">
-<!ENTITY abbrev{$day} "vi">
-<!ENTITY reading{$day} "">
-<!ENTITY lab{$day} "">
-<!ENTITY writeup{$day} "">
-+day
-<!ENTITY due{$day} "HW {$hw}: Playing with vi settings">
+<!ENTITY due{$day} "HW {$hw}">
 +hw
 
 <!ENTITY title{$day} "Compilation, Macros, and the C Preprocessor">
@@ -56,8 +47,8 @@
 <!ENTITY due{$day} "HW {$hw}">
 +hw
 
-<!ENTITY title{$day} "Using Macros for Generics">
-<!ENTITY abbrev{$day} "generics">
+<!ENTITY title{$day} "Using Macros for Logging">
+<!ENTITY abbrev{$day} "logging">
 <!ENTITY reading{$day} "">
 <!ENTITY lab{$day} "">
 <!ENTITY writeup{$day} "">
@@ -65,14 +56,22 @@
 <!ENTITY due{$day} "HW {$hw}">
 +hw
 
-<!ENTITY title{$day} "Writing a Unit Testing Library">
-<!ENTITY abbrev{$day} "unit-testing">
+<!ENTITY title{$day} "Learning Vi (Optional)">
+<!ENTITY abbrev{$day} "vi">
 <!ENTITY reading{$day} "">
 <!ENTITY lab{$day} "">
 <!ENTITY writeup{$day} "">
 +day
-<!ENTITY due{$day} "HW {$hw}">
+<!ENTITY due{$day} "HW {$hw}: Playing with vi settings">
 +hw
+
+<!ENTITY title{$day} "Vi, Continued">
+<!ENTITY abbrev{$day} "vi">
+<!ENTITY reading{$day} "">
+<!ENTITY lab{$day} "">
+<!ENTITY writeup{$day} "">
++day
+<!ENTITY due{$day} "">
 
 <!ENTITY title{$day} "Automating Work with Make">
 <!ENTITY abbrev{$day} "make-1">

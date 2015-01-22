@@ -1,5 +1,5 @@
 Some Testing Basics
-===================
+-------------------
 
 * How do we know our programs work the way that they are supposed to? 
   + Formal proof (hard, may not be posssible, may not be reliable)
@@ -23,7 +23,7 @@ Some Testing Basics
   results, from experimentation, in which you look at the output yourself.
 
 Some Basics of Unit Testing
-===========================
+---------------------------
 
 * Unit Testing: An approach to testing your program
   in which we test each "logical unit" of the program separately.
@@ -40,7 +40,7 @@ Some Basics of Unit Testing
   + We won't cover these frameworks today.
 
 An Exercise
-===========
+-----------
 
 * Here's a simple specification of binary search on arrays of integers.
 <pre>

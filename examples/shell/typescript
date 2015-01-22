@@ -1,0 +1,15 @@
+Script started on Thu 06 Feb 2014 01:57:34 PM CST
+[rebelsky@turing 501] ~/Web/Courses/CSC282/2014S/examples/shell $ cat /tmp[Kcat [Kh[Khead ~/.as[K[Kbash rc
+#
+
+# Every time a MathLAN user starts a bash shell, it runs a .bashrc script
+# like this one.
+
+# John David Stone and Samuel A. Rebelsky
+# Department of Mathematics and Computer Science
+# Grinnell College
+# stone@cs.grinnell.edu
+
+[rebelsky@turing 502] ~/Web/Courses/CSC282/2014S/examples/shell $ exit
+
+Script done on Thu 06 Feb 2014 01:58:05 PM CST

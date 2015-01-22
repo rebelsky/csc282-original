@@ -1,3 +1,4 @@
+* Project ecosystems.
 * An introduction to Make.
 * Example: A standard C project.
 * Good Make practice: Standard targets

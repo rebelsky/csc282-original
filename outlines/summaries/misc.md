@@ -1,2 +1,2 @@
-We consider a variety of smaller issues that will make you a better
+We consider a variety of smaller issues that might make you a better
 C programmer.

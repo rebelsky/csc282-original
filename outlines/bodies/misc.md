@@ -1,5 +1,5 @@
 assert - simple program checking
-================================
+--------------------------------
 
 * As you've seen, there are a variety of approaches to testing C programs.
 * A *very* common approach (one that is included in every C implementation
@@ -22,7 +22,7 @@ assert - simple program checking
   It often leads to Heisenbugs.
 
 Memory Issues in C Programs
-===========================
+---------------------------
 
 * One of the benefits and hazards of working with C is that you have
   direct access to memory.
@@ -38,7 +38,7 @@ Memory Issues in C Programs
 * Tracking them down is important!
 
 Valgrind: Tracking memory issues
-================================
+--------------------------------
 
 * Valgrind is a swiss-army-knife of program analysis, but I use it primarily
   for its memory checking features.
@@ -49,13 +49,13 @@ Valgrind: Tracking memory issues
 * We'll take a look at a variety of programs.  The errors in these programs
   are all fairly explicit, but are the kinds of things that often happen
   inadvertently.
-  + One that runs correctly.
-  + An out-of-bounds index accompanied by a failure to free memory.
-  + Inadvertent reuse of stack memory.  (In two forms.)
-  * Inadvertent reuse of heap memory.  (IN two forms.)
+    * One that runs correctly.
+    * An out-of-bounds index accompanied by a failure to free memory.
+    * Inadvertent reuse of stack memory.  (In two forms.)
+    * Inadvertent reuse of heap memory.  (In two forms.)
 
 Sorting
-=======
+-------
 
 * Suppose we have the following function
 <pre>
@@ -67,11 +67,11 @@ int strings_sort (int n, char *strings[])
 * Now, suppose you want to sort arrays of strings by length.  How would
   you build the new function?
 * Option 1 - Copy, paste, change
-  + But that should set off red flags.
+    * But that should set off red flags.
 * Option 2 - Factor out the common code with macros
-  + E.g., write a macro that generates the body of the sort routine,
-    but takes the comparator as a parameter
-  + Leads to name expansion!
+    * E.g., write a macro that generates the body of the sort routine,
+      but takes the comparator as a parameter
+    * Leads to name expansion!
 * Option 3 - Pass in the comparator as a parameter
 <pre>
 /**
@@ -81,7 +81,7 @@ int strings_sort (int n, char *strings[], "*something-that-compares-strings*" co
 </pre>
 
 Function Pointers
-=================
+-----------------
 
 * But how do you pass a function as a parameter in C?
   + In C, we say that you pass in a `function pointer`

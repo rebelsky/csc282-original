@@ -1,0 +1,113 @@
+CSC295 2014S, Class 02: Some Basic Tasks and Corresponding Tools
+================================================================
+
+_Overview_
+
+* Preliminaries.
+    * Admin.
+* Fun with GitHub.
+* Go over homework.
+* Exercise: The spaces problem.
+* Raymond, chapter 1.
+* Thinking about basic tools.
+
+Preliminaries
+-------------
+
+### Admin
+
+* I encourage you to attend CS table on Friday and talk about the ACM
+  code of ethics.
+* Status check 1: How many of you know the C bitwise operations?
+  (`&`, `|`, etc.)
+* Status check 2: Could anyone *not* make class if I moved it to 3:15pm?
+  (Hands closed, blackball-style question.)
+    * We are sticking with 1:15 p.m.
+* Note: I was overly optimistic at the start of the semester.  Given the
+  amount of time daily homework is taking in my three classes, I probably
+  won't get a lot of chance to write the "book" for this class.  I will
+  try to set up some lab problems, though.
+
+### Questions
+
+Fun with GitHub
+---------------
+
+* What happens when someone sends a pull request?
+    * GitHub sends you a nice message with instructions.
+    * You can browse the request to see how someone wants to screw up the
+      repository.
+* Isn't our site lovely?
+    * Careful instructions and agreed-upon policies help
+
+Go over homework
+----------------
+
+### That fun hypothetical C problem.  (Did anyone write code to cause 
+the error?)
+
+    int *x;     // Our array of data.
+    int 
+    main (int argc, char *argv[])
+    {
+      x = malloc (...);      
+      foo ();
+      bar ();
+      free (x);   // Crash
+    } // main
+
+* Multithreaded program, foo or bar accesses x after it should.
+    * foo and bar have terminated.
+* malloc keeps track of how much space it has allocated
+* Note: "You went beyond the null at the end of the array."
+    * Arrays are not null terminated in C.
+    * Strings *are* null terminated.
+
+    char *str = malloc (sizeof (char) * 16);
+    strcpy (str, "hello");
+    printf ("%d\n", strlen (str));
+
+### Spll chekcing
+
+* Finding information, mechanism one: Google
+* Check the manual pages `man -k spell` 
+    * The -k is "keyword"
+* So, our first solution is to use spell, but it gives us duplicates.
+  What next?
+    * Read the manual page
+    * Use `uniq` - not quite
+
+### URL extraction
+
+Exercise: The spaces problem
+----------------------------
+
+Write it in C.   You have ten minutes.
+
+Raymond, chapter 1
+------------------
+
+Thinking about basic tools
+--------------------------
+
+Homework
+--------
+
+0. Learn Markdown so that we can use it for these assignments.
+
+1. Learn about how you set and get environment variables.  Put your
+explanations in the `submissions` directory, with a file named after
+you.
+
+    * Command line
+    * Bash
+    * C (get only)
+
+2. Update our list of "things every *nix user should know" (either
+in the repo
+
+3. Come up with two or three tasks, similar to those we did for assignment
+1, and put notes about them in the tasks directory.  (You can include
+some sample solutions in your file.)
+
+4. Read the first chapter of the Make book.

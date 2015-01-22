@@ -1,0 +1,20 @@
+/*
+ * A realy simple style sheet.
+ */
+
+BODY {
+  margin-left: 1.2in;
+  margin-right: 0.5in;
+  color: black;
+  background-color: rgb(192,128,192);
+  background-position: top left;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+H1, H2, H3 {
+  font-family: Helvetica, sans-serif;
+  color: white;
+  text-align: center;
+}
+

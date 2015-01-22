@@ -1,0 +1,10 @@
+
+<!ENTITY title{$day} "Writing a Unit Testing Library">
+<!ENTITY abbrev{$day} "unit-testing-library">
+<!ENTITY reading{$day} "">
+<!ENTITY lab{$day} "">
+<!ENTITY writeup{$day} "">
++day
+<!ENTITY due{$day} "HW {$hw}">
++hw
+
