@@ -10,6 +10,8 @@
 #     lfa-fall: Learning from Alumni in the Fall (one day per week)
 #     mtwf-spring: A Monday, Tuesday, Wednesday, and Friday spring lab class.
 #     mtwf-spring-mlk, A MWTF spring lab class, with no MLK day
+#     th-fall: Meets Thursday in the fall
+#     322-fall: Meets Thursday in the fall, using the 322 model
 #     th-spring: Meets Thursday in the spring
 #     mwf-spring: A MWF spring class (no labs)
 #     mwf-spring-notes: A MWF spring class (no labs, note takers)
@@ -112,6 +114,18 @@ elsif ($type eq "mtwf-spring-alt") {
   print "</tbody>\n";
   bottom();
 } # mtwf-spring-alt
+elsif ($type eq "th-fall") {
+  top();
+  print "<thead>\n";
+  headings();
+  print "</thead>\n";
+  print "<tbody>\n";
+  days(8);
+  break("Fall Break", 6);
+  days(6);
+  print "</tbody>\n";
+  bottom();
+} # th-spring
 elsif ($type eq "th-spring") {
   top();
   print "<thead>\n";
@@ -140,6 +154,19 @@ elsif ($type eq "lfa-fall") {
   lfaBreak("Thanksgiving Break"); 
   lfaDay();
   lfaDay();
+  bottom();
+} 
+elsif ($type eq "322-fall") {
+  csc322Top();
+  print "<tbody>\n";
+  csc322Day(); csc322Day(); csc322Day(); csc322Day();
+  csc322Day(); csc322Day(); csc322Day(); csc322Day();
+  break("Fall Break", 5); 
+  csc322Day(); csc322Day(); csc322Day(); csc322Day();
+  break("Thanksgiving Break"); 
+  csc322Day();
+  csc322Day();
+  print "</tbody>\n";
   bottom();
 } 
 else {
@@ -211,10 +238,10 @@ sub weeks($$$)
       day();
     } # for each day
     # Add the review sessions and any extra days
-    if ($INCLUDE_REVIEW_SESSIONS) {
+    if ($INCLUDE_REVIEW_SESSIONS && ($D == 3)) {
       review();
-      day();
     }
+    day();
   } # for
 } # weeks
 
@@ -261,6 +288,24 @@ sub day()
       </tr>
 DAY
 } # day
+
+sub csc322Day()
+{
+  $DAY++;
+  $DAY = twoDigits($DAY);
+  print<<"DAY";
+      <tr>
+        <td>$DAY</td>
+        <td>&date$DAY;</td>
+        <td>&iteration$DAY;</td>
+        <td>
+          <ulink url="../outlines/outline.$DAY.html"><emphasis role="strong">&title$DAY;</emphasis></ulink>
+          <xi:include href="overviews/&abbrev$DAY;.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        </td>
+        <td>&due$DAY;</td>
+      </tr>
+DAY
+} # csc322Day()
 
 sub review()
 {
@@ -383,6 +428,31 @@ sub lfaTop()
   <tbody>
 TOP
 } # lfaTop()
+
+# csc322Top()
+#   Print the text at the top of a 322 page
+sub csc322Top()
+{
+  print <<"TOP";
+<section id="schedule"><title>Schedule</title>
+
+<para>
+  <emphasis>This is an <emphasis type="strong">approximate</emphasis>
+  schedule.</emphasis>
+</para>
+
+<table class="schedule">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Date</th>
+      <th>Iteration</th>
+      <th width="50%">Topic</th>
+      <th width="25%">Work Due</th>
+    </tr>
+  </thead>
+TOP
+} # csc322Top()
 
 # bottom()
 #   Print the text at the bottom of the page
