@@ -9,7 +9,7 @@
 <!ENTITY day08 "Friday">
 
 <!ENTITY day09 "Monday">
-<!ENTITY day00 "Tuesday">
+<!ENTITY day10 "Tuesday">
 <!ENTITY day11 "Wednesday">
 <!ENTITY day12 "Friday">
 
@@ -21,7 +21,7 @@
 <!ENTITY day17 "Monday">
 <!ENTITY day18 "Tuesday">
 <!ENTITY day19 "Wednesday">
-<!ENTITY day10 "Friday">
+<!ENTITY day20 "Friday">
 
 <!ENTITY day21 "Monday">
 <!ENTITY day22 "Tuesday">
@@ -34,7 +34,7 @@
 <!ENTITY day28 "Friday">
 
 <!ENTITY day29 "Monday">
-<!ENTITY day20 "Tuesday">
+<!ENTITY day30 "Tuesday">
 <!ENTITY day31 "Wednesday">
 <!ENTITY day32 "Friday">
 
@@ -46,7 +46,7 @@
 <!ENTITY day37 "Monday">
 <!ENTITY day38 "Tuesday">
 <!ENTITY day39 "Wednesday">
-<!ENTITY day30 "Friday">
+<!ENTITY day40 "Friday">
 
 <!ENTITY day41 "Monday">
 <!ENTITY day42 "Tuesday">
@@ -59,7 +59,7 @@
 <!ENTITY day48 "Friday">
 
 <!ENTITY day49 "Monday">
-<!ENTITY day40 "Tuesday">
+<!ENTITY day50 "Tuesday">
 <!ENTITY day51 "Wednesday">
 <!ENTITY day52 "Friday">
 
@@ -79,7 +79,7 @@
 <!ENTITY cal08 "&fri02;">
 
 <!ENTITY cal09 "&mon03;">
-<!ENTITY cal00 "&tue03;">
+<!ENTITY cal10 "&tue03;">
 <!ENTITY cal11 "&wed03;">
 <!ENTITY cal12 "&fri03;">
 
@@ -91,7 +91,7 @@
 <!ENTITY cal17 "&mon05;">
 <!ENTITY cal18 "&tue05;">
 <!ENTITY cal19 "&wed05;">
-<!ENTITY cal10 "&fri05;">
+<!ENTITY cal20 "&fri05;">
 
 <!ENTITY cal21 "&mon06;">
 <!ENTITY cal22 "&tue06;">
@@ -104,7 +104,7 @@
 <!ENTITY cal28 "&fri07;">
 
 <!ENTITY cal29 "&mon08;">
-<!ENTITY cal20 "&tue08;">
+<!ENTITY cal30 "&tue08;">
 <!ENTITY cal31 "&wed08;">
 <!ENTITY cal32 "&fri08;">
 
@@ -116,7 +116,7 @@
 <!ENTITY cal37 "&mon10;">
 <!ENTITY cal38 "&tue10;">
 <!ENTITY cal39 "&wed10;">
-<!ENTITY cal30 "&fri10;">
+<!ENTITY cal40 "&fri10;">
 
 <!ENTITY cal41 "&mon11;">
 <!ENTITY cal42 "&tue11;">
