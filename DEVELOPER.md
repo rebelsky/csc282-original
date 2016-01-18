@@ -115,7 +115,7 @@ a. Make the directory `handouts/overviews`.
 
 b. In the `handouts` directory, run `../tools/schedule-overviews`.
 
-c. Also make sure to check `handouts/Makefile`, since `schedule.html` and
+c. Also make sure to check `handouts/Makefile`, since `schedule.html` 
    `sched.html` are automatically generated from that file.
 
 10. Clear out and rebuild the daily administrative notes.
@@ -134,7 +134,11 @@ c. Also make sure to check `handouts/Makefile`, since `schedule.html` and
 
 14. Create a separate dev site (optional).
 
-15. Start editing and creating!
+15. Consider updating the style so that students can distinguish semesters.
+
+16. Update the .course file in the eboardds directory.
+
+17. Start editing and creating!
 
 At the End of the Semester
 --------------------------
@@ -148,13 +152,13 @@ At the End of the Semester
 3. Since you're about to start a new version of the course, make a branch
    for this old version.
 
-     git checkout -b 2014S
-     git push origin 2014S
+     git checkout -b 2016S
+     git push origin 2016S
 
 Starting a New Course
 ---------------------
 
-To create a new course, I need to fork the generic course repo. 
+To create a new course, you need to fork the generic course repo. 
 Unfortunately, github is not particularly nice about letting you fork
 your own repositories.  There's a nifty hack that I found at
 <http://bitdrift.com/post/4534738938/fork-your-own-project-on-github>.
@@ -166,15 +170,15 @@ It goes something like this.
 
 2. Clone the original repository onto your local machine
 
-        git clone http://github.com/rebelsky/generic-course csc000
+        git clone git@github.com:rebelsky/generic-course.git 2015F
 
    or
 
-        git clone git@github.com:rebelsky/generic-course.git csc000
+        git clone http://github.com/rebelsky/generic-course 2015F
 
 3. Edit the Git config file
 
-        cd csc000
+        cd 2015F
         vi .git/config
         :1,$s/generic-course/csc000/g
         :wq
@@ -185,7 +189,7 @@ It goes something like this.
 
 5. Check on github to see that everything worked.
 
-6. Update the generic site with a link to this fork.
+6. Update the README.md on the generic site with a link to this fork.
 
 7. Do the normal start of semester activities.
 
