@@ -4,7 +4,8 @@
 #   Create all of the overviews for semester
 
 if (! -d "overviews") {
-  system("mkdir overviews");
+  print "Creating overviews directory.\n";
+  mkdir "overviews";
 } # if the directory does not exist
 
 my $file;       # The original overview
