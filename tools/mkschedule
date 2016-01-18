@@ -14,6 +14,10 @@
 #     322-fall: Meets Thursday in the fall, using the 322 model
 #     th-spring: Meets Thursday in the spring
 #     mwf-spring: A MWF spring class (no labs)
+#     mwf-spring-half1: A MWF spring class for the first half
+#       of the semester
+#     mwf-spring-half1: A MWF spring class for the second half
+#       of the semester
 #     mwf-spring-notes: A MWF spring class (no labs, note takers)
 
 # +-----------+-------------------------------------------------------
@@ -145,6 +149,18 @@ elsif ($type eq "mwf-spring") {
   mwfWeeks(6);
   mwfBottom();
 } # mwf-spring
+elsif ($type eq "mwf-spring-half1") {
+  mwfTop();
+  mwfWeeks(7);
+  mwfBottom();
+} # mwf-spring-half1
+elsif ($type eq "mwf-spring-half2") {
+  mwfTop();
+  mwfWeeks(1);
+  break("Spring Break", 3);
+  mwfWeeks(6);
+  mwfBottom();
+} # mwf-spring-half2
 elsif ($type eq "lfa-fall") {
   lfaTop();
   lfaDay(); lfaDay(); lfaDay(); lfaDay();
