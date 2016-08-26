@@ -19,6 +19,7 @@
 #     mwf-spring-half1: A MWF spring class for the second half
 #       of the semester
 #     mwf-spring-notes: A MWF spring class (no labs, note takers)
+#     mwf-fall-half1: A MWF fall class for the first half of the semester
 
 # +-----------+-------------------------------------------------------
 # | Variables |
@@ -71,6 +72,30 @@ if ($type eq "mtwf-fall") {
   print "</tbody>\n";
   bottom();
 } # mtwf-fall
+# Deal with the different kinds of classes
+elsif ($type eq "mwf-fall") {
+  top();
+  print "<tbody>\n";
+  weeks(1,4,1);   # 1 week of 4 days
+  weeks(6,3,1);   # 6 weeks of 3 days
+  break("Fall Break", 6);
+  weeks(4,3,1);   # 4 weeks of 3 days
+  weeks(1,2,1);   # 1 week of 2 days
+  break("Thanksgiving Break", 6);
+  weeks(2,3,1);   # 2 weeks of 3 days
+  print "</tbody>\n";
+  bottom();
+} # mwf-fall
+# Deal with the different kinds of classes
+elsif ($type eq "mwf-fall-half1") {
+  print STDERR "MWF FALL FIRST HALF\n";
+  top();
+  print "<tbody>\n";
+  weeks(1,4,1);   # 1 week of 4 days
+  weeks(6,3,1);   # 6 weeks of 3 days
+  print "</tbody>\n";
+  bottom();
+} # mwf-fall-half1
 elsif ($type eq "mtwf-fall-alt") {
   top();
   print "<thead>\n";
@@ -235,6 +260,7 @@ sub weeks($$$)
   my $W = shift;        # Number of weeks
   my $D = shift;        # Number of days
   my $headings = shift; # Do we have headings?
+  print STDERR "Making $W weeks of $D days.\n";
   # Hack!  I assume review sessions are on Thursdays in MTWF classes.
   if ($INCLUDE_REVIEW_SESSIONS) {
     $D -= 1;
@@ -250,7 +276,7 @@ sub weeks($$$)
       headings(); 
     }
     # Generate the code for the days.
-    for ($d = 0; $d < $D; $d++) {
+    for ($d = 1; $d < $D; $d++) {
       day();
     } # for each day
     # Add the review sessions and any extra days
