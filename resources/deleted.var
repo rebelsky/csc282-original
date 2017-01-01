@@ -1,6 +1,32 @@
 
+<!ENTITY title{$day} "Learning Vi (Optional)">
+<!ENTITY abbrev{$day} "vi">
+<!ENTITY reading{$day} "">
+<!ENTITY lab{$day} "">
+<!ENTITY writeup{$day} "">
++day
+<!ENTITY due{$day} "HW {$hw}: Playing with vi settings">
++hw
+
+<!ENTITY title{$day} "Vi, Continued">
+<!ENTITY abbrev{$day} "vi">
+<!ENTITY reading{$day} "">
+<!ENTITY lab{$day} "">
+<!ENTITY writeup{$day} "">
++day
+<!ENTITY due{$day} "">
+
 <!ENTITY title{$day} "Writing a Unit Testing Library">
 <!ENTITY abbrev{$day} "unit-testing-library">
+<!ENTITY reading{$day} "">
+<!ENTITY lab{$day} "">
+<!ENTITY writeup{$day} "">
++day
+<!ENTITY due{$day} "HW {$hw}">
++hw
+
+<!ENTITY title{$day} "Decoding Scripts">
+<!ENTITY abbrev{$day} "typescript">
 <!ENTITY reading{$day} "">
 <!ENTITY lab{$day} "">
 <!ENTITY writeup{$day} "">

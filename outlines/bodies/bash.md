@@ -15,7 +15,8 @@ Some Simple Shell Stuff
         * From a file
         * From another program
     * You should know about the differences between stdout and stderr and how
-      to take advantage of those differences.
+      to take advantage of those differences.  (It's okay to need reference
+      pages once in a while.)
 * You should know about *command-line patterns*
 * You should know how to set and get *normal shell and environment 
   variables* (and why you how might do so).
@@ -68,36 +69,37 @@ Variables
 * Used like all variables: To give a name to information that may vary
   (e.g., from user to user).
 * Generally set with a command like <br>
-   `*var*=*value*`
+   `var=expression`
      *  No spaces are allowed in the value, so when you need spaces, put 
         the value in quotation marks.
-* Access variables as `$*var*`
+* Access variables as `$var`
 * Environment variables are shared from program to program.
 * May need to export enviornment variables. <br>
-  `export *VAR*="*value*"` <br>
+  `export VAR="value"` <br>
   or <br>
-  `export *VAR*`
+  `export VAR`
 * List all current environment variables with `printenv`
+* Common environment variables include `HOME`, `EDITOR`, `VISUAL`,
+  `PRINTER`, and more.
 
 Command-Line History
 --------------------
 
 * Bash (and the *nix shells) keeps a history of the commands you've typed.
+* You can browseit in the command line using up and down arrows.
 * You can repeat a command with an exclamation point and command number,
   such as `!10`.
 * You can repeat the previous command with `!!`.
 * You can repeat a command that begins with a particular string with
-  `!*str*`.  I use `!make` a lot.
+  `!*str*`.  I use `!make` a lot (or `!m`).
 * You can extract the last "word" on the previous line with !$.
   + I might write `*program* &gt; *file*` and then
     `less !$`, particularly if the file has a long pathname.
   + I might use `cp *file* *dir*` followed by a
     `cd !$`.
-* Command-line history is also useful with the command line browser
-  (up and down arrows, plus editing).
 
 The `script` Command
--------------------------------
+--------------------
 
 * Sometimes you want a record of what you've done.
 * The `script` command starts a new shell and records input, output,

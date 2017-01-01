@@ -1,16 +1,15 @@
-CSC295 2014S, Class 10: Improved Make
+CSC282 2015S, Class 10: Improved Make
 =====================================
 
 _Overview_
 
 * Preliminaries.
-    * Admin.
-    * Questions.
 * A quick review of Make.
+* Variables in Make.
+* Some standard variables for C programs.
+* Another example: Document development.
 * Automatic variables.
 * Generic rules.
-* Another example: Document development.
-* How do I use other people's code?
 * Standard make rules.
 * Other useful techniques.
 * Miscellaneous tools and techniques.
@@ -20,158 +19,143 @@ Preliminaries
 
 ### Admin
 
-* We'll spend a few minutes looking at your homework assignments.
-* Homework: Create a full make suite for some useful C project, including 
-  options for cleaning, packaging, and more.
-* Tomorrow's CS table is on lambdas in Java 8.
-* Cool CS talk today at 4:30 p.m.
+* Remember that there's an excellent free book on Make (listed in
+  the course front door).  You learn make, like most tools, by
+  using it in your own work.
+* Homework one of two:
+    * Version a: Create a full make suite for some useful C project, 
+      including options for cleaning, packaging, and more.  (This
+      version assumes that you look up the standard targets.)
+    * Version b: Find a particularly creative makefile and explain
+      some interesting parts.
 
 ### Questions
-
-### Sample Makefiles
-
-#### AK
-
-        CFLAGS = gcc -Wall -ggdb3
-
-> Traditionally, the CC command goes separately, so
-
-> CC = gcc
-> CFLAGS = -Wall
-
-        all: upperToLower
-
-        upperToLower : upperToLower.c charUtils.o charUtils.h
-        ${CFLAGS} -o upperToLower upperToLower.c charUtils.o
-
-> Usually we put .o files in the target.
-
-        charUtils.o : charUtils.c charUtils.h
-        ${CFLAGS} -c charUtils.c
-
-#### Another one
-
-        .PHONY : clean
-        clean:
-                -rm -rf *.o
-
-> Why the - before rm?  We're not sure.  Traditionally, make stops
-  with the first consequent that fails.  The - says "keep going".
-
-> What happens if we drop the `.PHONY`?  Then Make won't run the
-  rule when a file named `clean` exists and is up to date.
-
-### Sam discusses chmod
-
-chmod sets permissions on files and directories.
-
-You can use mnemonics
-
-You can use three digit octal numbers
-
-Each digit: 4 - read, 2 - write, 1 - execute
-
-* First digit: User
-* Second digit: Group
-* Third digit: All users
-
-Execute generally means "run a program".  For directories, it
-means something about "can access elements of the directory."
 
 A quick review of Make
 ----------------------
 
-* Tool for automating construction of projects
-* Three basic concepts:
-    * Targets (files or actions)
-    * Prerequisites
-    * Actions
-* Tied together with rules
+Goals
 
-        target: prerequites
-                action
-                action
+* Make it easier to compile and update projects.
+    * When you update something like a header file, it knows that
+      it has to recompile, and recompiles only what is necessary.
+* Document the steps needed for compilinga
+    * We've documented in a computer-usable format
+    * A human who knows the syntax could also follow them
 
-Automatic variables
--------------------
+Format
 
-Goal: Be more efficient with your time and with your rules
+* Create a file called `Makefile`
+* Need to specify target, action, dependencies
 
-        column-utests: column-utests.o column.o 
-                $(CC) $(CFLAGS) $(LDFLAGS) -o column-utests column-utests.o column.o
+        target: dependencies
+        \t      action1
+        \t      action2
+        ...
 
-Goal: Make that target simpler (other than just using the default
-rle).
+* We can include variables in our makefile (see next section)
+* Targets can either be particular files or virtual targets
 
-        LINK = $(CC) $(CFLAGS) $(LDFLAGS)
-        column-utests: column-utests.o column.o 
-                $(LINK) -o column-utests column-utests.o column.o
+Learned from writing your own
 
-What happens if I want to change the target?
+* Broader issue: How to deal with a project that has a lot of .c and
+  .h files.
+* It makes you more efficient.
+* It's relatively easy to do.
+* If you have just one target, you can just type `make`.  If you 
+  have multiple targets, typing `make` only makes the first one.
+    * Standard practice: First target is called `default` and lists
+      all the things you really want to make.
 
-        cut: column-utests.o column.o 
-                $(LINK) -o column-utests column-utests.o column.o
+Variables in Make
+-----------------
 
-Whoops.  I forgot to change it in the next line
+* Variables are a powerful tool.
+    * A variable is a name for one or more things, which may be
+      computed.
+    * Use `pi` rather than `3.141592653589...` (mnemonic rather 
+      than a value)
+    * Saves repeated calculations: Use 'x' rather than ten lines
+      of code that we use multiple times.
+    * Allows you to make global changes.  E.g., if we write code that
+      has to run in Indiana, we can redefine pi to 3.
+    * Sometimes the same value has multiple meanings, and variables
+      clarify the meaning.
+* Certain variables in make make your code more obscure but easier
+  to write.
+* In make, initialize with
 
-Make includes default variables for
+        VARIABLE = values or computations
 
-* target: `$@`
-* prereqs: `$^`
-* First prereq `$<`
-* Prefix of target `$*`
-* newer prerequisites ???
+* Custom is that variables are all caps
+* In make, we generally use variables with `$(VARIABLE)`
 
-        cut: column-utests.o column.o 
-                $(LINK) -o $@ $^
+Some standard variables for C programs
+--------------------------------------
 
-Generic rules
--------------
+Make has a lot of standard rules (e.g., for building .o files from
+.c files).  We can customize using variables.
 
-What if we have common rules for building certain things?  Why
-copy/paste/change?  With the percent sign wildcard.
-
-        %.o: %.c
+* `CC`
 
 Another example: Document development
 -------------------------------------
 
-Let's say we start with Markdown.  Markdown.pl translates a
-.md file to something like HTML.
+Sam's web sites
 
-That gives us incomplete HTML, we need to wrap it using wrap-md-html.
+* Simple things: Don't write in HTML
+    * Write in Markdown (.md)
+    * Write in Docbook/SGML - HTML + variables!
+* Rules for converting
+    * SGML/Docbook -> html
+    * md -> html
+        Multiple steps
+          md -> htm
+          add additional HTML in the header and footer
+    * html -> postscript
+    * postscript -> pdf
 
-So, let's write rules.
+Automatic variables
+-------------------
 
-Given a markdown file (.md) create a partial HTML file (.htm) 
-using Markdown.pl
+Rules are often almost identical.  So we want patterns that will
+work with anything that follows some standard naming conventions.
+
+* Converting .c to .o
+* Converting .o to executable
+* Converting .md to .htm
+* Converting .htm to .html
+* Converting .html to .ps
+* Converting .ps to .pdf
+
+Two mechansisms for doing this: Original Make and GNU Make.
+
+Two stages: Automatic variables
+
+* Refer to the target in the action `$@`
+* Refer to the prerequisites: `$^`
 
         file.htm: file.md
-                Markdown.pl file.md > file.htm
+                Markdown.pl < $^ > $@
 
-Improved
+Generic rules
+-------------
 
-        file.htm: file.md
-                Markdown.pl $< > $@
+* Use patterns for the target and dependecies (% means "anything")
 
-How do I use other people's libraries
--------------------------------------
-
-* Best answer: autoconf/automake figures it out for you
-    * Hard to learn
-* Traditional answer: Make user fill out a config file
-* Intermediate answer: pkgconfig
-
+        %.htm: %.md
+                Markdown.pl < $^ > $@
+        
 Standard make rules
 -------------------
+
+        make -p
 
 Other useful techniques
 -----------------------
 
+        VAR = $(shell COMMAND)
+
 Miscellaneous tools and techniques
 ----------------------------------
 
- 14:00:21 up 1004 days,  3:56,  2 users,  load average: 11.95, 4.28, 3.89
-USER     TTY      FROM              LOGIN@   IDLE   JCPU   PCPU WHAT
-root     tty1     -                17Feb14  9days  1.90s  1.90s -bash
-root     tty3     -                24Feb14 44days  0.02s  0.01s -bash

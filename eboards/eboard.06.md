@@ -1,112 +1,141 @@
-CSC295 2014S, Class 06: Using Macros for Logging
-================================================
+CSC282 2015S, Class 06: Compilation, Macros, and the C Preprocessor
+===================================================================
 
 _Overview_
 
 * Preliminaries.
     * Admin.
-* Interesting macro examples.
-* Requirements for a debugging/logging system.
-* Implementation details.
+    * Upcoming Work.
+    * Extra Credit.
+    * Questions.
+* Quick Review
+* Including files.
+* Macros.
+* CPP conditionals.
+* Detour: Standard header file format.
+* Command-line flags.
+* Hack: Generic data types. (Probably a future class.)
 
 Preliminaries
 -------------
 
 ### Admin
 
-* This week's assignment: Write a macro library for something interesting
-* No class next week.  Use the time to teach yourself vi
-    * Next week's assignment: 
-        * Find four interesting vi settings, such as `sm`.
-        * Make a list of four things you'd like to be able to do with vi.
-* Cool CS activities:
-    * Thursday extra: New curriculum
+* This week's assignment: Forthcoming.
+* Class next week may be on `gdb` if I can get Stone to teach it.
+* Don't forget this week's CS Table!  It should be really interesting.
 
-Interesting macro examples
---------------------------
+### Questions
 
-* Small C functions that we think will be more efficient as macros 
-  (no need to use the call/return; will inline suffice?)
-* Lots of use of ?:
-    * In Scheme if serves as both a statement and an expression
-      (+ 1 (if (> x y) x y))
-    * In C, `if` is a *statement*, so it can't be used as an expression
-      1 + if (x > y) x; y;  ILLEGAL C
-    * We need a conditional expression, as well as a conditional statement.
-      (Let's make it confusing!)
-      `test ? consequent : alternate`
-    * Now I can write
-      `z = 1 + (x > y) ? x : y;`
-* A typical definition 
-    #define MAX(a,b) (((a) > (b)) ? (a) : (b))
-* What happens if we write
-    int a = 2;
-    int b = 3;
-    int c = MAX(a++,b++);
-    printf ("%d,%d,%d\n", a, b, c);
-    // 3, 5, 4
+Review: The C Program Ecosystem
+-------------------------------
 
-Requirements for a debugging/logging system
--------------------------------------------
+* The steps of compilation.
+    * Start with source code: .c file
+    * Preprocess to handle the lines that begin # and some
+      related stuff (#include, #define, #ifdef, ...).  Output
+      is still source code.
+    * Translate the source code to assembly.  Convention that
+      assembly files have a suffix of .s.
+    * Assemble the assembly into relocatable object code, suffix
+      of .o.  These are almost the final stage, so we keep them
+      around for efficiency.
+    * Executable: Linked .o files and libraries and everything else.
+* The typical files in a "real" C program.
+    * .c files that contain your code (mostly hand-written)
+       * It's fun to write programs that generate C programs.
+         "metaprogramming"
+    * .h files - headers, get included in other files, provide
+      information about other parts of the program (mostly hand
+      written)
+    * .o files will litter our directory during development.
+      (Generated files)
+        * utils.c contains a function called `do_work.
+        * main.c calls `do_work`
+        * utils.h contains the signature of `do_work` 
+        * main.c include utils.h.
+        * We have utils.h and do the include so that the compiler
+          knows the types of parameters and the return type
+    * Libraries!  (Various suffixes; .la or .a or .so)
+    * Makefiles to provide instructions for doing the compilation
+      and dependencies.
+    * Executable(s)
+    * Test(s)
+    * Documentation!
+    * ...
+* What's the relationship between the .h file and the library?
+    * The .h contains primarily the signatures of functions (and a bit more).
+    * The library contains the information on how the funtions are
+      implemented.  `stdlib.h` tells you what's in the standard library,
+      but doesn't contain the code for that library.
+    * At the point you're compiling, you don't need to know how things
+      are implemented, you just need to know how to call them.
+    * At the point you're linking, you just need to know what to link
+      to.  Most C compilers automatically link stdlib and stdio.
+    * This is an example of the general principal to *Separate 
+      interface and implementation!*
+        * If the client programmer doesn't know about the implementation
+          he can't screw things up by relying on a particular
+          implementation.
+        * Easy to swap in different implementations.
 
-Print statements that are easy to enable/disable.
+Fun with Linking
+----------------
 
-   #ifdef DEBUG
-   #define MSG(str) fprintf (stderr, "  // %s\n", str)
-   #else
-   #define MSG(str)
-   #endif
+* `sample.c` uses `fprintf`, `stdout`, and `sin`.
+* With no #include, won't compile because `stdout` is undefined.
+* With `#include <stdio.h>`, compiled with warnings.
+        $ make sample.o
+        cc    -c -o sample.o sample.c
+        sample.c: In function ‘main’:
+        sample.c:21:49: warning: incompatible implicit declaration of built-in function ‘sin’ [enabled by default]
+        $ ls
+        sample.c  sample.o
+* However, we can't link
+        $ make sample
+        cc   sample.o   -o sample
+        sample.o: In function `main':
+        sample.c:(.text+0x28): undefined reference to `sin'
+        collect2: error: ld returned 1 exit status
+        make: *** [sample] Error 1
+* If we `#include <math.h>`, we can compile without errors.
+* But it still won't link.
+* So we have to write
+        $ cc sample.o -lm -o sample
+* Or update the Makefile.
+* What if we drop the `#include <math.h>`.  Can we still compile
+  and link?   Probably, but with a warning.
+    * Amazingly, even though we didn't give the signature, sin is
+      standard enough that the compiler got it right.
+* Observation: #include is different than linking.  We got information
+  that sin is a function with the #include, but we only got the code for
+  sin when we included -lm in our link stage.
 
-See the value of variables or expressions at various states in the program
-I get it wrong when I type
+Including files
+---------------
 
-   fprintf(stderr, "a = %d\n", a);
+* Since #include doesn't seem to include executable stuff.  What
+  does it really do?
+* We use angle brackets for standard include files (installed in
+  system directories; come with the C compiler)
+    * There is a variable, `LD_LIBRARY_PATH` tells the compiler
+      where to look for those.
+* We use quotation marks for the ones in the local directory
+  (or whose full path we know).
+* What does the include really do?
 
-I want
+Macros
+------
 
-   IVAR(x)
+CPP conditionals
+----------------
 
-to print
+Detour: Standard header file format
+-----------------------------------
 
-   x = 4
+Command-line flags
+------------------
 
-Cool macro feature: #param gives the parameter as a string
-
-    #ifdef DEBUG
-    #define IVAR(exp) fprintf (stderr, " // %s = %d\n", #exp, exp)
-    #else
-    #define IVAR(exp)
-    #endif
-
-See the code as it executes
-
-    #ifdef DEBUG
-    #define DO(statement) do { fprintf(stderr, "%s;\n", #statement); statement;  } while (0)
-    #else
-    #define DO(statement) statement
-    #fi
-
-See the call structure
-
-    START(FUNCTION_NAME)
-    END(FUNCTION_NAME)
-
-Generalized on/off printf
-
-A natural extension of all of this: Unit testing
-
-   CHECK_INT(expression, value)
-
-* Evaluate expression
-* Compare to value
-* If the same, do nothing
-* If different, print the expression, the value, and a message
-
-Difficlty
-
-   if (test)
-     DO(x = x + 1);
-
-Implementation details
-----------------------
+Hack: Generic data types
+------------------------
 

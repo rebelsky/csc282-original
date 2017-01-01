@@ -56,7 +56,7 @@ div.pagenotes {
 /* Have some fun with my headers */
 H1, H2 { 
   color: white;
-  background-color: rgb(96,96,96);
+  background-color: rgb(123,168,121);
   font-weight: bold;
   font-family: Helvetica, sans-serif;
   /* border: solid silver; */
@@ -81,12 +81,17 @@ H2 {
 }
 
 H3 {
-  color: rgb(96,96,96);
+  color: rgb(123, 168, 121);
   font-family: Helvetica, sans-serif;
   border-width: 2px 0em 0em 5px;
   font-size: 1.1em;
   font-style: italic;
   /* margin-left: -5px; */
+}
+
+H4 {
+  font-family: Helvetica, sans-serif;
+  color: rgb(123,168,121);
 }
 
 P {
@@ -99,7 +104,7 @@ P.course {
   font-size: 1.1em;
   text-align: right;
   color: white;
-  background-color: gray;
+  background-color: rgb(123,168,121);
   padding-top: 5px;
   padding-bottom: 5px;
 }
@@ -227,7 +232,7 @@ PRE,
 PRE.screen,
 PRE.programlisting,
 DIV.literallayout {
-  background-color: rgb(224,224,224);
+  background-color: rgb(223,240,221);
 }
 
 PRE {
@@ -368,8 +373,8 @@ SPAN.overview {
     margin: 0.5in;
   }
 
-  H1, H2 { 
-    background-color: rgb(96,96,96);
+  H1, H2, H3, H4 { 
+    color: rgb(123,168,121);
   }
 
   H1 {
@@ -383,8 +388,20 @@ SPAN.overview {
     margin-left: 0;
   }
 
-  H1, H2, H3 {
+  H1 {
+    border-bottom: 1px solid grey;
+  }
+
+  div.foot {
+    border-top: 1px solid grey;
+  }
+
+  H2, H3 {
     font-size: 100%;
+  }
+
+  H1, H2, H3, H4 {
+    page-break-after: avoid;
   }
 
   P.course {

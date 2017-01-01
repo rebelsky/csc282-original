@@ -1,101 +1,127 @@
-CSC295 2014S, Class 11: Debugging with GDB
-==========================================
+CSC282 2015S, Class 11: Miscellaneous C Programming Issues
+==========================================================
 
 _Overview_
 
 * Preliminaries.
     * Admin.
+    * Upcoming Work.
+    * Extra Credit.
     * Questions.
-* Debuggers.
-* gdb, the GNU Debugger.
-* Tracing crashes.
-* Some other operations.
-* Another example.
+* Sorting, revisited.
+    * Function pointers.
+* Testing C programs.
+    * Testing with macros.
+    * Testing through the command line.
+    * Testing with `assert`.
+* Memory issues in C programs.
+    * Checking memory problems with valgrind.
 
 Preliminaries
 -------------
 
 ### Admin
 
-* We won't spend much time looking at your work; just consider questions.
-* CS Pub Night tonight!
-* Pioneer Weekend this weekend!
-    * Get together, share an idea, build a prototype, eat some food,
-      meet some new people, hack some code, get mentored, get reviewed, 
-      maybe make some money.  Free T.
-* Homework: Find a gdb feature we did not discuss and write a quick 
-  guide to the feature.  Examples:
-    * Debugging a running process
-    * Tracking variables.
-* Tomorrow's CS table is on data privacy.
+* Homework: Find or write a program with interesting memory errors 
+  and show how valgrind helps you identify them.
 * Cool CS talk today at 4:30 p.m.
+* Alumni talk tonight about social media.
 
 ### Questions
 
-* Why can't I get install to work?
+Sorting, revisited
+------------------
 
-Debuggers
----------
+In Scheme
 
-* Sometimes code is incorrect.
-* How do you tell?
-    * Really good unit tests.
-* How do you find where the issue is?
-    * Unit tests tell us the functional unit where things seem to go
-      wrong.
-* How do you explore the issue in more detail?
-    * Read the code, work an example by hand.
-    * Once you know what you expect, you can put in assert statements.
-       * These can live forever as documentation.
-    * Put in printf statements.
-       * Something we have to remove later.
-    * Use debuggers to identify problems.
+        ;;; Procedure:
+        ;;;   sort
+        ;;; Parameters:
+        ;;;   lst, a list (or perhaps vec, a vector)
+        ;;;   order, a two-parameter predicate that represents
+        ;;;     a total order.  ("Does a come before b?")
 
-gdb, the GNU Debugger
+In Java, we also think about providing a Comparator (or using 
+Comparables)
+
+What about C?  What's your signature for a procedure that sorts
+an array of strings?
+
+* Question: Do we sort "in place" or do we return a sorted array?
+
+        /**
+         * Sort strings.  Return 1 upon success and 0 upon failure.
+         */
+        int
+        sort (char *strings[], int len)
+        {
+        } // sort
+
+Function pointers
+-----------------
+
+* Can we make this take a comparator?
+
+        /**
+         * Sort strings.  Return 1 upon success and 0 upon failure.
+         */
+        int
+        sort (char *strings[], int len, int (*compare)(char *x, char *y))
+        {
+        } // sort
+
+* This says "compare is a function that takes two strings as input
+  and returns an integer."
+* The parentheses are important!
+* Many novice C programmers find this hard to read.  Sometimes
+  typedefs are useful.
+
+        /**
+         * Functions that return negative if x comes before y, 0 if
+         * x "equals" y, and pos if x is greater than y.
+         */
+        typedef int (*Comparator)(char *x, char *y);
+
+        int
+        sort (char *strings[], int len, Comparator compare)
+        {
+        } // sort
+
+* How do we call sort?
+
+        int 
+        compare_by_length (char *x, char *y)
+        {
+          return strlen (x) - strlen (y);
+        } // compare_by_length
+
+        sort (strings, adfas, compare_by_length);
+
+Memory issues in C programs
+---------------------------
+
+* Everyone gets segfaults.
+* How do you find/fix them?
+    * Run gdb, look at a stack trace
+    * Unfortunately, not all memory errors happen where the program
+      crashes.
+         * Free earlier and use later.  (The error may be in the free.)
+         * Using freed memory, and only sometimes that fails.
+
+Checking memory problems with valgrind
+--------------------------------------
+
+* Approximate demos.
+
+Testing C programs
+------------------
+
+Testing with macros
+-------------------
+
+Testing through the command line
+--------------------------------
+
+Testing with `assert`
 ---------------------
-
-* Command-line: Fast to start up and use; not so intuitive
-* Also GUIs on top of gdb.
-* Really powerful: Can attach to running processes.
-   * Reason 1: It's still running, and there may be a cost to "getting here"
-   * Reason 2: Convenience
-   * Reason 3: Lets you escape when something is unexected
-   * Reason 4: Things like servers don't like to be stopped
-   * Reason 5: Plugins
-* Really big; I don't know all of it, you can learn more than me pretty
-  quickly.
-
-Tracing crashes
----------------
-
-        $ gdb program
-
-Starts gdb
-
-        gdb> run
-
-Runs the program.  If it crashes, tells you where
-
-        gdb> bt
-
-Prints the call stack.
-
-        gdb> p var
-
-Prints a variable
-
-        gdb> l fun
-
-List a function
-
-        gdb> l line
-
-List a line
-
-        gdb> set var VAR = EXP
-
-Guess.
-
-Another example
----------------
 

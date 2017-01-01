@@ -1,14 +1,44 @@
-<!ENTITY date01 "&thu01;">
-<!ENTITY date02 "&thu02;">
-<!ENTITY date03 "&thu03;">
-<!ENTITY date04 "&thu04;">
-<!ENTITY date05 "&thu05;">
-<!ENTITY date06 "&thu06;">
-<!ENTITY date07 "&thu07;">
-<!ENTITY date08 "&thu08;">
-<!ENTITY date09 "&thu09;">
-<!ENTITY date10 "&thu10;">
-<!ENTITY date11 "&thu11;">
-<!ENTITY date12 "&thu12;">
-<!ENTITY date13 "&thu13;">
-<!ENTITY date14 "&thu14;">
+<!ENTITY day01 "Thursday">
+<!ENTITY day02 "Thursday">
+<!ENTITY day03 "Thursday">
+<!ENTITY day04 "Thursday">
+<!ENTITY day05 "Thursday">
+<!ENTITY day06 "Thursday">
+<!ENTITY day07 "Thursday">
+<!ENTITY day08 "Thursday">
+<!ENTITY day09 "Thursday">
+<!ENTITY day10 "Thursday">
+<!ENTITY day11 "Thursday">
+<!ENTITY day12 "Thursday">
+<!ENTITY day13 "Thursday">
+<!ENTITY day14 "Thursday">
+
+<!ENTITY cal01 "&thu01;">
+<!ENTITY cal02 "&thu02;">
+<!ENTITY cal03 "&thu03;">
+<!ENTITY cal04 "&thu04;">
+<!ENTITY cal05 "&thu05;">
+<!ENTITY cal06 "&thu06;">
+<!ENTITY cal07 "&thu07;">
+<!ENTITY cal08 "&thu08;">
+<!ENTITY cal09 "&thu09;">
+<!ENTITY cal10 "&thu10;">
+<!ENTITY cal11 "&thu11;">
+<!ENTITY cal12 "&thu12;">
+<!ENTITY cal13 "&thu13;">
+<!ENTITY cal14 "&thu14;">
+
+<!ENTITY date01 "&day01;, &cal01;">
+<!ENTITY date02 "&day02;, &cal02;">
+<!ENTITY date03 "&day03;, &cal03;">
+<!ENTITY date04 "&day04;, &cal04;">
+<!ENTITY date05 "&day05;, &cal05;">
+<!ENTITY date06 "&day06;, &cal06;">
+<!ENTITY date07 "&day07;, &cal07;">
+<!ENTITY date08 "&day08;, &cal08;">
+<!ENTITY date09 "&day09;, &cal09;">
+<!ENTITY date10 "&day10;, &cal10;">
+<!ENTITY date11 "&day11;, &cal11;">
+<!ENTITY date12 "&day12;, &cal12;">
+<!ENTITY date13 "&day13;, &cal13;">
+<!ENTITY date14 "&day14;, &cal14;">

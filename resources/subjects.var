@@ -29,8 +29,8 @@
 <!ENTITY due{$day} "HW {$hw}">
 +hw
 
-<!ENTITY title{$day} "Decoding Scripts">
-<!ENTITY abbrev{$day} "typescript">
+<!ENTITY title{$day} "A C Program Ecosystem">
+<!ENTITY abbrev{$day} "cpp">
 <!ENTITY reading{$day} "">
 <!ENTITY lab{$day} "">
 <!ENTITY writeup{$day} "">
@@ -38,11 +38,28 @@
 <!ENTITY due{$day} "HW {$hw}">
 +hw
 
+<!ENTITY title{$day} "Cron">
+<!ENTITY abbrev{$day} "cron">
+<!ENTITY reading{$day} "">
+<!ENTITY lab{$day} "">
++day
+<!ENTITY due{$day} "HW {$hw}">
++hw
+
 <!ENTITY title{$day} "Compilation, Macros, and the C Preprocessor">
-<!ENTITY abbrev{$day} "cpp">
+<!ENTITY abbrev{$day} "cpp-revisited">
 <!ENTITY reading{$day} "">
 <!ENTITY lab{$day} "">
 <!ENTITY writeup{$day} "">
++day
+<!ENTITY due{$day} "HW {$hw}">
++hw
+
+<!ENTITY title{$day} "Debugging with gdb">
+<!ENTITY abbrev{$day} "gdb">
+<!ENTITY reading{$day} "">
+<!ENTITY lab{$day} "">
+<!ENTITY writuep{$day} "">
 +day
 <!ENTITY due{$day} "HW {$hw}">
 +hw
@@ -55,23 +72,6 @@
 +day
 <!ENTITY due{$day} "HW {$hw}">
 +hw
-
-<!ENTITY title{$day} "Learning Vi (Optional)">
-<!ENTITY abbrev{$day} "vi">
-<!ENTITY reading{$day} "">
-<!ENTITY lab{$day} "">
-<!ENTITY writeup{$day} "">
-+day
-<!ENTITY due{$day} "HW {$hw}: Playing with vi settings">
-+hw
-
-<!ENTITY title{$day} "Vi, Continued">
-<!ENTITY abbrev{$day} "vi">
-<!ENTITY reading{$day} "">
-<!ENTITY lab{$day} "">
-<!ENTITY writeup{$day} "">
-+day
-<!ENTITY due{$day} "">
 
 <!ENTITY title{$day} "Automating Work with Make">
 <!ENTITY abbrev{$day} "make-1">
@@ -91,15 +91,6 @@
 <!ENTITY due{$day} "HW {$hw}">
 +hw
 
-<!ENTITY title{$day} "Debugging with GDB">
-<!ENTITY abbrev{$day} "gdb">
-<!ENTITY reading{$day} "">
-<!ENTITY lab{$day} "">
-<!ENTITY writeup{$day} "">
-+day
-<!ENTITY due{$day} "HW {$hw}">
-+hw
-
 <!ENTITY title{$day} "Miscellaneous C Programming Issues">
 <!ENTITY abbrev{$day} "misc">
 <!ENTITY reading{$day} "">
@@ -109,8 +100,8 @@
 <!ENTITY due{$day} "HW {$hw}">
 +hw
 
-<!ENTITY title{$day} "Variadic Functions">
-<!ENTITY abbrev{$day} "varargs">
+<!ENTITY title{$day} "Testing">
+<!ENTITY abbrev{$day} "unit-testing">
 <!ENTITY reading{$day} "">
 <!ENTITY lab{$day} "">
 <!ENTITY writeup{$day} "">
@@ -118,6 +109,14 @@
 <!ENTITY due{$day} "HW {$hw}">
 +hw
 
+<!ENTITY title{$day} "Cancelled">
+<!ENTITY abbrev{$day} "cancelled">
+<!ENTITY reading{$day} "">
+<!ENTITY lab{$day} "">
+<!ENTITY writeup{$day} "">
++day
+<!ENTITY due{$day} "HW {$hw}">
++hw
 <!ENTITY title{$day} "Wrapup">
 <!ENTITY abbrev{$day} "wrapup">
 <!ENTITY reading{$day} "">

@@ -47,8 +47,9 @@
   [<a href="http://www.catb.org/esr/writings/taoup/html/">TAoUP</a>]
   [<a href="http://oreilly.com/catalog/make3/book/index.csp">Make3</a>]
 </p>
-<p class="links"><b>Related Courses:</b>
+<p class="links"><b>Previous Offerings:</b>
   [<a href="http://www.cs.grinnell.edu/~rebelsky/Courses/CSC295/2013S.03/">CSC 295 2013S</a>]
+  [<a href="http://www.cs.grinnell.edu/~rebelsky/Courses/CSC282/2014S/">CSC 295 2014S</a>]
 </p>
 <p class="links"> <b>Misc:</b> 
   [<a href="http://www.cs.grinnell.edu/~rebelsky/">SamR</a>]

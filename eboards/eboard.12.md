@@ -1,134 +1,95 @@
-CSC295 2014S, Class 12: Miscellaneous C Programming Issues
-==========================================================
+CSC282 2015S, Class 12: Testing
+===============================
 
 _Overview_
 
 * Preliminaries.
-    * Admin.
-    * Questions.
-* Memory issues in C programs.
-* Checking memory problems with valgrind.
-* Sorting, revisited.
-* Function pointers.
+* An introduction to testing.
+* An introduction to unit testing.
+* Thinking about unit testing in C.
+* Exercise, part 1: Write binary search.
+* Exercise, part 2: Test binary search.
 
 Preliminaries
 -------------
 
+### Homework
+
+* Think about how you would test binary search!
+
 ### Admin
 
-* I still need judges for the CSC 207 students Monday at 10:00 a.m.
-* If you are going to be taking classes on campus this fall and you have 
-  not registered, do so ASAP!
-* Congrats to AK!
-* In honor of the Work/Life Balance Town Hall, there is no homework for next
-  next week.
-* Next week may be our last week of this class.  We plan to have the CS senior
-  celebration on the last Thursday of the semester.
+* If you are not a senior and you have not registered, do so ASAP!
+    * There will be cuts.
+    * Poeple who do not pre-register will not get slots.
+* Town-hall today!
+* Cool talk today!
+* Pub night tonight!
+* No class next week!
+* Exclamation points!
 
 ### Questions
 
-Memory issues in C programs
----------------------------
+An introduction to testing
+--------------------------
 
-* Great aspect of C: Memory is a first-class value.
-* Also a huge problem; many program errors have to deal with failure to
-  use memory correctly.
-* How do programmers use memory incorrectly?
-    * Allocated less than actually gets used.  Uses more than allocated.
-    * Typically allocated with malloc.
-    * Typically used with arrays - outside bounds of arrays.
-    * Allocating space for a data type, and use the wrong amount of space.
-        
-       double *d = malloc(2);
+* We have a responsibility to write correct software (or at least do
+  our best to write correct software).
+* Gold standard: Formal proof. 
+    * Difficult
+    * Error prone
+* Experimentation / testing
+* Good programmers test
+* Better programmers write tests before they write code
+    * Less bias from/toward the code you write
+    * Helps you think more carefully about the code you're going
+      to write.
+    * Make programming a (really bad) video game: "Look, I'm down
+      to 10 failed tests".  "Measurable" evidence of progress.
+    * Tests document.
 
-    * Run out of memory
-    * Attempt to write your own alternative to malloc and screw it up.
-    * Problems with freeing memory
-        * You don't do it - Memory leak
-        * You do it twice
+An introduction to unit testing
+-------------------------------
 
-                int *ip = ...;
-                int *jp = ip;
-                ...
-                free (ip);
-                free (jp);
-* Memory issues sometimes have indirect effects
+* Test smaller units of the program individually
+* Test using a framework in which you get a report of either
+  "all tests successful" or failures.  (The computer, rather than
+  a human, makes sure that the output of each procedure is right.)
+* Modern languages include test frameworks - Java - JUnit
+* There is no standard for C.
 
-Checking memory problems with valgrind
---------------------------------------
+What do we do when we have to unit test our C programs?  (You want
+the computer to read the output!)
 
-* Catches a *lot* of different errors related to bad use of malloc
-  (or allocation on the stack)
+* Write code by hand
 
-Sorting, revisited
-------------------
+        if (fun(input) != expected_value)
+          fprintf (stderr, "Test case 43.1 failed!");
 
-Here's a standard signature
+* Write an interactive tester (`tester`)
+    * Write a textual input file, (`inputs`)
+    * Write a list of expected outpus (`outputs`)
+    * `tester < inputs > new-outputs; diff outputs new-output"
 
-   int strings_sort (int n, char *strings[]);
+* Write a generalized testing framework.  (Using Macros?)
 
-But wait!  How do we specify what we want to sort by?
+* Find an existing testing framework.  Just because there's no standard,
+  it doesn't mean there isn't one.
+    * Variant: Stackoverflow  "My annoying CS Prof expects us to do
+      unit testing in C.  What would you recommend, other than 
+      switching classes?"
+    * Note: A good testing framework influences how you test.
 
-   int strings_sort (int n, char *strings[], THING-TO-COMPARE-ELEMENTS compare);
+* Tradition in C: Use `assert`
 
+Exercise, part 1: Write binary search
+-------------------------------------
 
-Function pointers
------------------
+    /home/rebelsky/Web/Courses/CSC282/2015S/examples/binary-search
+    <http://www.cs.grinnell.edu/~rebesky/Courses/CSC282/2015S/examples/binary-search>
 
-   int strings_sort (int n, char *strings[], int (*compare)(char *, char *))
-
-How do we pass in a function that meets this signature?
-
-* Just type the name of the function
-
-        strings_sort (10, names, strcmp);
-
-        int compare_by_length (char *str1, char *str2)
-        {
-          if (strlen(str1) > strlen(str2))
-            return 1;
-          else if (strlen(str1) < strlen(str2))
-            return -1;
-          else
-            return 0;
-        }
-
-        strings_sort (10, names, compare_by_length);
-
-Making the type name a bit easier
-
-        typedef int (*StringComparator)(char *, char *);
-
-        int strings_sort (int n, char *strings[], StringComparator compare);
-
-Within out implementation of strings_sort, how do we call compare?
-
-Really precise version
-
-        (*compare)("alpha", "beta")
-
-Normal C programmer version
-
-        compare("alpha", "beta")
-
-
-Challenge!  Write a program that calls strings_sort to sort the strings
-on the command line alphabetically
-
-        int 
-        main (int argc, char *argv[])
-        {
-          int i;
-          strings_sort (argc-1, argv+1, strcmp);
-          for (i = 0; i < argc-1; i++)
-            printf ("%s ", argv[i]);
-          printf ("\n");
-        } // main
-
-
-
-
-
+Exercise, part 2: Test binary search
+------------------------------------
 
 
 

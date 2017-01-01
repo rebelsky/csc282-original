@@ -5,6 +5,37 @@ Review
 * You describe dependencies and instructions, it figures out which
   instructions to carry out (and carries them out).
 
+Variables in Make
+-----------------
+
+* Define with `NAME = ...`.
+* In most cases, use with $(NAME)
+
+Standard Variables for C
+------------------------
+
+These get used with the default rules for C.
+
+* `CC` - the C compiler
+* `CFLAGS` - flags for the C compiler
+* `CPPFLAGS` - flags for the C preproccesor
+* `LDFLAGS` - flags for the loader
+* `LINK.o` - The thing that links .o files
+* ...
+
+Example: Document Development
+-----------------------------
+
+* Make isn't just for C programs.
+    * We'll look at a sample ecosystem for simple document development.
+    * The inspiration for the ecosystem is my typical Web site development
+      strategy.
+* It's easy to write in Markdown (.md), and it's what I regularly use.
+* Markdown produces incomplete HTML (.htm); just the body, no outer tags.
+* We wrap that incomplete HTML in appropriate wrapper text (.html)
+* We might want to convert to Postscript or PDF.
+* ...
+
 Automatic Variables
 -------------------
 
@@ -59,20 +90,8 @@ Generic Rules
         objects/%.o: src:/%.c
                 $(CC) -o $@ $&lt;
 
-Example: Document Development
------------------------------
-
-* We'll look at a sample ecosystem for simple document development.
-* The inspiration for the ecosystem is my typical Web site development
-  strategy.
-* It's easiest to write in Markdown (.md)
-* Markdown produces incomplete HTML (.htm); just the body, no outer tags.
-* We wrap that incomplete HTML in appropriate wrapper text (.html)
-* We might want to convert to Postscript or PDF.
-* ...
-
-Standard Rules
---------------
+Default Rules
+-------------
 
 * As you've discovered, Make comes with a huge array of built-in rules.
 * How do you figure out which ones are available?  Make has a useful
@@ -81,8 +100,8 @@ Standard Rules
 Other Useful Techniques
 -----------------------
 
-* You can execute a shell command and use the result of that command
-  as a variable with `$(shell *command*)`
+* In the version of Make we use, you can execute a shell command and use 
+  the result of that command as a variable with `$(shell *command*)`
 * I often use this is conjunction with substitution.  For example
 <pre>
 HTML = $(shell ls *.html)
@@ -103,4 +122,5 @@ Miscellaneous tools and topics
     C flags.
   + `pkg-config --libs *package*` computes the flags
     for the linker.
-
+* Modern Make files are sufficiently complex that there are now programs
+  (particularly `automake`) that make them for you.

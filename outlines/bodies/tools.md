@@ -7,14 +7,6 @@ GitHub
 Going Over Homework
 -------------------
 
-### The C Memory Problem
-
-    x = malloc (...);
-    foo ();
-    bar ();
-    free (x);   // CRASH
-
-Background question: How does `free` work?
 
 ### Find all of the misspelled words in a text file
 
@@ -48,7 +40,7 @@ Homework
 
 0. Learn Markdown so that we can use it for these assignments.
 
-1. Learn about how you set and get environment variables.  Put your
+1. Learn about how you set and get environment variables in C.  Put your
 explanations in the directory.
 
     * Command line

@@ -1,4 +1,4 @@
-* About the course.
+* The origins of the course.
 * Some principles and practices.
 * Example: C from K and R.
 * Detour: A C memory problem.

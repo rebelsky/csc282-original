@@ -1,11 +1,9 @@
-About the course
-================
-
 Motivation
 ----------
 
 This course is an extension of a seminar I ran in spring 2012 and that
-students asked me to repeat in spring 2013.  That seminar was an outgrowth
+students asked me to repeat in spring 2013, that I repeated in spring
+2014, and that we have now regularized.  That seminar was an outgrowth
 of things I observed and was told in CSC 362 2011F.  In particular, the
 students in that course had much less familiarity with Makefiles than
 I would have liked and they told me that they generally did not use gdb
@@ -44,9 +42,9 @@ Principles and practices
 ------------------------
 
 * From my perspective, this course is about three related issues:
-  + Generally good programming practices
-  + How to think like a *nix programmer
-  + How to think like a C programmer
+    * Generally good programming practices
+    * How to think like a *nix programmer
+    * How to think like a C programmer
 * We'll look at a few important issues in each
 
 ### Important programming practices
@@ -68,11 +66,11 @@ to careers in programming find that I'm right about most of these things.)
   follow some language formatting standard.  (I tend to use the GNU
   standards in C.)
 
-You can take all of these with a grain of salt (or much more salt) when
-you're just writing quick-and-dirty code to get stuff done.  Keep in mind
-that your typical goal is efficiency.  You don't need to comprehensively
-test a few-line throwaway program.  However, you should document the
-program, because you may want to do a similar thing later.
+You can take all of these with a grain of salt (or many many grains of
+salt) when you're just writing quick-and-dirty code to get stuff done.
+Keep in mind that your typical goal is efficiency.  You don't need to
+comprehensively test a few-line throwaway program.  However, you should
+document the program, because you may want to do a similar thing later.
 
 ### Some key *nix principles
 
@@ -84,8 +82,10 @@ seminar continues.)
 
 * Don't do things by hand when you can more efficiently do them with
   a program.
+    * <http://xkcd.com/1205/>
+    * <http://xkcd.com/1319/>
 * Write small programs and libraries that have a very focused purpose.
-  + And save them for later.
+    * And save them for later.
 * Chain together small programs to solve more complex problems.
 * Communicate with text files.
 * Share!
@@ -95,10 +95,10 @@ programs to do tasks?  No, you can certainly use programs.  Here are
 ways you better do things "by program".
 
 * Know the primary tools that Linux provides.  (We'll make a list.)
-  + It's okay to know generally what they do and to read the documentation
-    when you need more info.
+    * It's okay to know generally what they do and to read the documentation
+      when you need more info.
 * Be able to write your own small tools in some scripting language. 
-  (I tend to script in Perl.  Python, Bash, and Ruby can all be useful
+  (I tend to script in Perl.  Python, Bash, Ruby, and even PHP can all be useful
   scripting languages, too.)
 * Be able to write your own small tools in C.  (Sometimes you need speed.)
 * Know enough *nix bash syntax to tie things together.
@@ -109,7 +109,7 @@ In addition to the general programming practices I've mentioned above,
 there are a few approaches that C programmers should master.  (We'll
 add more as the semester goes on.)
 
-* Know how to use the C preprocessor, particularly #include files and
+* Know how to use the C preprocessor, particularly `#include` and
   macros.
 * Know how to use a debugger.
 * Know how to use libraries.
@@ -131,7 +131,7 @@ does it do?
     char *
     fun (char *t, char *s)
     {
-      while (*t = *s);
+      while (*t++ = *s++);
       return t;
     } // fun
 
@@ -195,7 +195,7 @@ and estimate the time each would take.
 This will appear online some time in the near future (probably over the
 weekend).
 
-Repository: `https://github.com/Grinnell-CSC282/hw1`
+Repository: `https://github.com/Grinnell-CSC282/hw1-2015S`
 
 1. Read chapter 1 of Raymond to get a deeper understanding of the *nix
 Philosophy.
@@ -206,5 +206,5 @@ with your name in the GitHub repository.
 
 3. Make a list of *nix tools and utilities that you've found useful (or 
 even that you've just heard of).  Try to categorize and add a short
-description.  Put them in the `tools.md` file in the repository.
+description.  Add them to the `tools.md` file in the repository.
 

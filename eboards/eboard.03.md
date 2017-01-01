@@ -1,54 +1,12 @@
-CSC295 2014S, Class 03: The Bash Shell - A Refresher
+CSC282 2015S, Class 03: The Bash Shell - A Refresher
 ====================================================
 
 _Overview_
 
 * Preliminaries.
     * Admin.
-    * Reviewing homework 2.
-    * Questions.
-* Some things you should know about *nix.
-
-Preliminaries
--------------
-
-### Admin
-
-* I encourage you to attend CS table on Friday and talk about P vs. NP.
-* Homework:
-    * Part 1: Write a program that cleans up after `script`.  Put it
-      in the repo.  (I'd recommend using C, but it's up to you.)
-        * I'm sure you can find one.  You learn more by writing it.
-    * Part 2: Try to teach yourself `vi` or `vim` and add to the list of
-      questions you'd like answered or tasks you'd like to learn how
-      to solve.
-* The following week's homework
-    * Part 1: Write a bash script that finds all of the files under
-      the current directory that end with .jpg and moves them to a
-      directory called images.  Put it in the repo.
-
-### Reviewing homework 2
-
-* Please post things
-* Please post things using correct Markdown
-* Yes, I know that doing "Learn Markdown" and "read Make" probably
-  hit the two-hour mark.
-
-### Questions
-
-_Sam, will you talk about scenarios in which environment variables are
-helpful or necessary?_
-
-> Yes, see below.
-
-Some things you should know
----------------------------
-
-* Where the code you use is loaded from
-    * The `which` command tells you which one is used
-    * The `whereis` command tells you about more copies and about
-      libraries
-    * Control with the PATH environment variable
+    * Upcoming Work.
+* Some things you should know.
 * Files and directories.
 * Command-line patterns.
 * File and directory permissions.
@@ -56,75 +14,116 @@ Some things you should know
 * Variables.
 * Command-line history.
 * The `script` command.
-* Real programming in Bash: Loops, Conditionals
+
+Preliminaries
+-------------
+
+### Admin
+
+* There has been a request that we cover `cron` issues.  Would people like
+  to do that?
+* Homework:
+    * Part 0: Create a directory for yourself in the repo.
+    * Part 1: Write a program that cleans up after `script`.  Put it
+      in the repo.  (I'd recommend using C, but it's up to you.)
+        * I'm sure you can find one.  You learn more by writing it.
+    * Part 2: Write a bash script that finds all of the files under
+      the current directory that end with .jpg and moves them to a
+      directory called images.  Put it in the repo.
+    * Part 3: Suppose I have a file called `*` in my directory.
+      How do I remove.  Suppose I have a file called `-rf *`, how
+      do I delete it?
+
+### Questions
+
+* I need some help understanding that Make stuff.  Will you help?
+    * Answer: Eventually.
+    * Good Unix programmers find that Make is helpful to automate
+      tasks
+    * Example: Class outlines in Sam's world
+        * Administrative stuff
+        * Links
+           * Based on the day of the semester (vary)
+           * Based on the subject matter (consistent)
+        * Short summary
+        * Overview
+        * Detailed information
+    
+Some things you should know
+---------------------------
+
+* Files and directories.
+* Command-line patterns.
+* File and directory permissions.
+* I/O redirection.
+* Variables.
+* Command-line history.
+* The `script` command.
 
 Files and directories
 ---------------------
 
-* Some basic things that are stored in a filesystem
-    * Files (basically, a series of bytes)
-    * Directories: Containers for files
-    * Links: Connections to other directories/files
-    * "Special files"
-* How do you identify which files are in a directory?
-    * `cd DIRECTORY; ls`
-    * `ls DIRECTORY`
-    * `ls` alone does NOT list everything.  The `-a` flag also shows
-      the "hidden" files/directories that start with a period.
-    * The `-F` flag - shows whether things are directories or ...
-* Absolute vs. relative
-    * Bash keeps track of a current/present working directory
-    * Absolute: No matter where I am, this gives the directory
-        * Always begin with a slash
-    * Relative: From where I am, how do I get there
-        * Don't begin with a slash
-* Make and remove directories
-    * mkdir - create
-    * rmdir - remove if empty
-    * rm -r - remove, including contents, use sparingly
-    * rm -r * - remove way too much
+* Two ways to think about it: Internal (behind the scenes) and 
+  external (client model)
+* File is a collection of data.  Bits!  With a name.
+* Many mechanisms for telling the type of the file.
+    * Custom: Extension gives you information.  `.txt` is a text
+      file (usually *nix or Mac), `*.jpg` is an image file using the
+      JPEG image format, `.c` is a text file containing C code.
+    * Custom: A header (first few bytes) that describes the content
+      First two bytes correspond to the ascii values #!, Unix thinks
+      it's a script.
+    * Experiment: Can I open it with ...?
+    * Compute: Inspect the data
+* Note: The `file` command tells you an approximate type, based on
+  suffix and content and first few bytes.
+* Directory is a collection of files and other directories.
+* Unix tries to distinguish the two.
+* Internally, every file has one or more inodes, which has an
+  address, access information, some file type data, some data, and 
+  (optionally), a link to the next inode.
+* The directory maps names to inodes.
+* Unix treats lots of things as files, including devices.
+* Know commands for making files and list files and making directories
+  and list directories.
+    * `mkdir` - create a directory
+    * `ls` - list files 
+        * If the parameter is a directory, lists all of the elements
+          in that directory
+        * Given multiple parameters, processes each in turn
+        * Flags: -l is detail, -t organized by time, -F suffixes,
+          -R recursive, -a hidden
 
 Command-line patterns
 ---------------------
 
+* ls * - everything
+* ls *.x - everything that ends in .x
+* ls {foo,bar}.c
+* More: See notes and documentation
+
 File and directory permissions
 ------------------------------
+
+* Three basic kinds: user, group, other
+* For each category, three characteristics: read (4), write (2), 
+  execute (1)
+* Slightly different meanings for directories
 
 I/O redirection
 ---------------
 
+* >, <, |
+* stdout vs. stderr
+    * stdout is where the normal outpt of your program goes
+    * stderr is supposed to be where error messages go
+
 Variables
 ---------
-
-* Broadly, settings or variables that programs can use
-* In particular, common things that programs can look up to see what
-  your preferences are
-    * EDITOR
-    * VISUAL
-    * PWD
-    * PATH
-    * LDLIBS
-    * LPDEST
-* Set with `VAR=VALUE`
-* Export your variables if you want other programs to use them
-* The variable PS1 stores your prompt.
 
 Command-line history
 --------------------
 
-Misc. Useful Commands
----------------------
-
-* `wc` - word count
-* Make aliases in your .bashrc
-
-    alias ls="ls -F"
-
 The `script` command
 --------------------
 
-* You want to keep track of what happened.
-* `script` sets up a log of everything you do, including backspaces.
-* Saved by default in `typescript`
-* `script FILENAME` saves in that file
-* I don't know what the recursive thing does.

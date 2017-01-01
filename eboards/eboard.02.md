@@ -1,141 +1,151 @@
-CSC295 2014S, Class 02: Some Basic Tasks and Corresponding Tools
+CSC282 2015S, Class 02: Some Basic Tasks and Corresponding Tools
 ================================================================
 
 _Overview_
 
 * Preliminaries.
     * Admin.
+    * Upcoming Work.
+    * Questions.
 * Fun with GitHub.
 * Go over homework.
-* Exercise: The spaces problem.
+* Extended example.
 * Raymond, chapter 1.
 * Thinking about basic tools.
+* Next homework.
 
 Preliminaries
 -------------
 
 ### Admin
 
-* I encourage you to attend CS table on Friday and talk about the ACM
-  code of ethics.
+* I encourage you to attend CS table on Friday and talk about RAID.
 * Status check 1: How many of you know the C bitwise operations?
   (`&`, `|`, etc.)
-* Status check 2: Could anyone *not* make class if I moved it to 3:15pm?
-  (Hands closed, blackball-style question.)
-    * We are sticking with 1:15 p.m.
-* Note: I was overly optimistic at the start of the semester.  Given the
-  amount of time daily homework is taking in my three classes, I probably
-  won't get a lot of chance to write the "book" for this class.  I will
-  try to set up some lab problems, though.
 
 ### Questions
+
+_Are your questions intended to be as open-ended as they seem?_
+
+> Yes.  I look forward to discussing interesting answers.  We won't
+  discuss all of them, though.
 
 Fun with GitHub
 ---------------
 
-* What happens when someone sends a pull request?
-    * GitHub sends you a nice message with instructions.
-    * You can browse the request to see how someone wants to screw up the
-      repository.
-* Isn't our site lovely?
-    * Careful instructions and agreed-upon policies help
+Problems
+
+* Sam forgot to give me edit permissions / I forget to accept the
+  invitation to have such permissions.
+* Sometimes git gives incomprehensible errors.
 
 Go over homework
 ----------------
 
-### That fun hypothetical C problem.  (Did anyone write code to cause 
-the error?)
+Given a DOS-formatted text file (lines end with \r\n rather than just
+\n), convert it to a standard text file.
 
-    int *x;     // Our array of data.
-    int 
-    main (int argc, char *argv[])
-    {
-      x = malloc (...);      
-      foo ();
-      bar ();
-      free (x);   // Crash
-    } // main
+* Strategy 1: Write a C program.  Try to remember the wonders of C I/O.
 
-* Multi-threaded program, foo or bar accesses x after it should.
-    * foo and bar have terminated.
-* malloc keeps track of how much space it has allocated
-* Note: "You went beyond the null at the end of the array."
-    * Arrays are not null terminated in C.
-    * Strings *are* null terminated.
+        int c;
+        while ((c = getchar()) != EOF)
+          {
+            if (c != '\r')
+              putchar (c);
+          } // while
 
-    char *str = malloc (sizeof (char) * 16);
-    strcpy (str, "hello");
-    printf ("%d\n", strlen (str));
+    * Question: Why an int not a character?
+    * Because `getchar` needs to be able to signal a special status,
+      and returns a value outside the normal range of characters to
+      signal those special statuses.  EOF is outside the normal range.
+    * Question: How can we compare an integer to a character?
+    * `char` is an 8-bit integer, C promotes (converts) types as
+      necessary.
 
-### Spell checking
+* Observation: Overwriting the file is difficult.
+* Observation: Doesn't quite meet the spec.  If there's an `\r` somewhere
+  else, it still deletes it.  (Sam thinks that's okay.)
 
-* Finding information, mechanism one: Google
-* Check the manual pages `man -k spell` 
-    * The -k is "keyword"
-* So, our first solution is to use spell, but it gives us duplicates.
-  What next?
-    * Read the manual page
-    * Use `uniq` - not quite
-* spell file | sort | uniq
+Strategy two: Use `tr` (translate).  Traditionally used to translate
+one character to another.  Can also delete characters if you use the
+-d flag.
 
-### URL extraction
+        tr -d '\r' < original.dos > fixed.txt
 
-    grep -i -o '<img[^>]*src=[^>]*>' input | grep -o '"[^"]*"'
+* Observation: Since we're doing single-character processing, it has
+  the same problem as the C program.
 
-The first part gets you lines that look like
- 
-   <img ... src=.... ...>
+Strategy 3: Use `dos2unix`, which is not a standard program.  Five minutes.
 
-The second part extracts the stuff in quotation marks
+Strategy 4: Find a more sophisticated text translation tool and translate
+"\r\n" to "\n".  The `sed` program is great for this
 
-Flaws in this solution?
+        sed -e 's/\r\n/\n/g' < original.dos > fixed.txt
 
-* What if there are other things in quotation marks?  Those get printed too.  Boo.
-    * grep -o 'src="[^"]*"' | sed -e 's/^.*src="//' | sed -e 's/".*$'//'
-* What if there are multiple images on the same line?  Works okay.
-* What if the thing in quotation marks has a greater-than sign?  (Questionable HTML.)  Punt.
-* What if the image is in single quotes rather than double quotes?
+* Warning!  The following is a bad idea!
 
-### The CSV Problem
+        command < file.txt > file.txt
 
-"I want the names of the people with the five highest grades on HW2."
-File has 
+* Observation: There are lots of flags of sed.
 
-    fname:lname:assignment:grade
+Given a standard text file, convert all uppercase letters to lowercase.
 
-* grep to find the lines that contain HW2
-* sort to put them in numeric order (sort -k4 -n -r)
-* cut to remove columns
-* head to take the top 5
+Given a standard text file, remove all blank spaces at the end of lines.  
 
-Exercise: The spaces problem
-----------------------------
+* Don't write this in C if you want to support arbitrary line lengths.
+* Too much context to use tr
+* Sed is your friend.
 
-        sed -e 's/ *$//'
+        sed -e 's/ *$//g' < infile.txt > outfile.txt
 
-Write it in C.   You have ten minutes.
+* The '/g' is not necessary here, but is generally useful.
 
-   While input characters remain
-     read the next input character
-     switch (ch)
-       case space:
-         shove it in the buffer
-         break;
-       case newline:
-         clear the buffer
-         break;
-       default:
-         print the buffer
-         clear the buffer
-         print ch;
-         break
+        $ sed -e 's/a/A/'
+        Eh, I wish I were a canadian so that I could say eh.
+        Eh, I wish I were A canadian so that I could say eh.
+        $ sed -e 's/a/A/g'
+        Eh, I wish I were a canadian so that I could say eh.
+        Eh, I wish I were A cAnAdiAn so thAt I could sAy eh.
 
+Make a list of all misspelled words in a text file.
+
+        aspell list < file
+        aspell list < file | uniq
+        aspell list < file | sort | uniq
+        spell file | sort -u
+
+Given a CSV file in which each line has the form
+`LastName,FirstName,Assignment,NumericGrade`
+find the the five highest grades on homework 2.
+
+        Hint: cut, sort, head
+
+Given an HTML file, find the URLs of all images.  In case you don't know
+HTML, those will typically look like `<img ... src="*URL*" ...>` The
+`img` can have any capitalization (`img`, `IMG`, `Img`,  `iMg`, etc.)
+There can be other text between the `img` and the `src`.  (That text
+cannot include a greater than sign.)
 
 Raymond, chapter 1
 ------------------
 
+* Bad puns and too few characters are hallmarks of *nix
+* *nix has lots of tools
+* Combine small tools into big solutions using a simple communication
+  mechanism
+* Quick hacks are a good start
+* Keep it simple, smartie!
+
 Thinking about basic tools
 --------------------------
+
+* A good *nix programmer knows about some set of tools that are available.
+* The tools you know about govern how well and how quickly you solve
+  problems.
+* Good basic tools to know: sed, tr, sort, uniq, grep, head, tail
+* Scripting languages are good: Perl, Bash, Awk
+* The basics of the system: cat, pipes, <, >, more, less, ...
+* Good *nix programmers can write things in C.
 
 Homework
 --------
@@ -143,18 +153,17 @@ Homework
 0. Learn Markdown so that we can use it for these assignments.
 
 1. Learn about how you set and get environment variables.  Put your
-explanations in the `submissions` directory, with a file named after
-you.
+explanations in your personal directory for the assignment.
 
     * Command line
     * Bash
     * C (get only)
 
-2. Update our list of "things every *nix user should know" (either
-in the repo
-
-3. Come up with two or three tasks, similar to those we did for assignment
+2. Come up with two or three tasks, similar to those we did for assignment
 1, and put notes about them in the tasks directory.  (You can include
 some sample solutions in your file.)
 
-4. Read the first chapter of the Make book.
+3. Read the first chapter of the Make book.
+
+Sam's Fun Programming Problem
+-----------------------------

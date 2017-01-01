@@ -1,66 +1,10 @@
-assert - simple program checking
---------------------------------
-
-* As you've seen, there are a variety of approaches to testing C programs.
-* A *very* common approach (one that is included in every C implementation
-  I know) is to use *program assertions*.
-* An assertion is essentially a statement that "I expect this condition
-  to hold at this point in the program".
-  + It's like a test, but at a finer grain.
-* For example
-<pre>
-  i = 5;
-  // I assume i is 5
-  foo (i);
-  // I assume i is still 5, since C is a pass-by-value language
-</pre>
-* The `assert` macro takes as parameter a Boolean expression,
-  executes the expression, and, if it fails, terminates the program and
-  reports the line at which it terminated.
-* You can turn off the assert macro with the -DNDEBUG flag.
-* *Don't call assert with operations that have side effects!*
-  It often leads to Heisenbugs.
-
-Memory Issues in C Programs
----------------------------
-
-* One of the benefits and hazards of working with C is that you have
-  direct access to memory.
-* There are a host of problems that people encounter when working with
-  memory.
-* I'll make you list yours.
-* Here are some of mine:
-  + Memory leaks: Failing to free memory that you've allocated.
-  + Invalid references: Continuing to use memory after it's been freed.
-  + Invalid array indices: Referencing outside the bounds of the array.
-* Many of these errors are subtle.  They don't cause problems at the time
-  you make the error, they cause problems elsewhere in the program.
-* Tracking them down is important!
-
-Valgrind: Tracking memory issues
---------------------------------
-
-* Valgrind is a swiss-army-knife of program analysis, but I use it primarily
-  for its memory checking features.
-* You run valgrind on a program you've compiled.
-* It runs the program a bit more slowly, and reports on all of the memory
-  issues it's encountered.  
-  + It even reports on errors that it hasn't encountered.
-* We'll take a look at a variety of programs.  The errors in these programs
-  are all fairly explicit, but are the kinds of things that often happen
-  inadvertently.
-    * One that runs correctly.
-    * An out-of-bounds index accompanied by a failure to free memory.
-    * Inadvertent reuse of stack memory.  (In two forms.)
-    * Inadvertent reuse of heap memory.  (In two forms.)
-
 Sorting
 -------
 
 * Suppose we have the following function
 <pre>
 /**
-* Sort an array of strings alphabetically.
+ * Sort an array of strings alphabetically.
  */
 int strings_sort (int n, char *strings[])
 </pre>
@@ -117,4 +61,61 @@ int strings_sort (int n, char *strings[], StringComparator compare);
 <pre>
 compare (str1, str2);
 </pre>
+
+
+assert - simple program checking
+--------------------------------
+
+* As you've seen, there are a variety of approaches to testing C programs.
+* A *very* common approach (one that is included in every C implementation
+  I know) is to use *program assertions*.
+* An assertion is essentially a statement that "I expect this condition
+  to hold at this point in the program".
+  + It's like a test, but at a finer grain.
+* For example
+<pre>
+  i = 5;
+  // I assume i is 5
+  foo (i);
+  // I assume i is still 5, since C is a pass-by-value language
+</pre>
+* The `assert` macro takes as parameter a Boolean expression,
+  executes the expression, and, if it fails, terminates the program and
+  reports the line at which it terminated.
+* You can turn off the assert macro with the -DNDEBUG flag.
+* *Don't call assert with operations that have side effects!*
+  It often leads to Heisenbugs.
+
+Memory Issues in C Programs
+---------------------------
+
+* One of the benefits and hazards of working with C is that you have
+  direct access to memory.
+* There are a host of problems that people encounter when working with
+  memory.
+* I'll make you list yours.
+* Here are some of mine:
+  + Memory leaks: Failing to free memory that you've allocated.
+  + Invalid references: Continuing to use memory after it's been freed.
+  + Invalid array indices: Referencing outside the bounds of the array.
+* Many of these errors are subtle.  They don't cause problems at the time
+  you make the error, they cause problems elsewhere in the program.
+* Tracking them down is important!
+
+Valgrind: Tracking memory issues
+--------------------------------
+
+* Valgrind is a swiss-army-knife of program analysis, but I use it primarily
+  for its memory checking features.
+* You run valgrind on a program you've compiled.
+* It runs the program a bit more slowly, and reports on all of the memory
+  issues it's encountered.  
+  + It even reports on errors that it hasn't encountered.
+* We'll take a look at a variety of programs.  The errors in these programs
+  are all fairly explicit, but are the kinds of things that often happen
+  inadvertently.
+    * One that runs correctly.
+    * An out-of-bounds index accompanied by a failure to free memory.
+    * Inadvertent reuse of stack memory.  (In two forms.)
+    * Inadvertent reuse of heap memory.  (In two forms.)
 
