@@ -3,11 +3,23 @@
 # mkschedule TYPE
 #   Creates a schedule of a particular type
 #     mtwf-fall: A Monday, Tuesday, Wednesday, and Friday fall lab class.
+#     mtwf-fall-writeups: A Monday, Tuesday, Wednesday, and Friday fall 
+#       lab class with writeups.
+#     mtwf-fall-writeups-review: A Monday, Tuesday, Wednesday, and Friday fall 
+#       lab class with writeups and review sessions.
 #     lfa-fall: Learning from Alumni in the Fall (one day per week)
 #     mtwf-spring: A Monday, Tuesday, Wednesday, and Friday spring lab class.
+#     mtwf-spring-mlk, A MWTF spring lab class, with no MLK day
+#     th-fall: Meets Thursday in the fall
+#     322-fall: Meets Thursday in the fall, using the 322 model
 #     th-spring: Meets Thursday in the spring
 #     mwf-spring: A MWF spring class (no labs)
+#     mwf-spring-half1: A MWF spring class for the first half
+#       of the semester
+#     mwf-spring-half1: A MWF spring class for the second half
+#       of the semester
 #     mwf-spring-notes: A MWF spring class (no labs, note takers)
+#     mwf-fall-half1: A MWF fall class for the first half of the semester
 
 # +-----------+-------------------------------------------------------
 # | Variables |
@@ -30,28 +42,90 @@ my $type = shift;       # The type of schedule
 my $i;                  # Everyone's favorite counter variable
 
 # A quick hack to support notes
-if ($type =~ s/-notes$//) {
+if ($type =~ s/-notes//) {
   $NOTETAKERS = 1;
+}
+
+# Do we include writeups?
+my $INCLUDE_WRITEUPS = 0;
+if ($type =~ s/-writeups//) {  
+  $INCLUDE_WRITEUPS = 1;
+}
+
+# Do we include review sessions?  (Needs improvement.)
+my $INCLUDE_REVIEW_SESSIONS = 0;
+if ($type =~ s/-review//) {
+  $INCLUDE_REVIEW_SESSIONS = 1;
 }
 
 # Deal with the different kinds of classes
 if ($type eq "mtwf-fall") {
   top();
   print "<tbody>\n";
-  weeks(1,5,true);   # 1 week of 5 days
-  weeks(6,4,true);   # 6 weeks of 4 days
+  weeks(1,5,1);   # 1 week of 5 days
+  weeks(6,4,1);   # 6 weeks of 4 days
   break("Fall Break", 6);
-  weeks(4,4,true);   # 4 weeks of 4 days
-  weeks(1,3,true);   # 1 week of 3 days
+  weeks(4,4,1);   # 4 weeks of 4 days
+  weeks(1,3,1);   # 1 week of 3 days
   break("Thanksgiving Break", 6);
-  weeks(4,4,true);   # 2 weeks of 4 days
+  weeks(2,4,1);   # 2 weeks of 4 days
   print "</tbody>\n";
   bottom();
 } # mtwf-fall
+# Deal with the different kinds of classes
+elsif ($type eq "mwf-fall") {
+  top();
+  print "<tbody>\n";
+  weeks(1,4,1);   # 1 week of 4 days
+  weeks(6,3,1);   # 6 weeks of 3 days
+  break("Fall Break", 6);
+  weeks(4,3,1);   # 4 weeks of 3 days
+  weeks(1,2,1);   # 1 week of 2 days
+  break("Thanksgiving Break", 6);
+  weeks(2,3,1);   # 2 weeks of 3 days
+  print "</tbody>\n";
+  bottom();
+} # mwf-fall
+# Deal with the different kinds of classes
+elsif ($type eq "mwf-fall-half1") {
+  print STDERR "MWF FALL FIRST HALF\n";
+  top();
+  print "<tbody>\n";
+  weeks(1,4,1);   # 1 week of 4 days
+  weeks(6,3,1);   # 6 weeks of 3 days
+  print "</tbody>\n";
+  bottom();
+} # mwf-fall-half1
+elsif ($type eq "mtwf-fall-alt") {
+  top();
+  print "<thead>\n";
+  headings();
+  print "<\/thead>\n";
+  print "<tbody>\n";
+  weeks(1,5,0);   # 1 week of 5 days
+  weeks(6,4,0);   # 6 weeks of 4 days
+  break("Fall Break", 6);
+  weeks(4,4,0);   # 4 weeks of 4 days
+  weeks(1,3,0);   # 1 week of 3 days
+  break("Thanksgiving Break", 6);
+  weeks(2,4,0);   # 2 weeks of 4 days
+  print "</tbody>\n";
+  bottom();
+} # mtwf-spring-alt
 elsif ($type eq "mtwf-spring") {
   top();
   print "<tbody>\n";
   weeks(8,4,1);  
+  break("Spring Break", 6);
+  weeks(6,4,1);   
+  print "</tbody>\n";
+  bottom();
+} # mtwf-spring
+elsif ($type eq "mtwf-spring-mlk") {
+  top();
+  print "<tbody>\n";
+  weeks(1,3,1);         # 1 week of 3 days because of MLK
+  weeks(7,4,1);         # 7 more weeks of 4 days
   break("Spring Break", 6);
   weeks(6,4,1);   
   print "</tbody>\n";
@@ -63,12 +137,24 @@ elsif ($type eq "mtwf-spring-alt") {
   headings();
   print "<\/thead>\n";
   print "<tbody>\n";
-  weeks(8,4,false);
+  weeks(8,4,0);
   break("Spring Break", 6);
-  weeks(6,4,false);
+  weeks(6,4,0);
   print "</tbody>\n";
   bottom();
 } # mtwf-spring-alt
+elsif ($type eq "th-fall") {
+  top();
+  print "<thead>\n";
+  headings();
+  print "</thead>\n";
+  print "<tbody>\n";
+  days(8);
+  break("Fall Break", 6);
+  days(6);
+  print "</tbody>\n";
+  bottom();
+} # th-spring
 elsif ($type eq "th-spring") {
   top();
   print "<thead>\n";
@@ -88,6 +174,18 @@ elsif ($type eq "mwf-spring") {
   mwfWeeks(6);
   mwfBottom();
 } # mwf-spring
+elsif ($type eq "mwf-spring-half1") {
+  mwfTop();
+  mwfWeeks(7);
+  mwfBottom();
+} # mwf-spring-half1
+elsif ($type eq "mwf-spring-half2") {
+  mwfTop();
+  mwfWeeks(1);
+  break("Spring Break", 3);
+  mwfWeeks(6);
+  mwfBottom();
+} # mwf-spring-half2
 elsif ($type eq "lfa-fall") {
   lfaTop();
   lfaDay(); lfaDay(); lfaDay(); lfaDay();
@@ -99,15 +197,31 @@ elsif ($type eq "lfa-fall") {
   lfaDay();
   bottom();
 } 
+elsif ($type eq "322-fall") {
+  csc322Top();
+  print "<tbody>\n";
+  csc322Day(); csc322Day(); csc322Day(); csc322Day();
+  csc322Day(); csc322Day(); csc322Day(); csc322Day();
+  break("Fall Break", 5); 
+  csc322Day(); csc322Day(); csc322Day(); csc322Day();
+  break("Thanksgiving Break"); 
+  csc322Day();
+  csc322Day();
+  print "</tbody>\n";
+  bottom();
+} 
 else {
   print STDERR "Unknown type of schedule: $type\n";
   print STDERR "   lfa-fall: The Learning from Alumni Fall Course.\n";
   print STDERR "   mtwf-fall: A MTuWF Fall lab class.\n";
+  print STDERR "   mtwf-fall-writeups: A MTuWF Fall lab class with writeups.\n";
   print STDERR "   mtwf-spring: A MTuWF Spring lab class.\n";
+  print STDERR "   mtwf-spring-mlk-writeups: A MTuWF Spring class with writeups and no class on MLK day.\n";
   print STDERR "   mwf-spring: A MWF Spring class.\n";
   print STDERR "   th-spring: A Thursday-only Spring class.\n";
   exit 1;
 }
+
 # +-------------+-----------------------------------------------------
 # | Subroutines |
 # +-------------+
@@ -140,27 +254,38 @@ BREAK
 } # lfaBreak()
 
 # weeks(W,D,H?)
-#   Creates W weeks of D days.  Includes the headings if H? is true.
+#   Creates W weeks of D days.  Includes the headings if H? is 1.
 sub weeks($$$)
 {
   my $W = shift;        # Number of weeks
   my $D = shift;        # Number of days
   my $headings = shift; # Do we have headings?
+  print STDERR "Making $W weeks of $D days.\n";
+  # Hack!  I assume review sessions are on Thursdays in MTWF classes.
+  if ($INCLUDE_REVIEW_SESSIONS) {
+    $D -= 1;
+  }
+
   my $w;                # Week counter
   my $d;                # Day counter
   for ($w = 0; $w < $W; $w++) {
     # Generate the title for the week
     week();
     # Generate the headings, if appropriate
-    if ($headings != false) { 
+    if ($headings) { 
       headings(); 
     }
     # Generate the code for the days.
-    for ($d = 0; $d < $D; $d++) {
+    for ($d = 1; $d < $D; $d++) {
       day();
     } # for each day
+    # Add the review sessions and any extra days
+    if ($INCLUDE_REVIEW_SESSIONS && ($D == 3)) {
+      review();
+    }
+    day();
   } # for
-} # labWeek
+} # weeks
 
 # week()
 #   Prints the header for the next week
@@ -185,6 +310,12 @@ sub day()
 {
   $DAY++;
   $DAY = twoDigits($DAY);
+  if ($INCLUDE_WRITEUPS) {
+    $WRITEUP = " <break/><emphasis>&writeup$DAY;</emphasis>"
+  }
+  else {
+    $WRITEUP = "";
+  }
   print<<"DAY";
       <tr>
         <td>$DAY</td>
@@ -194,11 +325,45 @@ sub day()
           <xi:include href="overviews/&abbrev$DAY;.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         </td>
         <td>&reading$DAY;</td>
-        <td>&lab$DAY; <break/><emphasis>&writeup$DAY;</emphasis></td>
+        <td>&lab$DAY;$WRITEUP</td>
         <td>&due$DAY;</td>
       </tr>
 DAY
 } # day
+
+sub csc322Day()
+{
+  $DAY++;
+  $DAY = twoDigits($DAY);
+  print<<"DAY";
+      <tr>
+        <td>$DAY</td>
+        <td>&date$DAY;</td>
+        <td>&iteration$DAY;</td>
+        <td>
+          <ulink url="../outlines/outline.$DAY.html"><emphasis role="strong">&title$DAY;</emphasis></ulink>
+          <xi:include href="overviews/&abbrev$DAY;.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        </td>
+        <td>&due$DAY;</td>
+      </tr>
+DAY
+} # csc322Day()
+
+sub review()
+{
+  print<<"REVIEW";
+      <tr>
+        <td></td>
+        <td>&thu$WEEK;</td>
+        <td>
+          <emphasis role="strong"><emphasis><ulink url="../eboards/extra.$WEEK.html">Optional Review Session</ulink></emphasis></emphasis>
+        </td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+REVIEW
+}
 
 # days(N)
 #   Print N days
@@ -260,17 +425,21 @@ sub top()
   print <<"TOP";
 <section id="schedule"><title>Schedule</title>
 
+<!-- This page generated automatically.  Please do not edit by hand. -->
+
 <para>
   <emphasis>This is an <emphasis type="strong">approximate</emphasis>
-  schedule.  Expect dates and topics to change.  (I will try to keep
-  due dates the same.)</emphasis>
+  schedule.  Expect topics and dates of topics to change.  (I will try 
+  to keep due dates of assignments the same.)</emphasis>
 </para>
 
+<!--
 <para>
   Some of the information here can also be found in
   <ulink url="&gcal;">the Google calendar for the course</ulink>, which
   is available at &lt;<ulink url="&gcal;"/>&gt;.
 </para>
+-->
 
 <table class="schedule">
 TOP
@@ -301,6 +470,31 @@ sub lfaTop()
   <tbody>
 TOP
 } # lfaTop()
+
+# csc322Top()
+#   Print the text at the top of a 322 page
+sub csc322Top()
+{
+  print <<"TOP";
+<section id="schedule"><title>Schedule</title>
+
+<para>
+  <emphasis>This is an <emphasis type="strong">approximate</emphasis>
+  schedule.</emphasis>
+</para>
+
+<table class="schedule">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Date</th>
+      <th>Iteration</th>
+      <th width="50%">Topic</th>
+      <th width="25%">Work Due</th>
+    </tr>
+  </thead>
+TOP
+} # csc322Top()
 
 # bottom()
 #   Print the text at the bottom of the page

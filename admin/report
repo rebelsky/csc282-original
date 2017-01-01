@@ -271,12 +271,17 @@ else {
 print "Extra ............ : $extra units\n";
 
 print "\n";
-my $est = round1(100 * $total/$possible);
-my $total = round1($total);
-print "Estimated numeric grade: $total/$possible  = $est\n";
-my $adjusted = round1($est + $extra/2);
-print "Estimated numeric grade with extra credit: $adjusted\n";
-print "\n";
+my $est;
+my $adjusted;
+
+if ($possible != 0) {
+  my $total = round1($total);
+  my $est = round1(100 * $total/$possible);
+  my $adjusted = round1($est + $extra/2);
+  print "Estimated numeric grade: $total/$possible  = $est\n";
+  print "Estimated numeric grade with extra credit: $adjusted\n";
+  print "\n";
+} # if there are some possible grades
 
 if ($DETAILED) {
   print "DETAILED INFORMATION\n";

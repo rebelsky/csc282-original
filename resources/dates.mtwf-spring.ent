@@ -1,70 +1,196 @@
-<!ENTITY date01 "&mon01;">
-<!ENTITY date02 "&tue01;">
-<!ENTITY date03 "&wed01;">
-<!ENTITY date04 "&fri01;">
+<!ENTITY day01 "Monday">
+<!ENTITY day02 "Tuesday">
+<!ENTITY day03 "Wednesday">
+<!ENTITY day04 "Friday">
 
-<!ENTITY date05 "&mon02;">
-<!ENTITY date06 "&tue02;">
-<!ENTITY date07 "&wed02;">
-<!ENTITY date08 "&fri02;">
+<!ENTITY day05 "Monday">
+<!ENTITY day06 "Tuesday">
+<!ENTITY day07 "Wednesday">
+<!ENTITY day08 "Friday">
 
-<!ENTITY date09 "&mon03;">
-<!ENTITY date10 "&tue03;">
-<!ENTITY date11 "&wed03;">
-<!ENTITY date12 "&fri03;">
+<!ENTITY day09 "Monday">
+<!ENTITY day10 "Tuesday">
+<!ENTITY day11 "Wednesday">
+<!ENTITY day12 "Friday">
 
-<!ENTITY date13 "&mon04;">
-<!ENTITY date14 "&tue04;">
-<!ENTITY date15 "&wed04;">
-<!ENTITY date16 "&fri04;">
+<!ENTITY day13 "Monday">
+<!ENTITY day14 "Tuesday">
+<!ENTITY day15 "Wednesday">
+<!ENTITY day16 "Friday">
 
-<!ENTITY date17 "&mon05;">
-<!ENTITY date18 "&tue05;">
-<!ENTITY date19 "&wed05;">
-<!ENTITY date20 "&fri05;">
+<!ENTITY day17 "Monday">
+<!ENTITY day18 "Tuesday">
+<!ENTITY day19 "Wednesday">
+<!ENTITY day20 "Friday">
 
-<!ENTITY date21 "&mon06;">
-<!ENTITY date22 "&tue06;">
-<!ENTITY date23 "&wed06;">
-<!ENTITY date24 "&fri06;">
+<!ENTITY day21 "Monday">
+<!ENTITY day22 "Tuesday">
+<!ENTITY day23 "Wednesday">
+<!ENTITY day24 "Friday">
 
-<!ENTITY date25 "&mon07;">
-<!ENTITY date26 "&tue07;">
-<!ENTITY date27 "&wed07;">
-<!ENTITY date28 "&fri07;">
+<!ENTITY day25 "Monday">
+<!ENTITY day26 "Tuesday">
+<!ENTITY day27 "Wednesday">
+<!ENTITY day28 "Friday">
 
-<!ENTITY date29 "&mon08;">
-<!ENTITY date30 "&tue08;">
-<!ENTITY date31 "&wed08;">
-<!ENTITY date32 "&fri08;">
+<!ENTITY day29 "Monday">
+<!ENTITY day30 "Tuesday">
+<!ENTITY day31 "Wednesday">
+<!ENTITY day32 "Friday">
 
-<!ENTITY date33 "&mon09;">
-<!ENTITY date34 "&tue09;">
-<!ENTITY date35 "&wed09;">
-<!ENTITY date36 "&fri09;">
+<!ENTITY day33 "Monday">
+<!ENTITY day34 "Tuesday">
+<!ENTITY day35 "Wednesday">
+<!ENTITY day36 "Friday">
 
-<!ENTITY date37 "&mon10;">
-<!ENTITY date38 "&tue10;">
-<!ENTITY date39 "&wed10;">
-<!ENTITY date40 "&fri10;">
+<!ENTITY day37 "Monday">
+<!ENTITY day38 "Tuesday">
+<!ENTITY day39 "Wednesday">
+<!ENTITY day40 "Friday">
 
-<!ENTITY date41 "&mon11;">
-<!ENTITY date42 "&tue11;">
-<!ENTITY date43 "&wed11;">
-<!ENTITY date44 "&fri11;">
+<!ENTITY day41 "Monday">
+<!ENTITY day42 "Tuesday">
+<!ENTITY day43 "Wednesday">
+<!ENTITY day44 "Friday">
 
-<!ENTITY date45 "&mon12;">
-<!ENTITY date46 "&tue12;">
-<!ENTITY date47 "&wed12;">
-<!ENTITY date48 "&fri12;">
+<!ENTITY day45 "Monday">
+<!ENTITY day46 "Tuesday">
+<!ENTITY day47 "Wednesday">
+<!ENTITY day48 "Friday">
 
-<!ENTITY date49 "&mon13;">
-<!ENTITY date50 "&tue13;">
-<!ENTITY date51 "&wed13;">
-<!ENTITY date52 "&fri13;">
+<!ENTITY day49 "Monday">
+<!ENTITY day50 "Tuesday">
+<!ENTITY day51 "Wednesday">
+<!ENTITY day52 "Friday">
 
-<!ENTITY date53 "&mon14;">
-<!ENTITY date54 "&tue14;">
-<!ENTITY date55 "&wed14;">
-<!ENTITY date56 "&fri14;">
+<!ENTITY day53 "Monday">
+<!ENTITY day54 "Tuesday">
+<!ENTITY day55 "Wednesday">
+<!ENTITY day56 "Friday">
 
+<!ENTITY cal01 "&mon01;">
+<!ENTITY cal02 "&tue01;">
+<!ENTITY cal03 "&wed01;">
+<!ENTITY cal04 "&fri01;">
+
+<!ENTITY cal05 "&mon02;">
+<!ENTITY cal06 "&tue02;">
+<!ENTITY cal07 "&wed02;">
+<!ENTITY cal08 "&fri02;">
+
+<!ENTITY cal09 "&mon03;">
+<!ENTITY cal10 "&tue03;">
+<!ENTITY cal11 "&wed03;">
+<!ENTITY cal12 "&fri03;">
+
+<!ENTITY cal13 "&mon04;">
+<!ENTITY cal14 "&tue04;">
+<!ENTITY cal15 "&wed04;">
+<!ENTITY cal16 "&fri04;">
+
+<!ENTITY cal17 "&mon05;">
+<!ENTITY cal18 "&tue05;">
+<!ENTITY cal19 "&wed05;">
+<!ENTITY cal20 "&fri05;">
+
+<!ENTITY cal21 "&mon06;">
+<!ENTITY cal22 "&tue06;">
+<!ENTITY cal23 "&wed06;">
+<!ENTITY cal24 "&fri06;">
+
+<!ENTITY cal25 "&mon07;">
+<!ENTITY cal26 "&tue07;">
+<!ENTITY cal27 "&wed07;">
+<!ENTITY cal28 "&fri07;">
+
+<!ENTITY cal29 "&mon08;">
+<!ENTITY cal30 "&tue08;">
+<!ENTITY cal31 "&wed08;">
+<!ENTITY cal32 "&fri08;">
+
+<!ENTITY cal33 "&mon09;">
+<!ENTITY cal34 "&tue09;">
+<!ENTITY cal35 "&wed09;">
+<!ENTITY cal36 "&fri09;">
+
+<!ENTITY cal37 "&mon10;">
+<!ENTITY cal38 "&tue10;">
+<!ENTITY cal39 "&wed10;">
+<!ENTITY cal40 "&fri10;">
+
+<!ENTITY cal41 "&mon11;">
+<!ENTITY cal42 "&tue11;">
+<!ENTITY cal43 "&wed11;">
+<!ENTITY cal44 "&fri11;">
+
+<!ENTITY cal45 "&mon12;">
+<!ENTITY cal46 "&tue12;">
+<!ENTITY cal47 "&wed12;">
+<!ENTITY cal48 "&fri12;">
+
+<!ENTITY cal49 "&mon13;">
+<!ENTITY cal50 "&tue13;">
+<!ENTITY cal51 "&wed13;">
+<!ENTITY cal52 "&fri13;">
+
+<!ENTITY cal53 "&mon14;">
+<!ENTITY cal54 "&tue14;">
+<!ENTITY cal55 "&wed14;">
+<!ENTITY cal56 "&fri14;">
+
+<!ENTITY date01 "&day01;, &cal01;">
+<!ENTITY date02 "&day02;, &cal02;">
+<!ENTITY date03 "&day03;, &cal03;">
+<!ENTITY date04 "&day04;, &cal04;">
+<!ENTITY date05 "&day05;, &cal05;">
+<!ENTITY date06 "&day06;, &cal06;">
+<!ENTITY date07 "&day07;, &cal07;">
+<!ENTITY date08 "&day08;, &cal08;">
+<!ENTITY date09 "&day09;, &cal09;">
+<!ENTITY date10 "&day10;, &cal10;">
+<!ENTITY date11 "&day11;, &cal11;">
+<!ENTITY date12 "&day12;, &cal12;">
+<!ENTITY date13 "&day13;, &cal13;">
+<!ENTITY date14 "&day14;, &cal14;">
+<!ENTITY date15 "&day15;, &cal15;">
+<!ENTITY date16 "&day16;, &cal16;">
+<!ENTITY date17 "&day17;, &cal17;">
+<!ENTITY date18 "&day18;, &cal18;">
+<!ENTITY date19 "&day19;, &cal19;">
+<!ENTITY date20 "&day20;, &cal20;">
+<!ENTITY date21 "&day21;, &cal21;">
+<!ENTITY date22 "&day22;, &cal22;">
+<!ENTITY date23 "&day23;, &cal23;">
+<!ENTITY date24 "&day24;, &cal24;">
+<!ENTITY date25 "&day25;, &cal25;">
+<!ENTITY date26 "&day26;, &cal26;">
+<!ENTITY date27 "&day27;, &cal27;">
+<!ENTITY date28 "&day28;, &cal28;">
+<!ENTITY date29 "&day29;, &cal29;">
+<!ENTITY date30 "&day30;, &cal30;">
+<!ENTITY date31 "&day31;, &cal31;">
+<!ENTITY date32 "&day32;, &cal32;">
+<!ENTITY date33 "&day33;, &cal33;">
+<!ENTITY date34 "&day34;, &cal34;">
+<!ENTITY date35 "&day35;, &cal35;">
+<!ENTITY date36 "&day36;, &cal36;">
+<!ENTITY date37 "&day37;, &cal37;">
+<!ENTITY date38 "&day38;, &cal38;">
+<!ENTITY date39 "&day39;, &cal39;">
+<!ENTITY date40 "&day40;, &cal40;">
+<!ENTITY date41 "&day41;, &cal41;">
+<!ENTITY date42 "&day42;, &cal42;">
+<!ENTITY date43 "&day43;, &cal43;">
+<!ENTITY date44 "&day44;, &cal44;">
+<!ENTITY date45 "&day45;, &cal45;">
+<!ENTITY date46 "&day46;, &cal46;">
+<!ENTITY date47 "&day47;, &cal47;">
+<!ENTITY date48 "&day48;, &cal48;">
+<!ENTITY date49 "&day49;, &cal49;">
+<!ENTITY date50 "&day50;, &cal50;">
+<!ENTITY date51 "&day51;, &cal51;">
+<!ENTITY date52 "&day52;, &cal52;">
+<!ENTITY date53 "&day53;, &cal53;">
+<!ENTITY date54 "&day54;, &cal54;">
+<!ENTITY date55 "&day55;, &cal55;">
+<!ENTITY date56 "&day56;, &cal56;">

@@ -1,0 +1,136 @@
+<!-- Week One -->
+<!ENTITY mon01 "Week 1">
+<!ENTITY tue01 "Week 1">
+<!ENTITY wed01 "Week 1">
+<!ENTITY thu01 "Week 1">
+<!ENTITY fri01 "Week 1">
+<!ENTITY sat01 "Week 1">
+<!ENTITY sun01 "Week 1">
+<!-- Week Two -->
+<!ENTITY mon02 "Week 2">
+<!ENTITY tue02 "Week 2">
+<!ENTITY wed02 "Week 2">
+<!ENTITY thu02 "Week 2">
+<!ENTITY fri02 "Week 2">
+<!ENTITY sat02 "Week 2">
+<!ENTITY sun02 "Week 2">
+<!-- Week Three      -->
+<!ENTITY mon03 "Week 3">
+<!ENTITY tue03 "Week 3">
+<!ENTITY wed03 "Week 3">
+<!ENTITY thu03 "Week 3">
+<!ENTITY fri03 "Week 3">
+<!ENTITY sat03 "Week 3">
+<!ENTITY sun03 "Week 3">
+<!-- Week Four -->
+<!ENTITY mon04 "Week 4">
+<!ENTITY tue04 "Week 4">
+<!ENTITY wed04 "Week 4">
+<!ENTITY thu04 "Week 4">
+<!ENTITY fri04 "Week 4">
+<!ENTITY sat04 "Week 4">
+<!ENTITY sun04 "Week 4">
+<!-- Week Five -->
+<!ENTITY mon05 "Week 5">
+<!ENTITY tue05 "Week 5">
+<!ENTITY wed05 "Week 5"> 
+<!ENTITY thu05 "Week 5">   
+<!ENTITY fri05 "Week 5">
+<!ENTITY sat05 "Week 5">
+<!ENTITY sun05 "Week 5">
+<!-- Week Six -->
+<!ENTITY mon06 "Week 6">
+<!ENTITY tue06 "Week 6">
+<!ENTITY wed06 "Week 6">
+<!ENTITY thu06 "Week 6">
+<!ENTITY fri06 "Week 6">
+<!ENTITY sat06 "Week 6">
+<!ENTITY sun06 "Week 6">
+<!-- Week Seven -->
+<!ENTITY mon07 "Week 7">
+<!ENTITY tue07 "Week 7">
+<!ENTITY wed07 "Week 7">
+<!ENTITY thu07 "Week 7">
+<!ENTITY fri07 "Week 7">
+<!ENTITY sat07 "Week 7">
+<!ENTITY sun07 "Week 7">
+<!-- Week Eight -->
+<!ENTITY mon08 "Week 8">
+<!ENTITY tue08 "Week 8">
+<!ENTITY wed08 "Week 8">
+<!ENTITY thu08 "Week 8">
+<!ENTITY fri08 "Week 8">
+<!ENTITY sat08 "Week 8">
+<!ENTITY sun08 "Week 8">
+<!-- Break, Week One -->
+<!ENTITY mon1b "Break Week 1">
+<!ENTITY tue1b "Break Week 1">
+<!ENTITY wed1b "Break Week 1">
+<!ENTITY thu1b "Break Week 1">
+<!ENTITY fri1b "Break Week 1">
+<!ENTITY sat1b "Break Week 1">
+<!ENTITY sun1b "Break Week 1">
+<!-- Break, Week Two -->
+<!ENTITY mon1b "Break Week 2">
+<!ENTITY tue1b "Break Week 2">
+<!ENTITY wed1b "Break Week 2">
+<!ENTITY thu1b "Break Week 2">
+<!ENTITY fri1b "Break Week 2">
+<!ENTITY sat1b "Break Week 2">
+<!ENTITY sun1b "Break Week 2">
+<!-- Break Week Nine -->
+<!ENTITY mon09 "Week 9">
+<!ENTITY tue09 "Week 9">
+<!ENTITY wed09 "Week 9">
+<!ENTITY thu09 "Week 9">
+<!ENTITY fri09 "Week 9">
+<!ENTITY sat09 "Week 9">
+<!ENTITY sun09 "Week 9">
+<!-- Week Ten -->
+<!ENTITY mon10 "Week 10">
+<!ENTITY tue10 "Week 10">
+<!ENTITY wed10 "Week 10">
+<!ENTITY thu10 "Week 10">
+<!ENTITY fri10 "Week 10">
+<!ENTITY sat10 "Week 10">
+<!ENTITY sun10 "Week 10">
+<!-- Week Eleven -->
+<!ENTITY mon11 "Week 11">
+<!ENTITY tue11 "Week 11">
+<!ENTITY wed11 "Week 11">
+<!ENTITY thu11 "Week 11">
+<!ENTITY fri11 "Week 11">
+<!ENTITY sat11 "Week 11">
+<!ENTITY sun11 "Week 11">
+<!-- Week Twelve -->
+<!ENTITY mon12 "Week 12">
+<!ENTITY tue12 "Week 12">
+<!ENTITY wed12 "Week 12">
+<!ENTITY thu12 "Week 12">
+<!ENTITY fri12 "Week 12">
+<!ENTITY sat12 "Week 12">
+<!ENTITY sun12 "Week 12">
+<!-- Week Thirteen -->
+<!ENTITY mon13 "Week 13">
+<!ENTITY tue13 "Week 13">
+<!ENTITY wed13 "Week 13">
+<!ENTITY thu13 "Week 13">
+<!ENTITY fri13 "Week 13">
+<!ENTITY sat13 "Week 13">
+<!ENTITY sun13 "Week 13">
+<!-- Week Fourteen -->
+<!ENTITY mon14 "Week 14">
+<!ENTITY tue14 "Week 14">
+<!ENTITY wed14 "Week 14">
+<!ENTITY thu14 "Week 14">
+<!ENTITY fri14 "Week 14">
+<!ENTITY sat14 "Week 14">
+<!ENTITY sun14 "Week 14">
+<!-- Finals -->
+<!ENTITY mon1f "Week 11">
+<!ENTITY tue1f "Week 11">
+<!ENTITY wed1f "Week 11">
+<!ENTITY thu1f "Week 11">
+<!ENTITY fri1f "Week 11">
+<!ENTITY sat1f "Week 11">
+<!ENTITY sun1f "Week 11">

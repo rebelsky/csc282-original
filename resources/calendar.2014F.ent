@@ -1,0 +1,137 @@
+<!-- Week Zero -->
+<!ENTITY mon00 "Monday,    25 August 2014">
+<!ENTITY tue00 "Tuesday,   26 August 2014">
+<!ENTITY wed00 "Wednesday, 27 August 2014">
+<!ENTITY thu00 "Thursday,  28 August 2014">
+<!ENTITY fri00 "Friday,    29 August 2014">
+<!ENTITY sat00 "Saturday,  30 August 2014">
+<!ENTITY sun00 "Sunday,    31 August 2014">
+<!-- Week One -->
+<!ENTITY mon01 "Monday,     1 September 2014">
+<!ENTITY tue01 "Tuesday,    2 September 2014">
+<!ENTITY wed01 "Wednesday,  3 September 2014">
+<!ENTITY thu01 "Thursday,   4 September 2014">
+<!ENTITY fri01 "Friday,     5 September 2014">
+<!ENTITY sat01 "Saturday,   6 September 2014">
+<!ENTITY sun01 "Sunday,     7 September 2014">
+<!-- Week Two -->
+<!ENTITY mon02 "Monday,     8 September 2014">
+<!ENTITY tue02 "Tuesday,    9 September 2014">
+<!ENTITY wed02 "Wednesday, 10 September 2014">
+<!ENTITY thu02 "Thursday,  11 September 2014">
+<!ENTITY fri02 "Friday,    12 September 2014">
+<!ENTITY sat02 "Saturday,  13 September 2014">
+<!ENTITY sun02 "Sunday,    14 September 2014">
+<!-- Week Three -->
+<!ENTITY mon03 "Monday,    15 September 2014">
+<!ENTITY tue03 "Tuesday,   16 September 2014">
+<!ENTITY wed03 "Wednesday, 17 September 2014">
+<!ENTITY thu03 "Thursday,  18 September 2014">
+<!ENTITY fri03 "Friday,    19 September 2014">
+<!ENTITY sat03 "Saturday,  20 September 2014">
+<!ENTITY sun03 "Sunday,    21 September 2014">
+<!-- Week Four -->
+<!ENTITY mon04 "Monday,    22 September 2014">
+<!ENTITY tue04 "Tuesday,   23 September 2014">
+<!ENTITY wed04 "Wednesday, 24 September 2014">
+<!ENTITY thu04 "Thursday,  25 September 2014">
+<!ENTITY fri04 "Friday,    26 September 2014">
+<!ENTITY sat04 "Saturday,  27 September 2014">
+<!ENTITY sun04 "Sunday,    28 September 2014">
+<!-- Week Five -->
+<!ENTITY mon05 "Monday,    29 September 2014">
+<!ENTITY tue05 "Tuesday,   30 September 2014">
+<!ENTITY wed05 "Wednesday,  1 October 2014">
+<!ENTITY thu05 "Thursday,   2 October 2014">
+<!ENTITY fri05 "Friday,     3 October 2014">
+<!ENTITY sat05 "Saturday,   4 October 2014">
+<!ENTITY sun05 "Sunday,     5 October 2014">
+<!-- Week Six -->
+<!ENTITY mon06 "Monday,     6 October 2014">
+<!ENTITY tue06 "Tuesday,    7 October 2014">
+<!ENTITY wed06 "Wednesday,  8 October 2014">
+<!ENTITY thu06 "Thursday,   9 October 2014">
+<!ENTITY fri06 "Friday,    10 October 2014">
+<!ENTITY sat06 "Saturday,  11 October 2014">
+<!ENTITY sun06 "Sunday,    12 October 2014">
+<!-- Week Seven -->
+<!ENTITY mon07 "Monday,    13 October 2014">
+<!ENTITY tue07 "Tuesday,   14 October 2014">
+<!ENTITY wed07 "Wednesday, 15 October 2014">
+<!ENTITY thu07 "Thursday,  16 October 2014">
+<!ENTITY fri07 "Friday,    17 October 2014">
+<!ENTITY sat07 "Saturday,  18 October 2014">
+<!ENTITY sun07 "Sunday,    19 October 2014">
+<!-- Break, Week One -->
+<!ENTITY mon1b "Monday,    20 October 2014">
+<!ENTITY tue1b "Tuesday,   21 October 2014">
+<!ENTITY wed1b "Wednesday, 22 October 2014">
+<!ENTITY thu1b "Thursday,  23 October 2014">
+<!ENTITY fri1b "Friday,    24 October 2014">
+<!ENTITY sat1b "Saturday,  25 October 2014">
+<!ENTITY sun1b "Sunday,    26 October 2014">
+<!-- Week Eight -->
+<!ENTITY mon08 "Monday,    27 October 2014">
+<!ENTITY tue08 "Tuesday,   28 October 2014">
+<!ENTITY wed08 "Wednesday, 29 October 2014">
+<!ENTITY thu08 "Thursday,  30 October 2014">
+<!ENTITY fri08 "Friday,    31 October 2014">
+<!ENTITY sat08 "Saturday,   1 November 2014">
+<!ENTITY sun08 "Sunday,     2 November 2014">
+<!-- Week Nine -->
+<!ENTITY mon09 "Monday,     3 November 2014">
+<!ENTITY tue09 "Tuesday,    4 November 2014">
+<!ENTITY wed09 "Wednesday,  5 November 2014">
+<!ENTITY thu09 "Thursday,   6 November 2014">
+<!ENTITY fri09 "Friday,     7 November 2014">
+<!ENTITY sat09 "Saturday,   8 November 2014">
+<!ENTITY sun09 "Sunday,     9 November 2014">
+<!-- Week Ten -->
+<!ENTITY mon10 "Monday,    10 November 2014">
+<!ENTITY tue10 "Tuesday,   11 November 2014">
+<!ENTITY wed10 "Wednesday, 12 November 2014">
+<!ENTITY thu10 "Thursday,  13 November 2014">
+<!ENTITY fri10 "Friday,    14 November 2014">
+<!ENTITY sat10 "Saturday,  15 November 2014">
+<!ENTITY sun10 "Sunday,    16 November 2014">
+<!-- Week Eleven -->
+<!ENTITY mon11 "Monday,    17 November 2014">
+<!ENTITY tue11 "Tuesday,   18 November 2014">
+<!ENTITY wed11 "Wednesday, 19 November 2014">
+<!ENTITY thu11 "Thursday,  20 November 2014">
+<!ENTITY fri11 "Friday,    21 November 2014">
+<!ENTITY sat11 "Saturday,  22 November 2014">
+<!ENTITY sun11 "Sunday,    23 November 2014">
+<!-- Week Twelve -->
+<!ENTITY mon12 "Monday,    24 November 2014">
+<!ENTITY tue12 "Tuesday,   25 November 2014">
+<!ENTITY wed12 "Wednesday, 26 November 2014">
+<!-- thanksgiving -->
+<!ENTITY thu12 "Thursday,  27 November 2014">
+<!ENTITY fri12 "Friday,    28 November 2014">
+<!ENTITY sat12 "Saturday,  29 November 2014">
+<!ENTITY sun12 "Sunday,    30 November 2014">
+<!-- Week Thirteen -->
+<!ENTITY mon13 "Monday,     1 December 2014">
+<!ENTITY tue13 "Tuesday,    2 December 2014">
+<!ENTITY wed13 "Wednesday,  3 December 2014">
+<!ENTITY thu13 "Thursday,   4 December 2014">
+<!ENTITY fri13 "Friday,     5 December 2014">
+<!ENTITY sat13 "Saturday,   6 December 2014">
+<!ENTITY sun13 "Sunday,     7 December 2014">
+<!-- Week Fourteen -->
+<!ENTITY mon14 "Monday,     8 December 2014">
+<!ENTITY tue14 "Tuesday,    9 December 2014">
+<!ENTITY wed14 "Wednesday, 10 December 2014">
+<!ENTITY thu14 "Thursday,  11 December 2014">
+<!ENTITY fri14 "Friday,    12 December 2014">
+<!ENTITY sat14 "Saturday,  13 December 2014">
+<!ENTITY sun14 "Sunday,    14 December 2014">
+<!-- Finals Week -->
+<!ENTITY mon1f "Monday,    15 December 2014">
+<!ENTITY tue1f "Tuesday,   16 December 2014">
+<!ENTITY wed1f "Wednesday, 17 December 2014">
+<!ENTITY thu1f "Thursday,  18 December 2014">
+<!ENTITY fri1f "Friday,    19 December 2014">
+<!ENTITY sat1f "Saturday,  20 December 2014">
+<!ENTITY sun1f "Sunday,    21 December 2014">

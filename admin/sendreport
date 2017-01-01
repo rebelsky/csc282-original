@@ -5,3 +5,8 @@ echo "Sending report for $1 to $2@grinnell.edu"
 ./report "$1" $2 > reports/$2
 
 # cat reports/$2 | mail -s "CSC151.02 2013F: Grade Report for $1" -c rebelsky@grinnell.edu $2@grinnell.edu
+
+if [ -n "$3" ]; then
+  echo "Pausing for $3 seconds.";
+  sleep $3;
+fi

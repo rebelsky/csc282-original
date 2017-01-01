@@ -1,5 +1,6 @@
 Developer Notes
 ===============
+
 This repository and its forks are designed as places for me to hold
 the Web materials for my various courses.  I use a combination of 
 Markdown and Docbook to manage my course webs.
@@ -8,6 +9,7 @@ Some information on the design of the sites is in the manfiest.
 
 Directories
 -----------
+
 I try to have a different directory for each "section" of the site 
 (assignments, readings, etc.).  Right now, I have a hack for getting
 custom settings for each section - I link the main XSL stylesheets to
@@ -16,6 +18,7 @@ directory (e.g., the entities).
 
 Forks and Branches
 ------------------
+
 There is one main repository for the "generic" materials (the basic
 structure, some of the software, documents that I tend to have in
 every class, etc.).  Each class then has its own separate repository.
@@ -29,17 +32,28 @@ of the semester I add a branch at the current position of the repo.)
 
 Pulling Updates from the Generic Course
 ---------------------------------------
+
 Just the normal instructions for pulling from an upstream source (plus
 ensuring that we link to the upstream).
 
-        make generic
-        git fetch generic master
-        git merge upstream/master
+Approach 1:
 
-*Note: These commands should eventually be a target in the Makefile.*
+    make generic
+    git fetch generic master
+    git merge upstream/master
+
+Approach 2:
+
+    make generic
+    git pull generic master
+
+Approach 3:
+
+    make pull-generic
 
 Pushing Updates to the Generic Course
 -------------------------------------
+
 My initial experiments at pushing a limited number of updates from a 
 fork back to the main branch were not particularly successful.  For now,
 the best strategy seems to be to make generic updates in the generic
@@ -53,6 +67,10 @@ At the Beginning of the Semester
 
 1. Add the dates files (whatever form that takes)
 
+2. Link some dates file to dates.ent.
+
+3. Link the current calendar file to calendar.ent.
+
 ### For An Individual Course ###
 
 1. If you're starting a new course, follow the *Starting a New Course*
@@ -62,28 +80,85 @@ At the Beginning of the Semester
    course.  E.g.,
 
         cd /home/rebelsky/Web/Courses/CSC000/
-        git clone https://github.com/rebelsky/csc000 2013F
-        cd 2013F
+        git clone git@github.com:rebelsky/csc000.git 2015F
+        cd 2015F
 
-   you may also want to use
+   If for some reason you want http as opposed to ssh, use
 
-        git clone git@github.com:rebelsky/csc.git 2013F
+        git clone https://github.com/rebelsky/csc000 2015F
 
-3. Edit `resources/course.ent`, which has the course-specific information.
+3. Pull any changes from the generic repository
+
+        make pull-generic
+
+4. Edit `resources/course.ent`, which has the course-specific information.
 
         vi resources/course.ent
 
-4. Run Make at the top level, just to make sure that things are okay
+5. Make sure that `resources/dates.ent` is linked to the appropriate
+   list of dates for the current course.
+
+6. Edit `resources/links.xsl`, which contains the links to previous offerings
+(among other things).
+
+7. Make `resources/subjects.ent`, which is required by a bunch of other files.
+
+        cd resources
+        make subjects.ent
+
+8. Edit `home/index.sect` or `home/index.md`, which contains the front
+   door for the course.
+
+9. Set up the schedule files (some details in a section below)
+
+a. Make the directory `handouts/overviews`.
+
+b. In the `handouts` directory, run `../tools/schedule-overviews`.
+
+c. Also make sure to check `handouts/Makefile`, since `schedule.html` 
+   `sched.html` are automatically generated from that file.
+
+10. Clear out and rebuild the daily administrative notes.
+
+        cd outlines
+        rm admin/*
+        ../tools/all-outline-parts 56
+        
+11. Run Make at the top level, just to make sure that things are okay
 
         make
 
-5. Look at a page on the Web
+12. Look at a page on the Web
 
-6. Start editing and creating!
+13. Commit and push the changes that you've just made.
+
+14. Create a separate dev site (optional).
+
+15. Consider updating the style so that students can distinguish semesters.
+
+16. Update the .course file in the eboardds directory.
+
+17. Start editing and creating!
+
+At the End of the Semester
+--------------------------
+
+1. Make sure to commit or throw away any of the remaining changes you've
+   made.  (In an ideal world, you've been doing this as you go.  In the
+   real world, you've probably got a lot to do now.)
+
+2. Push to the repository.
+
+3. Since you're about to start a new version of the course, make a branch
+   for this old version.
+
+     git checkout -b 2016S
+     git push origin 2016S
 
 Starting a New Course
 ---------------------
-To create a new course, I need to fork the generic course repo. 
+
+To create a new course, you need to fork the generic course repo. 
 Unfortunately, github is not particularly nice about letting you fork
 your own repositories.  There's a nifty hack that I found at
 <http://bitdrift.com/post/4534738938/fork-your-own-project-on-github>.
@@ -91,19 +166,19 @@ your own repositories.  There's a nifty hack that I found at
 It goes something like this.
 
 1. Create the repository for the new course on github.  For this example,
-   I'm using csc000.
+   I'm using csc000.  Do not add a README, LICENSE, or .gitignore.
 
 2. Clone the original repository onto your local machine
 
-        git clone http://github.com/rebelsky/generic-course csc000
+        git clone git@github.com:rebelsky/generic-course.git 2015F
 
    or
 
-        git clone git@github.com:rebelsky/generic-course.git
+        git clone http://github.com/rebelsky/generic-course 2015F
 
 3. Edit the Git config file
 
-        cd csc000
+        cd 2015F
         vi .git/config
         :1,$s/generic-course/csc000/g
         :wq
@@ -114,12 +189,37 @@ It goes something like this.
 
 5. Check on github to see that everything worked.
 
-6. Update the generic site with a link to this fork.
+6. Update the README.md on the generic site with a link to this fork.
 
 7. Do the normal start of semester activities.
 
+Working with the Outlines and Schedule
+--------------------------------------
+
+I've set up a slightly complex system for dealing with the course
+schedule, the daily outlines (what I plan to talk about), and the daily
+eboards (what I actually talk about).  When setting up a new course or
+updating an existing course, it's important to do thinking in something
+like the following order:
+
+1. Update resources/subjects.var to list all of the daily subjects.
+
+2. Create appropriate subdirectories of outlines.  (admin, bodies,
+overviews, related, summaries)
+
+3. Create all of the appropriate .md files.  You can use 
+tools/outlines-parts-blank-md, tools/outline-parts-md, or
+tools/all-outline-parts.  (tools/outline-parts-md copies files
+from old Siteweaver courses, and needs to be configured appropriately.)
+
+4. Create the directory handouts/overviews.
+
+5. In the handouts directory, run the command `../tools/schedule-overviews`
+to make XML equivalents to the `md` files.
+
 An Incomplete Strategy for Pushing Updates from Forks
 -----------------------------------------------------
+
 The difficulty in pushing updates from forks is that you've usually
 changed and added lots of files, but only a few of those changes really
 need to be propagated back.  These are my quick notes on what should work.

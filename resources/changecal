@@ -1,0 +1,27 @@
+# Look!  Stupid vi commands to move us backward one day
+
+:1,$s/0 \([^"]\)/_ \1/
+:1,$s/1 \([^"]\)/0 \1/
+:1,$s/2 \([^"]\)/1 \1/
+:1,$s/3 \([^"]\)/2 \1/
+:1,$s/4 \([^"]\)/3 \1/
+:1,$s/5 \([^"]\)/4 \1/
+:1,$s/6 \([^"]\)/5 \1/
+:1,$s/7 \([^"]\)/6 \1/
+:1,$s/8 \([^"]\)/7 \1/
+:1,$s/9 \([^"]\)/8 \1/
+:1,$s/1_/ 9/
+:1,$s/2_/19/
+:1,$s/3_/29/
+:1,$s/"0 January/"31 December/
+:1,$s/"0 February/"31 January/
+:1,$s/"0 March/"28 February/
+:1,$s/"0 April/"31 March/
+:1,$s/"0 May/"30 April/
+:1,$s/"0 June/"31 May/
+:1,$s/"0 July/"30 June/
+:1,$s/"0 August/"31 July/
+:1,$s/"0 September/"31 August/
+:1,$s/"0 October/"30 September/
+:1,$s/"0 November/"31 October/
+:1,$s/"0 December/"30 November/

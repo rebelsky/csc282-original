@@ -1,0 +1,136 @@
+<!-- Week One -->
+<!ENTITY mon01 "25 January 2016">
+<!ENTITY tue01 "26 January 2016">
+<!ENTITY wed01 "27 January 2016">
+<!ENTITY thu01 "28 January 2016">
+<!ENTITY fri01 "29 January 2016">
+<!ENTITY sat01 "30 January 2016">
+<!ENTITY sun01 "31 January 2016">
+<!-- Week Two -->
+<!ENTITY mon02 "1 February 2016">
+<!ENTITY tue02 "2 February 2016">
+<!ENTITY wed02 "3 February 2016">
+<!ENTITY thu02 "4 February 2016">
+<!ENTITY fri02 "5 February 2016">
+<!ENTITY sat02 "6 February 2016">
+<!ENTITY sun02 "7 February 2016">
+<!-- Week Three -->
+<!ENTITY mon03 "8 February 2016">
+<!ENTITY tue03 "9 February 2016">
+<!ENTITY wed03 "10 February 2016">
+<!ENTITY thu03 "11 February 2016">
+<!ENTITY fri03 "12 February 2016">
+<!ENTITY sat03 "13 February 2016">
+<!ENTITY sun03 "14 February 2016">
+<!-- Week Four -->
+<!ENTITY mon04 "15 February 2016">
+<!ENTITY tue04 "16 February 2016">
+<!ENTITY wed04 "17 February 2016">
+<!ENTITY thu04 "18 February 2016">   
+<!ENTITY fri04 "19 February 2016">
+<!ENTITY sat04 "20 February 2016">
+<!ENTITY sun04 "21 February 2016">
+<!-- Week Five -->
+<!ENTITY mon05 "22 February 2016">
+<!ENTITY tue05 "23 February 2016">
+<!ENTITY wed05 "24 February 2016">
+<!ENTITY thu05 "25 February 2016">
+<!ENTITY fri05 "26 February 2016">
+<!ENTITY sat05 "27 February 2016">
+<!ENTITY sun05 "28 February 2016">
+<!-- Week Six -->
+<!ENTITY mon06 "29 February 2016">
+<!ENTITY tue06 "1 March 2016">
+<!ENTITY wed06 "2 March 2016">      <!-- SIGCSE March 2-5 -->
+<!ENTITY thu06 "3 March 2016">
+<!ENTITY fri06 "4 March 2016">
+<!ENTITY sat06 "5 March 2016">
+<!ENTITY sun06 "6 March 2016">
+<!-- Week Seven -->
+<!ENTITY mon07 "7 March 2016">
+<!ENTITY tue07 "8 March 2016">
+<!ENTITY wed07 "9 March 2016">
+<!ENTITY thu07 "10 March 2016">
+<!ENTITY fri07 "11 March 2016">
+<!ENTITY sat07 "12 March 2016">
+<!ENTITY sun07 "13 March 2016">
+<!-- Week Eight -->
+<!ENTITY mon08 "14 March 2016">
+<!ENTITY tue08 "15 March 2016">
+<!ENTITY wed08 "16 March 2016">
+<!ENTITY thu08 "17 March 2016">
+<!ENTITY fri08 "18 March 2016">
+<!ENTITY sat08 "19 March 2016">
+<!ENTITY sun08 "20 March 2016">
+<!-- Break, Week One -->
+<!ENTITY mon1b "21 March 2016">
+<!ENTITY tue1b "22 March 2016">
+<!ENTITY wed1b "23 March 2016">
+<!ENTITY thu1b "24 March 2016">
+<!ENTITY fri1b "25 March 2016">
+<!ENTITY sat1b "26 March 2016">
+<!ENTITY sun1b "27 March 2016">
+<!-- Break, Week Two -->
+<!ENTITY mon2b "28 March 2016">
+<!ENTITY tue2b "29 March 2016">
+<!ENTITY wed2b "30 March 2016">
+<!ENTITY thu2b "31 April 2016">
+<!ENTITY fri2b "1 April 2016">
+<!ENTITY sat2b "2 April 2016">
+<!ENTITY sun2b "3 April 2016">
+<!-- Week Nine -->
+<!ENTITY mon09 "4 April 2016">
+<!ENTITY tue09 "5 April 2016">
+<!ENTITY wed09 "6 April 2016">
+<!ENTITY thu09 "7 April 2016">
+<!ENTITY fri09 "8 April 2016">
+<!ENTITY sat09 "9 April 2016">
+<!ENTITY sun09 "10 April 2016">
+<!-- Week Ten -->
+<!ENTITY mon10 "11 April 2016">
+<!ENTITY tue10 "12 April 2016">
+<!ENTITY wed10 "13 April 2016">
+<!ENTITY thu10 "14 April 2016">
+<!ENTITY fri10 "15 April 2016">
+<!ENTITY sat18 "16 April 2016">
+<!ENTITY sun10 "17 April 2016">
+<!-- Week Eleven -->
+<!ENTITY mon11 "18 April 2016">
+<!ENTITY tue11 "19 April 2016">
+<!ENTITY wed11 "20 April 2016">
+<!ENTITY thu11 "21 April 2016">
+<!ENTITY fri11 "22 April 2016">
+<!ENTITY sat11 "23 April 2016">
+<!ENTITY sun11 "24 April 2016">
+<!-- Week Twelve -->
+<!ENTITY mon12 "25 April 2016">
+<!ENTITY tue12 "26 April 2016">
+<!ENTITY wed12 "27 April 2016">
+<!ENTITY thu12 "28 April 2016">
+<!ENTITY fri12 "29 April 2016">
+<!ENTITY sat12 "30 April 2016">
+<!ENTITY sun12 "1 May 2016">
+<!-- Week Thirteen -->
+<!ENTITY mon13 "2 May 2016">
+<!ENTITY tue13 "3 May 2016">
+<!ENTITY wed13 "4 May 2016">
+<!ENTITY thu13 "5 May 2016">
+<!ENTITY fri13 "6 May 2016">
+<!ENTITY sat13 "7 May 2016">
+<!ENTITY sun13 "8 May 2016">
+<!-- Week Fourteen -->
+<!ENTITY mon14 "9 May 2016">
+<!ENTITY tue14 "10 May 2016">
+<!ENTITY wed14 "11 May 2016">
+<!ENTITY thu14 "12 May 2016">
+<!ENTITY fri14 "13 May 2016">
+<!ENTITY sat14 "14 May 2016">
+<!ENTITY sun14 "15 May 2016">
+<!-- Finals -->
+<!ENTITY mon1f "16 May 2016">
+<!ENTITY tue1f "17 May 2016">
+<!ENTITY wed1f "18 May 2016">
+<!ENTITY thu1f "19 May 2016">
+<!ENTITY fri1f "20 May 2016">
+<!ENTITY sat1f "21 May 2016">
+<!ENTITY sun1f "22 May 2016">

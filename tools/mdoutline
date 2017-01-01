@@ -41,6 +41,7 @@ if (! -f $subjects) {
 }
 
 # Grab the prefix
+LOG("Grabbing prefix");
 $PREFIX = lookupEntity("abbrev$NN", $subjects);
 if (! $PREFIX) {
   print STDERR "Could not find abbreviation for $NN in $subjects.\n";
@@ -48,12 +49,15 @@ if (! $PREFIX) {
 }
 
 # Grab the title of the page
+LOG("Grabbing title");
 $title = lookupEntity("title$NN", $subjects);
 
 # Grab the date of the class
+LOG("Looking up date");
 $date = lookupClassDate($NN);
 
 # Make the various parts of the page
+LOG("Making the parts");
 system("../tools/outline-parts-md $PREFIX");
 
 # Create the administrative and related items components (if it doesn't exist)
@@ -132,10 +136,12 @@ sub lookupEntity($$)
 {
   my $entity = shift;
   my $file = shift;
-  my $result = `grep $entity $file`;
+  # LOG("Looking up '$entity' in '$file'");
+  my $result = `grep "$entity" "$file" | head -1`;
   chomp($result);
   $result =~ s/^[^"]*"//;
   $result =~ s/".*$//;
+  # LOG("  Returning '$result'");
   return $result;
 } # lookupEntity()
 
@@ -144,11 +150,12 @@ sub lookupEntity($$)
 sub lookupClassDate($)
 {
   my $num = shift;
-  my $day = lookupEntity("date$num", $dates);
-  $day =~ s/^\&//;
-  $day =~ s/;$//;
-  my $date = lookupEntity("$day", $calendar);
-  return $date;
+  my $cal = lookupEntity("cal$num", $dates);
+  my $day = lookupEntity("day$num", $dates);
+  $cal =~ s/^\&//;
+  $cal =~ s/;$//;
+  my $date = lookupEntity("$cal", $calendar);
+  return "$day, $date";
 } # lookupClassDate
 
 # printN(str, n)
@@ -190,3 +197,11 @@ sub twoDigits()
     return "$n";
   }
 } # twoDigits()
+
+# LOG(text)
+#   Optionaly print text
+sub LOG()
+{
+  my $text = shift;
+  # print STDERR "$text\n";
+} # LOG()

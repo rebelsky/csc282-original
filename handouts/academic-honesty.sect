@@ -3,7 +3,12 @@
 <para>
   <emphasis>This document describes my general approach to academic honesty. I
   may modify it for individual courses to better fit the structure and style
-  of those courses.</emphasis>
+  of those courses.  Please read this document thoroughly and carefully
+  so that neither you nor I have to deal with instances of academic 
+  dishonesty.  Please also review the Computer Science Department's
+  policy on academic honesty, available at
+  <ulink url="http://www.cs.grinnell.edu/academic-honesty-policy"/>,
+  as that policy is in effect for this class.</emphasis>
 </para>
 
 <para>
@@ -69,37 +74,40 @@ p. 39; Downloaded from <ulink url="http://www.grinnell.edu/offices/studentaffair
 </para>
 
 <para>
-  I expect you to follow the highest principles of academic honesty.
-  Among other things, this means that any work you turn in should be your
-  own or should have the work of others clearly documented.  However, when
-  you explicitly work as part of a group or team, you need not identify
-  the work of each individual (unless I specify otherwise).  You are,
-  of course, required to make it clear that you worked as part of a group
-  or team, and who the members of that group or team are.
+  <emphasis>I expect you to follow the highest principles of academic
+  honesty.</emphasis> Among other things, this means that any work you
+  turn in should be your own or should have the work of others clearly
+  documented.  However, when you explicitly work as part of a group or
+  team, you need not identify the work of each individual (unless I
+  specify otherwise).  You are, of course, required to make it clear
+  that you worked as part of a group or team, and who the members of
+  that group or team are.
 </para>
 
 <para>
-  You should never <quote>give away</quote> answers to homework assignments
-  or examinations.  You may, however, work together in developing an
-  approach for most homework assignments - design, general algorithms,
-  etc.  Except as specified on individual assignments, each student
-  should develop his or her own final version of the assignment.  On most
-  written assignments, each student should write up an individual version
-  of the assignment and cite the discussion.  On non-group programming
-  assignments, each student should do his or her own programming,
-  although students may help each other with design and debugging.
-  If someone else (e.g., a classmate or class mentor) helps you on an
-  assignment, please include a note in the assignment that indicates
-  that you received such help and summarizes the help you received.
+  <emphasis>You should never <quote>give away</quote> answers to
+  homework assignments or examinations.</emphasis>  You may, however,
+  work together in developing an approach for most homework assignments
+  - design, general algorithms, etc.  Except as specified on individual
+  assignments, each student should develop his or her own final version of
+  the assignment.  On most written assignments, each student should write
+  up an individual version of the assignment and cite the discussion.
+  On non-group programming assignments, each student should do his or
+  her own programming, although students may help each other with design
+  and debugging.  If someone else (e.g., a classmate or class mentor)
+  helps you on an assignment, please include a note in the assignment
+  that indicates that you received such help and summarizes the help
+  you received.
 </para>
 
 <para>
-  When working on examinations, you generally should not use people
-  (other than me) as resources.  In most cases, I will allow you to look
-  up things on the Web, but you should read the examination guidelines
-  to be sure.  In most examinations, I will not allow you to ask tutors
-  and mentors anything pertaining to the exam, not even general syntax
-  questions.  If you need help, you'll need to talk to me or a colleague.
+  <emphasis>When working on examinations, you should not directly use
+  people (other than me) as resources</emphasis>.  In most cases, I
+  will allow you to look up things on the Web, but you should read the
+  examination guidelines to be sure.  In most examinations, I will not
+  allow you to ask tutors and mentors anything pertaining to the exam.
+  If you need help, you'll need to talk to me or one of the other
+  faculty members.
 </para>
 
 <para>
@@ -136,7 +144,7 @@ p. 39; Downloaded from <ulink url="http://www.grinnell.edu/offices/studentaffair
   collaboration.  That is, if I don't specify otherwise on an individual
   assignment, you may assume that you can talk about design together,
   should code individually, and can help each other look for bugs (in
-  design, code, implementation, whateer).
+  design, code, implementation, whatever).
 </para>
 
 </section>  <!-- collaborative-work -->
@@ -160,17 +168,17 @@ p. 39; Downloaded from <ulink url="http://www.grinnell.edu/offices/studentaffair
 </para>
 
 <para>
-  <emphasis>Homework assignments</emphasis> may be individual or group
-  assignments.  For either kind, you should feel free to ask for help from
-  almost anyone (me, the class mentor, another student, a TC, a friend).
-  If I give an individual homework, I expect each individual to write
-  up his or her answers individually (no copying!).  However, you may
-  certainly ask a colleague to proofread or comment on your answers,
-  provided you cite that person.  If I give collaborative homework,
-  each group of students should write and turn in its own single set
-  of answers.  However, you can still ask colleagues in other groups
-  to proofread or comment on your answers.  (Once again, you should
-  cite them.)
+  <emphasis>Homework assignments</emphasis> and
+  <emphasis>projects</emphasis> may be individual or group assignments.
+  For either kind, you should feel free to ask for help from almost anyone
+  (me, the class mentor, another student, a TC, a friend).  If I give
+  an individual homework, I expect each individual to write up his or
+  her answers individually (no copying!).  However, you may certainly
+  ask a colleague to proofread or comment on your answers, provided
+  you cite that person.  If I give collaborative homework, each group
+  of students should write and turn in its own single set of answers.
+  However, you can still ask colleagues in other groups to proofread or
+  comment on your answers.  (Once again, you should cite them.)
 </para>
 
 <para>
@@ -213,9 +221,10 @@ p. 39; Downloaded from <ulink url="http://www.grinnell.edu/offices/studentaffair
 </para>
 
 <para>
-  Each piece of code you take from elsewhere must include a comment 
-  that points me to the original work.  Ideally, your comment would
-  specify all of the following:
+  <emphasis>Each piece of code you take from elsewhere must include a
+  comment that points me to the original work</emphasis>, even if you
+  modify the code after copying it.  Ideally, your comment would specify
+  all of the following:
 </para>
 
 <itemizedlist>
@@ -247,11 +256,12 @@ p. 39; Downloaded from <ulink url="http://www.grinnell.edu/offices/studentaffair
 </para>
 
 <para>
-  Note that, as much as I appreciate a carefully constructed citation, my
-  primary concern is that you clearly state that you have used the work
-  of another.  Hence, I will also accept a short note that simply gives
-  the location from which you obtained code (e.g., you can just write
-  <quote>Ideas and code taken from <emphasis>this URL</emphasis>.</quote>)
+  As much as I appreciate a carefully constructed citation, <emphasis>my
+  primary concern is that you clearly state that you have used the
+  work of another</emphasis>.  Hence, I will also accept a short note
+  that simply gives the location from which you obtained code (e.g.,
+  you can just write <quote>Ideas and code taken from <emphasis>this
+  URL</emphasis>.</quote>)
 </para>
 
 <para>
@@ -334,7 +344,7 @@ Visited 10 January 2014).
   answers to this examination on the Web. And, in case it's not clear,
   you may not ask others (in person, via email, via IM, by posting a
   <quote>please help</quote> message, or in any other way) to put answers
-  on the Web.
+  on the Web (or anywhere online or offline, for that matter).
 </para>
 
 <para>
@@ -427,11 +437,11 @@ Visited 10 January 2014).
 <para>
   Finally, there are a few instances in which I see nearly identical
   solutions to a problem.  At times, that's reasonable - some problems
-  have only a few natural solutions and I tend to assume that
-  two similar common solutions were developed independently.  But when
-  a problem admits a huge variety of possible solutions and I see
-  similar solutions, or when the solutions I see are not so 
-  <quote>natural</quote>, I may find it necessary to report the similarity.
+  have only a few natural solutions and I tend to assume that two similar
+  common solutions were developed independently.  But when a problem
+  admits a huge variety of possible solutions and I see similar solutions,
+  or when the solutions I see are not so <quote>natural</quote>, I am
+  likely to find it necessary to report the similarity.
 </para>
 
 </section> <!-- typical-violations -->
@@ -465,6 +475,83 @@ Visited 10 January 2014).
   case is no longer under my control.
 </para>
   
+<para>
+  In a few instances (perhaps violations of ethical or behavior standards,
+  rather than strict honesty issues), I may report the violation to the College 
+  Hearing Board (CHB), rather than to the Committee on Academic Standing.  I
+  follow similar procedures for CHB to those I follow for CAS.
+</para>
+
+<para>
+  If CAS and CHB do not consider the violation within their purview,
+  I will apply the principles and approaches stated within the
+  CS Department's <ulink url="http://www.cs.grinnell.edu/academic-honesty-policy">policy on academic honesty</ulink>.
+</para>
+
 </section> <!-- responding -->
+
+<section id="academic-cs"><title>Academic Honesty and Computer Science</title>
+
+<para>
+  You may have noted that this discussion of academic honesty is particularly
+  detailed.  There are a variety of reasons for this level of detail.  First,
+  as you've probably figured out by now, whenever I write about something,
+  I tend to write a lot about it.  And, because I've been writing about
+  academic honesty for more than two decades, this document has gotten longer
+  and longer.  But that's not the main reason.  There are at least
+  three others.
+</para>
+
+<para>
+  First, as my colleague Jerod Weinman reminds me, proper citation is an 
+  expected professional practice for computer programmers and software
+  designers.  If you <quote>borrow</quote> code from elsewhere and don't
+  cite it, you put your project and your company at risk to lawsuits.
+  (Ideally, someone reviews code and when they note that it's based on
+  code from elsewhere, they either seek permission to use the code or
+  insist that the programmers rewrite it.) For example, a proprietary
+  software company cannot legally use pieces of free and open-source code 
+  that are released under the GNU Public License (GPL) unless they
+  arrange a separate license.
+</para>
+
+<para>
+  Second, as my colleague John David Stone reminds me, computer scientists,
+  computer programmers, and software designers may all encounter significant
+  pressures to behave less than ethically.  When deadlines are tight 
+  and the rewards are great, there are temptations to <quote>cut 
+  corners</quote>.  We hope that by inculcating good habits now and
+  grounding them in sensible reasoning, we provide you with the habits
+  to behave appropriately, even when you encounter such pressures.
+</para>
+
+<para>
+  Third , the Computer Science department identifies a disproportionate
+  number of cases of academic dishonesty.  I do not believe that this
+  is because students in CS are less honest.  Rather, I expect that
+  a combination of issues are at play.  For example, it may be easier
+  for us to notice copying.  In addition, it may be that there are more
+  opportunities for <quote>valid</quote> copying, but some students are
+  not accustomed to citing when they copy, and so neglect to do so.
+  Other issues are also likely involved.
+</para>
+
+<para>
+  Whatever the reason, we report a lot.  And I <emphasis>hate</emphasis>
+  to have to report such cases.  First, I care a lot about my students,
+  and don't like to see them go through the stress of a hearing.  
+  Second, it takes a lot of my time to properly document a case, time
+  I'd much rather spend doing work that will improve my courses.  Third,
+  as noted above and in the department policy, I want to help students
+  develop good habits and it bothers me when I fail.
+</para>
+
+<para>
+  Please don't make life more difficult for yourself or for me - take
+  care in all of your work, include a citation whenever you copy, and
+  only rely on others when you are permitted to do so.
+</para>
+
+</section> <!-- academic-cs -->
 
 </section> <!-- academic-honesty -->

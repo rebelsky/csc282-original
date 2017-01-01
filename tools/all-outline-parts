@@ -10,10 +10,27 @@ if ($#ARGV != 0) {
 
 my $N = shift;
 
+# Verify that the directories exist
+checkdir("admin");
+checkdir("bodies");
+checkdir("overviews");
+checkdir("related");
+checkdir("summaries");
+
+# Create all the parts
 for (my $i = 1; $i <= $N; $i++) {
   $num = twodigits($i);
   system("../tools/outline-parts-blank-md $num");
 } # for
+
+sub checkdir()
+{
+  my $dir = shift;
+  if (! -e $dir) { 
+    print "Creating directory $dir\n";
+    mkdir $dir; 
+  }
+} # checkdir
 
 sub twodigits()
 {

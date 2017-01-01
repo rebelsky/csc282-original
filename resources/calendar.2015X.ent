@@ -1,0 +1,96 @@
+<!-- Week One --> <!-- Monday is Memorial Day -->
+<!ENTITY mon01 "25 May 2015">
+<!ENTITY tue01 "26 May 2015">
+<!ENTITY wed01 "27 May 2015">
+<!ENTITY thu01 "28 May 2015">
+<!ENTITY fri01 "29 May 2015">
+<!ENTITY sat01 "30 May 2015">
+<!ENTITY sun01 "31 May 2015">
+<!-- Week Two --> <!-- Jon at swim camp -->
+<!ENTITY mon02 " 1 June 2015">
+<!ENTITY tue02 " 2 June 2015">
+<!ENTITY wed02 " 3 June 2015">
+<!ENTITY thu02 " 4 June 2015">
+<!ENTITY fri02 " 5 June 2015">
+<!ENTITY sat02 " 6 June 2015">
+<!ENTITY sun02 " 7 June 2015">
+<!-- Week Three --> <!-- Daniel at Dorian -->
+<!ENTITY mon03 " 8 June 2015">
+<!ENTITY tue03 " 9 June 2015">
+<!ENTITY wed03 "10 June 2015">
+<!ENTITY thu03 "11 June 2015">
+<!ENTITY fri03 "12 June 2015">
+<!ENTITY sat03 "13 June 2015">
+<!ENTITY sun03 "14 June 2015">
+<!-- Week Four --> <!-- Jon at Boy's State -->
+<!ENTITY mon04 "15 June 2015">
+<!ENTITY tue04 "16 June 2015">
+<!ENTITY wed04 "17 June 2015">
+<!ENTITY thu04 "18 June 2015">   
+<!ENTITY fri04 "19 June 2015">
+<!ENTITY sat04 "20 June 2015">
+<!ENTITY sun04 "21 June 2015">
+<!-- Week Five --> <!-- ??? -->
+<!ENTITY mon05 "22 June 2015">
+<!ENTITY tue05 "23 June 2015">
+<!ENTITY wed05 "24 June 2015">
+<!ENTITY thu05 "25 June 2015">
+<!ENTITY fri05 "26 June 2015">
+<!ENTITY sat05 "27 June 2015">
+<!ENTITY sun05 "28 June 2015">
+<!-- Week Six --> <!-- Sam at GOA -->
+<!ENTITY mon06 "29 June 2015">
+<!ENTITY tue06 "30 June 2015">
+<!ENTITY wed06 " 1 July 2015">
+<!ENTITY thu06 " 2 July 2015">
+<!ENTITY fri06 " 3 July 2015">
+<!ENTITY sat06 " 4 July 2015">
+<!ENTITY sun06 " 5 July 2015">
+<!-- Week Seven --> <!-- Sam at Scout Camp -->
+<!ENTITY mon07 " 6 July 2015">
+<!ENTITY tue07 " 7 July 2015">
+<!ENTITY wed07 " 8 July 2015">
+<!ENTITY thu07 " 9 July 2015">
+<!ENTITY fri07 "10 July 2015">
+<!ENTITY sat07 "11 July 2015">
+<!ENTITY sun07 "12 July 2015">
+<!-- Week Eight --> <!-- Family Vacation -->
+<!ENTITY mon08 "13 July 2015">
+<!ENTITY tue08 "14 July 2015">
+<!ENTITY wed08 "15 July 2015">
+<!ENTITY thu08 "16 July 2015">
+<!ENTITY fri08 "17 July 2015">
+<!ENTITY sat08 "18 July 2015">
+<!ENTITY sun08 "19 July 2015">
+<!-- Week Nine --> <!-- ??? -->
+<!ENTITY mon09 "20 July 2015">
+<!ENTITY tue09 "21 July 2015">
+<!ENTITY wed09 "22 July 2015">
+<!ENTITY thu09 "23 July 2015">
+<!ENTITY fri09 "24 July 2015">
+<!ENTITY sat09 "25 July 2015">
+<!ENTITY sun09 "26 July 2015">
+<!-- Week Ten --> <!-- Jon at football camp; Letterpress workshop -->
+<!ENTITY mon10 "27 July 2015">
+<!ENTITY tue10 "28 July 2015">
+<!ENTITY wed10 "29 July 2015">
+<!ENTITY thu10 "30 July 2015">
+<!ENTITY fri10 "31 July 2015">
+<!ENTITY sat10 " 1 August 2015">
+<!ENTITY sun10 " 2 August 2015">
+<!-- Week Eleven -->
+<!ENTITY mon11 " 3 August 2015">
+<!ENTITY tue11 " 4 August 2015">
+<!ENTITY wed11 " 5 August 2015">
+<!ENTITY thu11 " 6 August 2015">
+<!ENTITY fri11 " 7 August 2015">
+<!ENTITY sat11 " 8 August 2015">
+<!ENTITY sun11 " 9 August 2015">
+<!-- Week Twelve -->
+<!ENTITY mon12 "12 August 2015">
+<!ENTITY tue12 "12 August 2015">
+<!ENTITY wed12 "12 August 2015">
+<!ENTITY thu12 "13 August 2015">
+<!ENTITY fri12 "14 August 2015">
+<!ENTITY sat12 "15 August 2015">
+<!ENTITY sun12 "16 August 2015">

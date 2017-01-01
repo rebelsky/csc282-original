@@ -1,7 +1,42 @@
 /*
- * A generic design for Sam Rebelsky's course sites.
- * Copyright (c) 2001-2014 Samuel A. Rebelsky.  All rights reserved.
+ * A generic design for Sam Rebelsky's course sites, updated for CSC 151.
+ * Copyright (c) 2001-2016 Samuel A. Rebelsky.  All rights reserved.
  */
+
+/**
+ * Use a Google font for fun.
+ */
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700");
+
+/*
+ * We set enough colors that it's useful to put them in one place.
+ *
+ * Note that one should also look at @media print below
+ */
+
+div.head,
+div.foot,
+P.course,
+TR.week
+{
+  color: white;
+  background-color: rgb(96,96,96);
+}
+
+div.body,
+div.section,
+span.guimenu,
+span.guimenuitem
+{
+  background-color: rgb(248,248,248);
+}
+
+pre.screen,
+pre.programlisting,
+div.literallayout
+{
+  background-color: rgb(224,224,224);
+}
 
 /* 
  * Here's a nice overall appearance.  Some extra whitespace at the sides.  
@@ -9,38 +44,59 @@
  * enough for the logo.
  */
 BODY {  
-  margin-left: 6%;
+  margin-left: 4%;
   margin-right: 4%; 
   color: black;
   background-color: white;
   background-position: top left;
   /* background-attachment: fixed; */
   background-repeat: no-repeat;
+  /* font-family: Verdana, Geneva, sans-serif; */
+  font-family: 'Open Sans', serif;
+}
+
+P {
+  padding-left: 2%;
+  padding-right: 2%;
+}
+
+/*
+ * Should we hack at links?  I dunno.
+ */
+a:link {
+  text-decoration: none;
+  color: blue;
+}
+
+a:visited {
+  text-decoration: none;
+  color: purple;
+}
+
+/* Get rid of the stupid HR that appears at the top. */
+div.titlepage hr {
+  display: none;
 }
 
 /* The head and the foot. */
 div.head {
-  background-color: rgb(232,232,232); 
   border-bottom: thin solid black;
 }
 
-div.body {
-  background-color: rgb(240,240,240);
-}
-
-div.section {
-  background-color: rgb(240,240,240);
+div.titlepage hr {
+  display: none;
 }
 
 div.foot {  
   border-top: solid black;
   border-bottom: thin solid black;
-  background-color: rgb(232,232,232); 
   border-width: 3px 0em 0em 5px;
   margin-top: 5px;
   padding-right: 0.2em;
   padding-top: 0.5em;
   padding-left: 0.5em;
+  border-bottom-left-radius: 0.5em;
+  border-bottom-right-radius: 0.5em;
 }
 
 div.pagenotes {
@@ -48,78 +104,40 @@ div.pagenotes {
   font-size: small;
 }
 
-/* The fascinating history section */
-div.history {
-  margin-left: 3em;
-  padding-left: 1em;
-  border-width: 0.1em 0em 0em 0.1em;
-  border-color: gray; 
-  /* border-width: 0.1em; */
-  color: gray;
-  background-color: white;
-  font-size: small;
-}
-
-div.history p {
-  color: gray;
-}
-div.history li {
-  color: gray;
-}
-div.history ul {
-  color: gray;
-}
-div.history a:link {
-  color: gray;
-}
-div.history a:visited {
-  color: gray;
-}
-
-div.history H3 {
-  color: gray;
-  margin-left: 0em;
-  border-width: 0em;
-}
-
-div.history HR {
-  width: 50%;
-  text-align: right;
-
-}
-
 /* Have some fun with my headers */
-H1, H2, H3 { 
-  color: white;
-  background-color: gray;
-  font-family: Helvetica, sans-serif;
+H1,
+H2,
+H3, 
+H4
+{
+  color: rgb(96,96,96);
+}  
+
+H1, H2 { 
   font-weight: bold;
-  /* border: solid silver; */
-  /* margin-left: -0.7em;  */
   padding-left: 0.2em;
   padding-top: 0.2em; 
-  border-top: 10px solid white;
 }
 
 H1 {
-  /* border-width: 6px 0em 0em 5px; */
   font-size: 1.4em;
   text-align: center;
-  /* margin-left: -20px; */
-  border-bottom: thick solid white;
 }
 
 H2 {
   border-width: 4px 0em 0em 5px;
   font-size: 1.2em;
-  /* margin-left: -10px; */
+  border-bottom: 1px solid rgb(96,96,96);
 }
 
 H3 {
+  font-family: Helvetica, sans-serif;
   border-width: 2px 0em 0em 5px;
   font-size: 1.1em;
   font-style: italic;
-  /* margin-left: -5px; */
+}
+
+H4 {
 }
 
 P {
@@ -132,16 +150,25 @@ P.course {
   font-size: 1.1em;
   text-align: right;
   color: white;
-  background-color: gray;
   padding-top: 5px;
-  padding-bottom: 5px;
+  border-top-left-radius: 0.5em;
+  border-top-right-radius: 0.5em;
+  /* padding-bottom: 5px;
+  border-bottom-right-radius: 0.5em;
+  */
 }
 
 P.course a:link {
   color: white;
 }
 P.course a:visited {
-  color: white;
+  /* color: white; */
+}
+div.foot a:link {
+  color: #9988FF;
+}
+div.foot a:visited {
+  color: #AAAAFF;
 }
 
 
@@ -151,7 +178,20 @@ p.links {
   font-size: small;
   margin-top: 0pt;
   margin-bottom: 0pt;
+  color: grey;
+  padding-left: 1%;
+  padding-right: 1%;
 }
+
+p.links a:link,
+p.links a:visited {
+  color: rgb(248,248,248);
+}
+
+p.links b {
+  color: white;
+}
+
 
 /* The search form that appears at the top and bottom of each page. */
 form.search {
@@ -160,12 +200,13 @@ form.search {
   margin-top: 0pt;
   margin-bottom: 0pt;
   padding: 0pt;
+  patting-right: 2%;
 }
 
 HR {
   width: 50%;
   text-align: right;
-  color: maroon;
+  color: black;
   background-color: white;
 }
 HR.history {
@@ -181,13 +222,13 @@ SPAN.guimenu {
   font-weight: bold;
   font-size: small;
   font-family: Helvetica, sans-serif;
-  background-color: rgb(224,224,224);
+  background-color: rgb(224,224,240);
 }
+
 SPAN.guimenuitem {
   font-weight: bold;
   font-size: small;
   font-family: Helvetica, sans-serif;
-  background-color: rgb(224,224,224);
 }
 
 SPAN.uimenu {
@@ -253,6 +294,13 @@ SPAN.errortext {
   color: red;
 }
 
+/**
+ * Standard background color for preformatted sections.
+ */
+PRE,
+PRE.screen,
+PRE.programlisting,
+
 PRE {
   border-width: 1px;
   border-style: solid;
@@ -266,7 +314,7 @@ PRE.screen {
   border-style: dashed;
   border-color: black;
   color: black;
-  background-color: transparent;
+  background-color: rgb(224,224,240);
   padding: 5px;
   margin-left: 2em;
   margin-right: 2em;
@@ -285,7 +333,7 @@ PRE.programlisting {
   border-width: 1px;
   border-color: black;
   color: black;
-  background-color: rgb(224,224,224);
+  background-color: rgb(224,224,240);
   padding: 5px;
   margin-left: 2em;
   margin-right: 2em;
@@ -296,7 +344,7 @@ DIV.literallayout {
   border-width: 1px;
   border-color: black;
   color: black;
-  background-color: rgb(224,224,224);
+  background-color: rgb(224,224,240);
   padding: 5px;
   margin-left: 2em;
   margin-right: 2em;
@@ -322,7 +370,6 @@ TABLE.schedule TH {
 
 TR.week {
   color: white;
-  background-color: grey;
 }
 
 TR.break {
@@ -330,11 +377,19 @@ TR.break {
 }
 
 TR.break TH {
+/*
+  border-top-left-radius: 0.5em;
+  border-bottom-right-radius: 0.5em;
+ */
   text-align: center;
 }
 
 TR.week TH {
   text-align: center;
+/*
+  border-top-left-radius: 0.5em;
+  border-bottom-right-radius: 0.5em;
+ */
 }
 
 TABLE.schedule {
@@ -345,6 +400,10 @@ TABLE.schedule {
   vertical-align: top;
 }
 
+DIV.index {
+  border-bottom: 1em solid rgb(240,240,240);
+}
+
 TABLE.index {
   margin-left: 5%;
   width: 90%;
@@ -353,9 +412,17 @@ TABLE.index {
   vertical-align: top;
 }
 
+TABLE.index tr:nth-child(even) {
+  background-color: rgb(224,224,224); 
+}
+
+TABLE.index tr:nth-child(odd) {
+  background-color: white;
+}
+
+
 SPAN.guibutton {
-  background-color: rgb(224,224,224);
-  border-color: rgb(192,192,192);
+  border-color: rgb(208,208,192);
   border-style: ridge;
   border-width: 2px;
   border-radius: 5px;
@@ -378,3 +445,116 @@ SPAN.break {
 SPAN.overview {
   display: block;
 }
+
+/*
+ * Override some of the Docbook decisions
+ */
+
+.userinput {
+  font-weight: normal;
+}
+
+/*
+ * Formatted Scheme code
+ */
+
+.comment {
+  color: rgb(193,116,31);
+  font-style: oblique;
+}
+
+.keyword {
+  font-weight: bold;
+  color: rgb(38,38,128);
+}
+
+.number {
+  color: rgb(41,128,38);
+}
+
+.paren {
+  color: rgb(132,60,36);
+}
+
+.strbdy {
+  text-decoration: underline;
+}
+
+.string {
+  color: rgb(41,128,38);
+}
+
+.symbol {
+  color: rgb(38,38,128);
+}
+
+/*
+ * Set up for printing
+ */
+@media print {
+  div.head {
+    display: none;
+  }
+  div.NOPRINT {
+    display: none;
+  }
+
+  @page {
+    margin: 0.5in;
+  }
+
+  H1, H2 { 
+    color: rgb(96,96,96);
+  }
+
+  H1 {
+    padding-top: 0;
+  }
+
+  H1, H2, H3 {
+    margin-top: 0;
+    padding-top: 0;
+    padding-left: 0;
+    margin-left: 0;
+  }
+
+  H1 {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #0b61a4;
+  }
+
+  div.foot {
+    border-top: 1px solid rgb(96,96,96);
+  }
+
+  H2, H3 {
+    font-size: 100%;
+  }
+
+  P.course {
+    font-size: small;
+    color: rgb(96,96,96);
+  }
+
+  P.course,
+  div.section,
+  div.titlepage {
+    margin: 0;
+    padding: 0;
+  }
+
+  PRE {
+    font-size: 90%;
+  }
+
+   a {
+     text-decoration: none;
+   }
+   a:link {
+     color: blue;
+   }
+   a:visited {
+     color: blue;
+   }
+}
+

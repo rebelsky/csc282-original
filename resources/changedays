@@ -1,0 +1,8 @@
+:41,$s/mon/fun/
+:41,$s/tue/mon/
+:41,$s/wed/tue/
+:41,$s/thu/wed/
+:41,$s/fri/thu/
+:41,$s/sat/fri/
+:41,$s/sun/sat/
+:41,$s/fun/sun/
