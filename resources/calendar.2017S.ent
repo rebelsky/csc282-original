@@ -1,0 +1,135 @@
+<!-- Week One -->
+<!ENTITY mon01 "23 January 2017">
+<!ENTITY tue01 "24 January 2017">
+<!ENTITY wed01 "25 January 2017">
+<!ENTITY thu01 "26 January 2017">
+<!ENTITY fri01 "27 January 2017">
+<!ENTITY sat01 "28 January 2017">
+<!ENTITY sun01 "29 January 2017">
+<!-- Week Two -->
+<!ENTITY mon02 "30 January 2017">
+<!ENTITY tue02 "31 January 2017">
+<!ENTITY wed02 " 1 February 2017">
+<!ENTITY thu02 " 2 February 2017">
+<!ENTITY fri02 " 3 February 2017">
+<!ENTITY sat02 " 4 February 2017">
+<!ENTITY sun02 " 5 February 2017">
+<!-- Week Three -->
+<!ENTITY mon03 " 6 February 2017">
+<!ENTITY tue03 " 7 February 2017">
+<!ENTITY wed03 " 8 February 2017">
+<!ENTITY thu03 " 9 February 2017">
+<!ENTITY fri03 "10 February 2017">
+<!ENTITY sat03 "11 February 2017">
+<!ENTITY sun03 "12 February 2017">
+<!-- Week Four -->
+<!ENTITY mon04 "13 February 2017">
+<!ENTITY tue04 "14 February 2017">
+<!ENTITY wed04 "15 February 2017">
+<!ENTITY thu04 "16 February 2017">   
+<!ENTITY fri04 "17 February 2017">
+<!ENTITY sat04 "18 February 2017">
+<!ENTITY sun04 "19 February 2017">
+<!-- Week Five -->
+<!ENTITY mon05 "20 February 2017">
+<!ENTITY tue05 "21 February 2017">
+<!ENTITY wed05 "22 February 2017">
+<!ENTITY thu05 "23 February 2017">
+<!ENTITY fri05 "24 February 2017">
+<!ENTITY sat05 "25 February 2017">
+<!ENTITY sun05 "26 February 2017">
+<!-- Week Six -->
+<!ENTITY mon06 "27 February 2017">
+<!ENTITY tue06 "28 February 2017">
+<!ENTITY wed06 " 1 March 2017">
+<!ENTITY thu06 " 2 March 2017">
+<!ENTITY fri06 " 3 March 2017">
+<!ENTITY sat06 " 4 March 2017">
+<!ENTITY sun07 " 5 March 2017">
+<!-- Week Seven -->
+<!ENTITY mon07 " 6 March 2017">
+<!ENTITY tue07 " 7 March 2017">
+<!ENTITY wed07 " 8 March 2017">         <!-- SIGCSE March 8-11th -->
+<!ENTITY thu07 " 9 March 2017">
+<!ENTITY fri07 "10 March 2017">
+<!ENTITY sat07 "11 March 2017">
+<!ENTITY sun08 "12 March 2017">
+<!-- Week Eight -->
+<!ENTITY mon08 "13 March 2017">
+<!ENTITY tue08 "14 March 2017">
+<!ENTITY wed08 "15 March 2017">
+<!ENTITY thu08 "16 March 2017">
+<!ENTITY fri08 "17 March 2017">
+<!ENTITY sat08 "18 March 2017">
+<!ENTITY sun1b "19 March 2017">
+<!-- Break, Week One -->
+<!ENTITY mon1b "20 March 2017">
+<!ENTITY tue1b "21 March 2017">
+<!ENTITY wed1b "22 March 2017">
+<!ENTITY thu1b "23 March 2017">
+<!ENTITY fri1b "24 March 2017">
+<!ENTITY sat1b "25 March 2017">
+<!ENTITY sun2b "26 March 2017">
+<!-- Break, Week Two -->
+<!ENTITY mon2b "27 March 2017">
+<!ENTITY tue2b "28 March 2017">
+<!ENTITY wed2b "29 April 2017">
+<!ENTITY thu2b "30 March 2017">
+<!ENTITY fri2b "31 March 2017">
+<!ENTITY sat2b " 1 April 2017">
+<!ENTITY sun09 " 2 April 2017">
+<!-- Week Nine -->
+<!ENTITY mon09 " 3 April 2017">
+<!ENTITY tue09 " 4 April 2017">
+<!ENTITY wed09 " 5 April 2017">
+<!ENTITY thu09 " 6 April 2017">
+<!ENTITY fri09 " 7 April 2017">
+<!ENTITY sat09 " 8 April 2017">
+<!ENTITY sun10 " 9 April 2017">
+<!-- Week Ten -->
+<!ENTITY mon10 "10 April 2017">
+<!ENTITY tue10 "11 April 2017">
+<!ENTITY wed10 "12 April 2017">
+<!ENTITY thu10 "13 April 2017">
+<!ENTITY fri18 "14 April 2017">
+<!ENTITY sat10 "15 April 2017">
+<!ENTITY sun11 "16 April 2017">
+<!-- Week Eleven -->
+<!ENTITY mon11 "17 April 2017">
+<!ENTITY tue11 "18 April 2017">
+<!ENTITY wed11 "19 April 2017">
+<!ENTITY thu11 "20 April 2017">
+<!ENTITY fri11 "21 April 2017">
+<!ENTITY sat11 "22 April 2017">
+<!ENTITY sun12 "23 April 2017">
+<!-- Week Twelve -->
+<!ENTITY mon12 "24 April 2017">
+<!ENTITY tue12 "25 April 2017">
+<!ENTITY wed12 "26 April 2017">
+<!ENTITY thu12 "27 April 2017">
+<!ENTITY fri12 "28 April 2017">
+<!ENTITY sat12 "29 April 2017">
+<!ENTITY sun13 "30 April 2017">
+<!-- Week Thirteen -->
+<!ENTITY mon13 " 1 May 2017">
+<!ENTITY tue13 " 2 May 2017">
+<!ENTITY wed13 " 3 May 2017">
+<!ENTITY thu13 " 4 May 2017">
+<!ENTITY fri13 " 5 May 2017">
+<!ENTITY sat13 " 6 May 2017">
+<!ENTITY sun14 " 7 May 2017">
+<!-- Week Fourteen -->
+<!ENTITY mon14 " 8 May 2017">
+<!ENTITY tue14 " 9 May 2017">
+<!ENTITY wed14 "10 May 2017">
+<!ENTITY thu14 "11 May 2017">
+<!ENTITY fri14 "12 May 2017">
+<!ENTITY sat14 "13 May 2017">
+<!ENTITY sun1f "14 May 2017">
+<!-- Finals -->
+<!ENTITY mon1f "15 May 2017">
+<!ENTITY tue1f "16 May 2017">
+<!ENTITY wed1f "17 May 2017">
+<!ENTITY thu1f "18 May 2017">
+<!ENTITY fri1f "19 May 2017">
+<!ENTITY sat1f "20 May 2017">
