@@ -1,10 +1,10 @@
-<!ENTITY courseid "CSC 295/282">
+<!ENTITY courseid "CSC 282">
 <!ENTITY section "01">
-<!ENTITY semester "2014S">
+<!ENTITY semester "2017S">
 <!ENTITY coursename "Thinking in C and *nix">
 <!ENTITY school "Grinnell College">
-<!ENTITY url "http://www.cs.grinnell.edu/~rebelsky/Courses/CSC282/2014S/">
+<!ENTITY url "http://www.cs.grinnell.edu/~rebelsky/Courses/CSC282/2017S/">
 <!ENTITY courseurl "&url;">
 <!ENTITY grader "rebelsky@grinnell.edu">
-<!ENTITY cnix "http://www.cs.grinnell.edu/~rebelsky/Cnix/">
-<!ENTITY gcal "http://bit.ly/282gcal">
+<!ENTITY cnix "http://www.cs.grinnell.edu/~rebelsky/musings/index-cnix">
+<!ENTITY gcal "">
